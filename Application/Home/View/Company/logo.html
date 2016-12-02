@@ -1,0 +1,124 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>企业LOGO - 企业会员中心 </title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="" />
+<meta name="copyright" content="__APP__" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/templates/default/css/style.css" />
+<link href="__PUBLIC__/home/templates/default/css/user.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/home/templates/default/js/uploadPreview.js"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' language="javascript"></script>
+
+
+</head>
+<body>
+<link href="__PUBLIC__/home/templates/default/css/global.css" rel="stylesheet" type="text/css">
+<include file="Common:head" />
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+	<script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js" type='text/javascript' ></script>
+<div class="page_location link_bk"> 当前位置：<a href="__APP__">首页</a>&nbsp;>>&nbsp;<a href="__APP__/Vip/comvip">会员中心</a>&nbsp;>>&nbsp;公司信息&nbsp;>>企业LOGO</div>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk"> <script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+//
+	$('#chk').click(function(){$("#form1 :checkbox").attr('checked',$("#chk").attr('checked'))});
+	$(".left_menu_btop").css("display","block");
+	//$("#info .left_menu_btop").css("display","block");
+	//$("#info .left_menu_img img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+	$(".left_menu_bg").click(function(){
+		var tb=$(this).next();
+		var tb_display=tb.css("display");
+		if (tb_display=="block")
+		{
+		tb.css("display","none");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/06.gif");
+		}
+		else
+		{
+		tb.css("display","block");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+		}
+	});
+	
+	
+	$("input[type='text'],input[type='password']").focus(function(){
+	$(this).css("border-color","#0066CC #9DCEFF #9DCEFF #0066CC");
+	});
+	$("input[type='text'],input[type='password']").blur(function(){
+	$(this).css("border-color","");
+	});
+});
+</script>
+<include file="Common:left1" />
+</td>
+    <td valign="top">
+	<div class="user_right_box">
+		<div class="user_right_top_tit_bg">		
+		  <h1>企业logo</h1>
+		</div>
+		<div class="user_right_top_tit_bg" style="text-align:center;line-height:30px">		
+		<font color="red">上传企业LOGO</font>
+		</div>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" >
+     
+        <tr>
+          <td height="22">
+		  <form id="Form1" name="Form1" method="post" action=""  enctype="multipart/form-data">
+		  <table width="100%" border="0" cellspacing="0" cellpadding="4"  >
+		   <tr>
+                    <td width="242" height="28" align="right" valign="top" ><strong  style="color:#FF0000">*</strong>企业LOGO：</td>
+                    <td width="836" id="warp" ><li><input name="file" type="file"  id="up_img_WU_FILE_0"/> 
+                    <br> <img  width="120px" height="120px" id="imgShow_WU_FILE_0" <if condition="$logo neq '' ">src="__PUBLIC__/Uploads/logo/{$logo}"></if></li></td>
+              </tr>
+          <tr>
+             
+             
+            </tr>
+			    <tr>
+              <td width="100" height="10"></td>
+              <td></td>
+            </tr>
+	
+            
+   
+          </table>
+		 
+		   <input name="go_resume_show" type="hidden"  value="" />
+	
+		  <table width="100%" border="0" cellspacing="0" cellpadding="4" >
+   
+              <td width="160" height="23" align="right"></td>
+              <td height="60">
+		
+<input type="submit" name="submit" id="reg2"   value="保存"  class="user_long_submit"/>
+
+
+			  			   
+				  </form>  </td>
+            </tr>
+</table>
+		  </td>
+         
+              </tr>
+</table>
+     
+		  </td>
+        </tr>
+      </table>
+	  
+	  </div>
+    </td>
+  </tr>
+</table>
+<include file="Common:foot" />
+</body>
+</html>

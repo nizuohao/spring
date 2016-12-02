@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> 简历列表 </title>
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/home/templates/default/css/index-2013.css" rel="stylesheet" type="text/css"> 
+<link href="__PUBLIC__/home/templates/default/css/list-global.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/home/templates/default/css/list-company.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' ></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js" type='text/javascript' ></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.highlight-3.js" type='text/javascript' ></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js" type='text/javascript' ></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.resume-list.js" type='text/javascript'></script>
+<script src="__PUBLIC__/home/templates/default/js/lpsjob-public.js"  type='text/javascript' ></script>
+<script src="__PUBLIC__/home/data/cache_classify.js" type='text/javascript' charset="utf-8"></script>
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	resumelist();
+	favorites("/");
+	recommend_resume("/");
+});
+</script>
+<script type="text/javascript"> 
+$(document).ready(function()
+{
+	resumelist();
+	favorites("/");
+	recommend_resume("/");
+	var nav=$(".s-title-main");
+	var headHeight=nav.height()+425;
+	$(window).scroll(function()
+	{
+	if($(this).scrollTop()>headHeight)
+	{
+	nav.addClass("navFix");
+	}
+	else
+	{
+	nav.removeClass("navFix");
+	}
+	});
+
+	$("#Button1").click(function()
+	{  
+		search_location()
+
+    ;
+	});
+});
+</script>
+</head>
+<body>
+<link href="__PUBLIC__/home/templates/default/css/global.css" rel="stylesheet" type="text/css">
+<include file="Common:head" /><div class="container">
+ <div class="search-nav clearfix">
+  <ul>
+    <li id="cur"><a  class="select">全能搜索</a></li>
+
+  </ul>
+</div>
+<div class="resumesearchbox link_bkg" id="resumesearchbox" style="height:50px">
+	
+	  <div class="tsearch-panel clearfix" style="margin:5px">
+     
+
+      <form  method="get" id="form1" action="">
+        <ul >
+     
+          <li class="li1" >
+            <input name="keywords" id="keywords" onFocus="$(this).addClass('cgry')" onBlur="$(this).removeClass()"  class="s0"  type="text" x-webkit-speech="true" value="{$get.keywords}" />
+             
+          </li>
+          <li class="li2">
+            <input type="submit" id="index-search-button" value="" />
+          </li>
+        </ul>
+     
+        </form>
+      </div>
+</div>
+<!--
+<script src="__PUBLIC__/home/templates/default/js/jquery.resume-search.js" type='text/javascript'></script>
+<script type="text/javascript">
+	var getstr=",,,,,,,,,";	
+	var defaultkey="请输入：技能，特长，职位...";
+	var getkey="";
+	if (getkey=='')
+	{
+	getkey=defaultkey;
+	}
+	allaround('','/','__APP__/Job/stulist',getkey,getstr);
+</script>-->
+<form action="" method="post"  name="formresumelist" id="formresumelist"  target="_blank">
+  <div class="search-main shadow">
+    <div class="s-title-main">
+      <div class="s-title clearfix">
+        <ul>
+          <li class="select">
+            <label>
+              </label>
+          </li>
+         
+         
+         <li class="sort" style="width:720px"></li>
+		  <li class="domain spages"><span>每页：</span><a href="__APP__/Student/stu_list/num/5"<if condition="$get.num eq  5"> class="select"</if>>5</a>
+		  <a href="__APP__/Student/stu_list/num/10" <if condition="$get.num eq 10"> class="select" </if> >10</a>
+		  <a href="__APP__/Student/stu_list/num/20" <if condition="$get.num eq 20"> class="select"</if>>20</a>
+		  <li class="line-w"></li>
+        
+        </ul>
+      </div>
+    </div>
+    <!-- s-title end --> 
+	 	<div class="d-search">
+      <ul>     
+<volist name="arr" id="vo">
+         <li class="clearfix list">
+		 <div class="d-s-l">
+            <p class="pos_input">
+            &nbsp;  <input name="jid" type="checkbox" value="{$vo.re_id}"  />
+            </p>
+            <p class="pos-name"><a href="__APP__/Apply/info/re_id/{$vo.re_id}" class="blue blod" target="_blank">{$vo.s_name}</a>
+		<dfn><em class="col-6 normal">&nbsp;&nbsp;简历名称：</em>{$vo.re_name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em class="col-6 normal">求职：</em>{$vo.re_job}</dfn></p>
+            <p class="pos-info"><strong class="m-0">性别：</strong><a href="__APP__/Apply/info/re_id/{$vo.re_id}"><if condition=" $vo.s_sex eq 1 ">男<else />女</if></a><strong>年龄：</strong>{$year-$vo.s_bir}岁&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong class="m-0">期望城市：</strong><a href="__APP__/Student/info/re_id/{$vo.re_id}">{$vo.re_city}</a>
+           </p>
+            <p class="pos-info"> <strong>最近工作过的职位:</strong> <volist name="vo.stu" id="stu">{$stu.c_name}--{$stu.c_job}&nbsp;&nbsp;&nbsp;</volist>&nbsp;</p>
+            <p class="pos-info"> <strong>自我介绍:</strong> <?php  $con=$vo["re_text"]; echo substr($con,0,120);?>……
+</p>
+          </div>
+          <div class="d-s-r">
+            <p class="center" style="height:50px;line-height:50px"><a href="__APP__/Apply/info/re_id/{$vo.re_id}"  target="_blank" class="blue">[查看详细]</a></p>
+            <p class="pos-time"><span style="color:#FF3300;position:relative;left:35px">{$vo.re_time}</span></p>
+          </div>
+        </li>
+</volist>
+		   
+			  </ul>
+    </div>
+  
+	    	   </form>
+	 <div class="clear"></div>
+		    <div class="page-next">{$page}<div class="clear"></div><div class="clear"></div>
+   </div>
+
+</div>
+</div>
+<div class="clear"></div>
+<include file="Common:foot" />
+</body>
+</html>

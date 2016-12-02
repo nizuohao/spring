@@ -1,0 +1,78 @@
+
+.reg-warp{border:1px solid #dedede;background:#fff;color:#666}
+.reg-warp h4{height:88px;background:url(../images/reg-title.png);border-bottom:1px solid #dedede;}
+.reg-warp .tit-per{}
+.reg-warp .tit-com{background-position:0 -88px}
+.reg-box{width:750px;float:left;background:url(../images/dotted-y.png) right top repeat-y;margin-top:20px}
+.reg-box dl{padding-left:30px;font-size:14px}
+.reg-box dl dt{clear:both;width:80px;float: left;padding:12px 4px 10px 4px ;text-align: right;}
+.reg-box dl dd{margin: 0 0 0 80px;padding:12px 4px 10px 4px;text-align: left;font-size:14px;color:#333;font-weight:bold}
+.reg-box .input-1{border:1px solid #d3d3d3;width:250px;padding:5px;outline:none;height:26px;line-height:26px;font-family:Verdana;box-shadow:0px 2px 0px #ebebeb;font-weight:bold;margin-top:-5px} 
+.reg-box .submit-1{width:150px;height:45px;line-height:45px;border:none;color:#fff;font-size:14px;font-weight:bold;margin-left:0;border-radius:3px;box-shadow:0px 2px 0px #005986;cursor:pointer}
+.psw-dt{padding:0px 4px!important;height:30px!important}
+.psw-dd{padding:0px 4px!important;font-size:16px!important;font-weight:normal!important;color:#888!important;position:relative;height:30px}
+.psw-dd p{display:inline-block;float:left;position:absolute;top:0px;line-height:25px}
+.psw-dd .psw-width{width:126px;height:15px;top:0px;left:70px;background:url(../images/psw-width.png);overflow:hidden}
+.psw-dd .psw-width dfn{display:block;background:url(../images/psw-width.png) left -15px no-repeat;height:15px}
+.psw-dd .no-reg{color:red;top:0;left:200px;width:60px}
+.psw-edit{height:20px;margin-top:5px}
+.login-box{width:248px;float:right;margin-top:20px}
+.login-box p{margin-left:64px}
+.login-box a.login-qq{display:block;width:120px;height:24px;float:left;overflow:hidden;background:url(../images/login-QQ.png);text-indent:-99999px;margin-top:2px}
+.login-box .login{display:block;width:120px;height:40px;line-height:40px;font-weight:bold;font-size:14px;color:#fff;text-align:center;border-radius:3px;box-shadow:0px 2px 0px #be3014;
+background-color: #ff7e0c;
+background-image: linear-gradient(top,#ff7e0c 0,#f07100 100%);
+background-image: -moz-linear-gradient(top,#ff7e0c 0,#f07100 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ff7e0c),color-stop(100%,#f07100));
+background-image: -o-linear-gradient(top,#ff7e0c 0,#f07100 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff7e0c,endColorstr=#f07100,GradientType=0);
+background-image: -ms-linear-gradient(top,#ff7e0c 0,#f07100 100%);
+}
+.login-box a:hover.login{
+color:#fff;text-decoration:none;
+background-color: #e46300;
+background-image: linear-gradient(top,#fc7014 0,#f76503 100%);
+background-image: -moz-linear-gradient(top,#fc7014 0,#f76503 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fc7014),color-stop(100%,#f76503));
+background-image: -o-linear-gradient(top,#fc7014 0,#f76503 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fc7014,endColorstr=#f76503,GradientType=0);
+background-image: -ms-linear-gradient(top,#fc7014 0,#f76503 100%);
+}
+/* mailBox */
+#mailBox{background:#fff;border:1px solid #ddd;padding:3px 5px 5px;position:absolute;z-index:9999;display:none;text-align:left;box-shadow:2px 2px 2px #eee}
+#mailBox p{width:100%;margin:0;padding:0;height:20px;line-height:20px;clear:both;font-size:12px;color:#999;cursor:default;}
+#mailBox ul{padding:0;margin:0;}
+#mailBox li{font-size:12px;height:22px;line-height:22px;color:#333;font-family:'Tahoma';list-style:none;cursor:pointer;overflow:hidden;}
+#mailBox .cmail{color:#000;background:#e8f4fc;}
+/* QQ */
+.qq-warp{border-top:2px solid #f26b01}
+.qq-warp .tit{background:#f8f8f8;border-bottom:1px solid #eee;line-height:40px;text-indent:20px;font-size:14px;font-weight:bold;color:#1d2736}
+.qq-warp .reg-box{background:none;padding-bottom:20px}
+.qq-warp .reg-box p{padding-left:118px;font-size:14px;line-height:28px}
+
+i.password_qd { border:1px solid #ccc; width:122px; display:inline-block; height:12px; line-height:12px; margin-right:10px; background-color:#fff; padding:1px;}
+i.password_qd .password_bg { width:40px; background-color:#eee;display:inline-block; border-right:1px solid #ccc;}
+i.password_qd .password_bg.none { border-right:0px solid #ccc;}
+i.password_qd span #strength_L {background-color:#FF4040;}
+i.password_qd span #strength_M {background-color:#FF9900;}
+i.password_qd span #strength_H {background-color:#33CC00;}
+.reg_oks { border:1px solid #ddd; padding:10px 0px 10px 200px; background:url(/images/reg_ok_07.gif) no-repeat 10px 20px; }
+.reg_tips { margin-top:10px; }
+.login_ag.bd dl.msg_login { line-height:35px;}
+.line35 { line-height:35px;}
+.job_logo, .user_logo { border:0px;}
+.reg_ok_tip { overflow: hidden;zoom:1; width:600px; margin:0 auto;}
+.reg_ok_tip li { float:left; width:48%; text-align:center;}
+.reg_ok_tip li img { display:inline-block;}
+
+.fuli{width:500px;display:inline-block;}
+.fuli em{width:85px;height:35px;display:inline-block;_margin-top:5px;}
+.fuli em input{margin-right:3px;}
+dd label.error{ color:#f60; background:url(/skin2013/images/icon1.png) no-repeat 5px -488px; padding:5px 0px 5px 30px; font-size:12px; }
+dd label.success{ color:#009BD8; background:url(/skin2013/images/icon1.png) no-repeat 5px -360px; padding:5px 0px 5px 30px; }
+dd input.error {border:1px #FF6600 solid; background-color:#FFEDE8; color:#FF0000}
+dd strong{ color:#F00; padding-right:30px;}
+dd span a{ color:#666666; color:#F00}
+#imgsrc{vertical-align:middle}
+.agree a{font-size:12px;color:#666;}
+.agree a:hover{color:#f36700;}

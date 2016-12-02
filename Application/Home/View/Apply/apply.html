@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>学生就业服务_软件工程系</title>
+
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.user.selectlayer.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<link href="__ROOT__/Public/home/templates/default/css/user.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="__ROOT__/Public/home/templates/default/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	href="__ROOT__/Public/home/data/css/style.css" />
+<script type="text/javascript"
+	src="__ROOT__/Public/home/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/home/js/index.js"></script>
+<!-- 头部文件 -->
+<include file="Common:head" />
+<!-- end -->
+<div class="page_location link_bk">当前位置：<a href="__APP__">首页</a>&nbsp;>>&nbsp;<a
+	href="__APP__/Student/centre">用户中心</a>&nbsp;>>&nbsp;管理投职</div>
+<table width="958" border="0" align="center" cellpadding="0"
+	cellspacing="0" style="margin-top: 8px; margin-left: 175px">
+	<tr>
+		<td width="173" valign="top" class="link_bk"><script
+			src="__ROOT__/Public/home/templates/default/js/jquery.dialog.js"
+			type='text/javascript'></script> <!-- 左侧栏目 --> <include
+			file="Common:left" /> <!-- end -->
+		<td valign="top">
+		<div class="user_right_box">
+		<div class="user_right_top_tit_bg">
+		<h1>投职管理</h1>
+		</div>
+		<form id="Form1" name="Form1" method="post" action="?act=addjobs_save">
+		<input name="addrand" type="hidden" id="addrand" value="2631" />
+		<table width="100%" border="0" cellpadding="4" cellspacing="0"
+			style="margin-top: 8px;" class="cen">
+			<tr>
+				<th>编号</th>
+				<th>期望职位</th>
+				<th>期望薪资</th>
+				<th>期望城市</th>
+				<th>工作经验</th>
+				<th>自我介绍</th>
+				<th>关键字</th>
+				<th>手机号</th>
+				<th>填写时间</th>
+				<th>操作</th>
+			</tr>
+			<volist name="value" id="vo">
+			<tr>
+				<td align="center">{$i}</td>
+				<td align="center">{$vo.re_job}</td>
+				<td align="center">{$vo.re_money}</td>
+				<td align="center">{$vo.re_city}</td>
+				<td align="center">{$vo.re_scale}年</td>
+				<td align="center">{$vo.re_text}</td>
+				<td align="center">{$vo.re_keyword}</td>
+				<td align="center">{$vo.re_tel}</td>
+				<td align="center">{$vo.re_time|date="Y-m-d H:i:s",###}</td>
+				<td align="center"><a href="__URL__/addResume/id/{$vo.re_id}">修改</a>
+				| <a href="__URL__/delResume/id/{$vo.re_id}">删除</a></td>
+			</tr>
+			</volist>
+			<tr>
+				<td colspan="7" align="center">{$page}</td>
+			</tr>
+		</table>
+		</div>
+		</form>
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- 底部文件 -->
+<include file="Common:foot" />
+<!-- end -->

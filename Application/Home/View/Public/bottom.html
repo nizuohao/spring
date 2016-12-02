@@ -1,0 +1,47 @@
+<div style="height:100px">&nbsp;</div>
+<script type="text/javascript"><!--<!--
+	/*$('#serviceLink').mouseenter(function() {
+		$(this).hide().siblings('.service').show();
+	});
+	$('.service').mouseleave(function() {
+		$(this).hide();
+		$('#serviceLink').show();
+	});*/
+	$(".left_menu_bg").click(function(){
+		var tb=$(this).next();
+		var tb_display=tb.css("display");
+		if (tb_display=="block")
+		{
+		tb.css("display","none");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/06.gif");
+		}
+		else
+		{
+		tb.css("display","block");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+		}
+	});
+	<script type="text/javascript">
+	$(function(){
+	   //$(".sub dl:gt(0) dd").hide();
+	   $(".left_menu_box").click(function(){
+	   if(".left_menu_box:nth-child(1)").is(":visible")){
+	    $(this).hide();
+	   }else{
+	      $(this).show();
+	   }
+	   });
+	  });
+	</script>
+	
+</script>
+<div class="footer-t-container">
+<div><img id="qr-code"
+	src="__PUBLIC__/home/data/images/sdspringcode.png" alt="二维码">
+<div class="jyfw">
+<h3>教育是服务—用阳光的形象引领学生健康成长。</h3>
+<h4>Education is a service —— With the image of the sun lead
+healthy growth.</h4>
+</div>
+</div>
+</div>

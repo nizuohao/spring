@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>预览简历 - 个人会员中心</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="" />
+<meta name="copyright" content="__MODULE__" />
+<link href="__PUBLIC__/home/templates/default/css/user.css"
+	rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/home/templates/default/js/jquery.js"
+	type='text/javascript'></script> <script
+	src="__PUBLIC__/home/templates/default/js/jquery.idTabs.min.js"
+	type='text/javascript' language="javascript"></script> <script
+	src="__PUBLIC__/home/templates/default/js/jquery.reasontip-min.js"
+	type='text/javascript' language="javascript"></script>
+<link href="__ROOT__/Public/home/templates/default/css/user.css"
+	rel="stylesheet" type="text/css" />
+<body>
+<link href="__PUBLIC__/home/templates/default/css/style.css"
+	rel="stylesheet" type="text/css"><include file="Common:head" />
+
+
+<div class="page_location link_bk">当前位置：<a href="__MODULE__">首页</a>&nbsp;>>&nbsp;<a
+	href="__MODULE__/Student/centre">会员中心</a>&nbsp;>>&nbsp;预览简历</div>
+<table width="985" border="0" align="center" cellpadding="0"
+	cellspacing="0" style="margin-top: 8px;">
+	<tr>
+		<td width="173" valign="top" class="link_bk"><script
+			src="__PUBLIC__/home/templates/default/js/jquery.dialog.js"
+			type='text/javascript'></script> 
+			 <!-- 左侧栏目 --> <include file="Common:left" /> <!-- end -->
+		<td valign="top">
+		<div class="user_right_box">
+		<div class="user_right_top_tit_bg">
+		<h1>预览简历 - <span style="color: #FF6600">{$vole_res['re_name']}</span></h1>
+		</div>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="30" bgcolor="#F5FAFC"
+					style="border-bottom: 1px #C9D9E7 solid;"><span
+					style="color: #0066CC; padding-left: 20px;"><strong>基本设置</strong></span></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 1px #C9D9E7 solid;">
+				<table width="95%" border="0" align="center" cellpadding="0"
+					cellspacing="0" class="link_lan">
+					<tr>
+						<td height="30" class="link_lan">简历名称：{$vole_res['re_name']}&nbsp;&nbsp;&nbsp;
+						</td>
+
+					</tr>
+					<tr>
+						<td height="30" class="link_lan">姓名：
+						{$vole_stu.s_name}&nbsp;&nbsp;&nbsp;</td>
+					</tr>
+					<tr>
+						<td height="30" class="link_lan">创建时间：
+						{$vole_res.re_time|date="Y-m-d H:i:s",###}</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+			<tr>
+				<td height="30" bgcolor="#F5FAFC"
+					style="border-bottom: 1px #C9D9E7 solid;"><span
+					style="color: #0066CC; padding-left: 20px;"><strong>基本信息</strong></span></td>
+			</tr>
+			<tr>
+				<td height="22" style="border-bottom: 1px #C9D9E7 solid;">
+				<table width="100%" border="0" align="center" cellpadding="0"
+					cellspacing="3">
+					<tr>
+						<td valign="top">
+						<table width="98%" border="0" align="center" cellpadding="0"
+							cellspacing="8">
+							<tr>
+								<td class="link_lan">姓名： {$vole_stu.s_name}</td>
+								<td class="link_lan">性别：<if
+									condition="$vole_stu.s_sex eq 1">男<else />女</if></td>
+							</tr>
+							<tr>
+								<td width="170px">出生日期：{$vole_stu.s_bir}</td>
+								<td>专业：<if condition="$vole_stu.s_type eq 1">编程<elseif
+									condition="$vole_stu.s_type eq 2" />美工<else />未选择专业</if></td>
+							</tr>
+							<tr>
+								<td>联系电话：{$vole_stu.s_tel}</td>
+								<td>电子邮箱： {$vole_stu.s_email}
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td>家庭住址：{$vole_stu.s_address}</td>
+							</tr>
+						</table>
+						</td>
+						<td width="150" valign="top">
+						<div style="position: relative">
+						<div style="position: absolute; right: 10px; top: 10px;">
+						<table border="0" align="center" cellpadding="0" cellspacing="1"
+							style="line-height: 180%">
+							<tr>
+								<td>
+								<table border="0" align="center" cellpadding="2" cellspacing="1"
+									bgcolor="#CCCCCC" class="link_lan">
+									<tr>
+										<td bgcolor="#FFFFFF"><img
+											src="__PUBLIC__/Uploads/StuHead/{$vole_stu.s_head}"
+											height="100px" width="200px" /></td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+
+							<tr>
+								<td height="35" align="center" class="link_lan"><a
+									href="__MODULE__/Student/person">修改照片</a></td>
+							</tr>
+						</table>
+						</div>
+						</div>
+
+						</td>
+					</tr>
+				</table>
+				<div align="center" style="padding: 15px; padding-top: 6px;">
+				<input name="" type="button" value="修改" class="but80"
+					style="background: #5FBCD3;"
+					onclick="window.location='__MODULE__/Student/read'" /></div>
+				</td>
+			</tr>
+			<tr>
+				<td height="30" bgcolor="#F5FAFC"
+					style="border-bottom: 1px #C9D9E7 solid;"><span
+					style="color: #0066CC; padding-left: 20px;"><strong>求职意向</strong></span></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 1px #C9D9E7 solid;">
+				<table width="98%" border="0" align="center" cellpadding="0"
+					cellspacing="10">
+					<tr>
+						<td>期望职位：{$vole_res.re_job}</td>
+						<td>期望薪资：{$vole_res.re_money}</td>
+					</tr>
+					<tr>
+						<td>期望期望城市：{$vole_res.re_city}</td>
+						<td>手机号：{$vole_res.re_tel}</td>
+					</tr>
+					<tr>
+						<td>特长标签：{$vole_res.re_keyword}</td>
+						<td>工作经验：{$vole_res.re_scale}年</td>
+					</tr>
+					<tr>
+						<td colspan=2>自我介绍：{$vole_res.re_text}</td>
+					</tr>
+				</table>
+				<if condition="$vole_res eq ''">
+				<div align="center" style="padding: 15px; padding-top: 6px;">
+				<input name="" type="button" value="新增" class="but80"
+					style="background: #5FBCD3;"
+					onclick="window.location='__MODULE__/Apply/addResume'" /></div>
+				<else />
+				<div align="center" style="padding: 15px; padding-top: 6px;">
+				<input name="" type="button" value="修改" class="but80"
+					style="background: #5FBCD3;"
+					onclick="window.location='__MODULE__/Apply/addResume/re_id/{$vole_res.re_id}'" /></div>
+				</if></td>
+			</tr>
+
+			<tr>
+				<td height="30" bgcolor="#F5FAFC"
+					style="border-bottom: 1px #C9D9E7 solid;"><span
+					style="color: #0066CC; padding-left: 20px;"><strong>工作经历</strong></span></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 1px #C9D9E7 solid;">
+				<table width="100%" border="0" cellspacing="1" cellpadding="5"
+					class="link_lan">
+					<tr>
+						<td height="23" align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">起止年月</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">企业名称</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">企业介绍：</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">职位：</td>
+						<td width="120" align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">编辑</td>
+					</tr>
+					<volist name="vole_cou" id="vo">
+					<tr>
+						<td height="23" align="center">{$vo.c_stime}至{$vo.c_endtime}</td>
+						<td align="center">{$vo.c_coname}</td>
+						<td align="center">{$vo.c_intro}</td>
+						<td align="center">{$vo.c_job}</td>
+						<td align="center"><a
+							href="__URL__/work/c_id/{$vo.c_id}/re_id/{$vo.re_id}">修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+							href="__URL__/delwork/c_id/{$vo.c_id}/re_id/{$vo.re_id}"
+							onClick="return confirm('您确定删除吗?')">删除</a></td>
+					</tr>
+					</volist>
+				</table>
+				<div align="center" style="padding: 15px; padding-top: 6px;">
+				<input name="" type="button" value="新增" class="but80"
+					style="background: #5FBCD3;"
+					onclick="window.location='__MODULE__/Apply/work/re_id/{$vole_res['re_id']}'" /></div>
+				</td>
+			</tr>
+			<tr>
+				<td height="30" bgcolor="#F5FAFC"
+					style="border-bottom: 1px #C9D9E7 solid;"><span
+					style="color: #0066CC; padding-left: 20px;"><strong>作品展示</strong></span></td>
+			</tr>
+			<tr>
+				<td style="border-bottom: 1px #C9D9E7 solid;">
+				<table width="100%" border="0" cellspacing="1" cellpadding="5"
+					class="link_lan">
+					<tr>
+						<td height="23" align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">项目名称</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">项目描述：</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">项目网址：</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">服务公司：</td>
+						<td width="120" align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">编辑</td>
+					</tr>
+					<volist name="vole_show" id="vo">
+					<tr>
+						<td height="23" align="center">{$vo.sh_project}</td>
+						<td align="center">{$vo.sh_desc}</td>
+						<td align="center">{$vo.sh_href}</td>
+						<td align="center">{$vo.sh_com}</td>
+						<td align="center"><a
+							href="__MODULE__/Apply/show/sh_id/{$vo.sh_id}/re_id/{$vo.re_id}">修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+							href="__MODULE__/Apply/delshow/sh_id/{$vo.sh_id}/re_id/{$vo.re_id}"
+							onClick="return confirm('您确定删除吗?')">删除</a></td>
+					</tr>
+					</volist>
+				</table>
+				<div align="center" style="padding: 15px; padding-top: 6px;">
+				<input name="" type="button" value="新增" class="but80"
+					style="background: #5FBCD3;"
+					onclick="window.location='__MODULE__/Apply/show/re_id/{$vole_res['re_id']}'" /></div>
+				</td>
+			</tr>
+		</table>
+		</div>
+		</td>
+	</tr>
+</table>
+<include file="Common:foot" />
+</body>
+</html>

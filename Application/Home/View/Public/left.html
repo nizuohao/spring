@@ -1,0 +1,144 @@
+<div class="left_menu_home"><a href="__MODULE__/Ent/sel_e"
+	style="color: #990000">中心首页</a> <a
+	href="__MODULE__/Ent/det_enterprise" style="color: #990000">基本信息</a></div>
+<div class="left_menu_box" id="index">
+<div class="left_menu_bg">
+<div class="left_menu_tit">招聘管理</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Bring/bring" target="_self">招聘管理</a></li>
+	<li><a href="__MODULE__/Bring/addBring" target="_self">发布招聘</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+
+<div class="left_menu_box" id="recruitment">
+<div class="left_menu_bg">
+<div class="left_menu_tit">捐赠管理</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Donate_e/donate" target="_self">捐赠管理</a></li>
+	<li><a href="__MODULE__/Donate_e/addDonate" target="_self">申请捐赠</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+
+<div class="left_menu_box" id="promotion">
+<div class="left_menu_bg">
+<div class="left_menu_tit">会员中心
+<div class="hot"></div>
+</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Vip/vip" target="_self">会员信息</a></li>
+	{$_COOKIE['v_type']?'':'<li><a href="__MODULE__/Vip/addVip" target="_self">申请会员</a></li>'}
+	<li><a href="__MODULE__/Vip/addMoney" target="_self">余额充值</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+
+<div class="left_menu_box" id="recruitment">
+<div class="left_menu_bg">
+<div class="left_menu_tit">投诉管理</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Complain/complain" target="_self">投诉管理</a></li>
+	<li><a href="__MODULE__/Complain/addComplain" target="_self">发起投诉</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+
+<div class="left_menu_box" id="service">
+<div class="left_menu_bg">
+<div class="left_menu_tit">个人建议</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+
+	<li><a href="__MODULE__/Sug/sug" target="_self">建议管理</a></li>
+	<li><a href="__MODULE__/Sug/addSug" target="_self">发布建议</a></li>
+	<div class="clear"></div>
+</ul>
+
+</div>
+</div>
+
+<div class="left_menu_box" id="user" style="border-bottom: 1px;">
+<div class="left_menu_bg">
+<div class="left_menu_tit">账户管理</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Public/un" target="_self">安全退出</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+</td>
+		<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$('#chk').click(
+								function() {
+									$("#form1 :checkbox").attr('checked',
+											$("#chk").attr('checked'))
+								});
+						$(".left_menu_btop").css("display", "block");
+						$(".left_menu_bg")
+								.click(
+										function() {
+											var tb = $(this).next();
+											var tb_display = tb.css("display");
+											if (tb_display == "block") {
+												tb.css("display", "none");
+												$(this)
+														.find("img")
+														.attr("src",
+																"__ROOT__/Public/home/templates/default/images/06.gif");
+											} else {
+												tb.css("display", "block");
+												$(this)
+														.find("img")
+														.attr("src",
+																"__ROOT__/Public/home/templates/default/images/07.gif");
+											}
+										});
+
+						$("input[type='text'],input[type='password']").focus(
+								function() {
+									$(this).css("border-color",
+											"#0066CC #9DCEFF #9DCEFF #0066CC");
+								});
+						$("input[type='text'],input[type='password']").blur(
+								function() {
+									$(this).css("border-color", "");
+								});
+					});
+</script> 

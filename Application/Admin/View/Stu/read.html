@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__ROOT__/Public/admin/css/style.css" rel="stylesheet"
+	type="text/css" />
+<style type="text/css">
+.dfinput {
+	width: 100px;
+	height: 32px;
+	line-height: 32px;
+	border-top: solid 1px #a7b5bc;
+	border-left: solid 1px #a7b5bc;
+	border-right: solid 1px #ced9df;
+	border-bottom: solid 1px #ced9df;
+	background: url(../images/inputbg.gif) repeat-x;
+	text-indent: 10px;
+}
+;
+</style>
+<script type="text/javascript" src="__ROOT__/Public/admin/js/jquery.js"></script><script type="text/javascript">function getGrade(){	//alert('gdsgeg');	var grade=$('select[name="s_gid"]').val();	$.post('__MODULE__/Stu/getClass',{g:grade},	function(data)	{		//alert(data);		$("#class").html(data);	});	}</script>
+<script language="javascript">
+$(function(){	
+	 $("#print").click(function(){
+  	 location.href="__URL__/read/print/1";
+  	});
+	//导航切换
+	$(".imglist li").click(function(){
+		$(".imglist li.selected").removeClass("selected")
+		$(this).addClass("selected");
+	});
+});
+</script>
+</head>
+<body>
+<div class="place"><span>位置：</span>
+<ul class="placeul">
+	<li><a href=http://localhost/project/Admin.php/admin/index.html>首页</a></li>
+	<li><a href="__URL__/student">学生信息</a></li>
+</ul>
+</div>
+<div class="rightinfo">
+<div class="tools">
+<ul class="toolbar">
+	<li class="click"><span><img
+		src="__ROOT__/Public/admin/images/t01.png" /></span> <a href="__URL__/add">添加</a>
+	</li>
+</ul>
+<form action="" method="post">
+<ul class="toolbar1" style="float: left">
+	<li>&nbsp;&nbsp;年级： <select name="s_gid" id="grade" class="dfinput" onchange="return getGrade()">
+		<option value="">---请选择---</option>
+		<volist name="grade" id="vo">
+		<option value="{$vo.c_gid}">{$vo.c_gid}级</option>
+		</volist>
+	</select></li>
+	<li>&nbsp;&nbsp;班级： <select name="c_id" id="class" class="dfinput">
+		<option value="">---请选择---</option>
+	</select></li>
+	<li>&nbsp;&nbsp;审核状态： <select name="s_state" class="dfinput">
+		<option value="">---请选择---</option>
+		<option value=3>---未审核---</option>
+		<option value=1>---通过---</option>
+		<option value=2>---不通过---</option>
+	</select></li>
+	<li>&nbsp;&nbsp;专业： <select name="s_type" class="dfinput">
+		<option value="">---请选择---</option>
+		<option value=1>---编程---</option>
+		<option value=2>---美工---</option>
+	</select></li>
+	<li>&nbsp;&nbsp;学生姓名：<input type="text" name="s_name"
+		class="dfinput"></li>
+	<input type="submit" name="sub" value="查询" class="scbtn" />
+</ul><input name="submit" type="button" id="print" class="scbtn" value="导出" />
+</form>
+</div>
+
+<table class="tablelist">
+	<thead>
+		<tr>
+			<!--<th width="50px"><a id="qx" href="">全选</a></th>-->
+			<th>编号</th>
+			<th><a href="">用户名</a></th>
+			<th><a href="">姓名</a></th>
+			<th><a href="">性别</a></th>
+			<th><a href="">年级</a></th>
+			<th><a href="">班级</a></th>
+			<th><a href="">期望城市</a></th>
+			<th><a href="">专业</a></th>
+			<th><a href="">手机号</a></th>
+			<th><a href="">邮箱</a></th>
+			<th><a href="">头像</a></th>
+			<th><a href="">审核状态</a></th>
+			<th><a href="">操作</a></th>
+		</tr>
+	</thead>
+	<tbody>
+		<volist name="vole" id="vo">
+		<tr class="fo">
+			<!-- <td class="imgtd"><input type="checkbox" name="check[]" value="{$vo.s_id}" /></td> -->
+			<td>{$vo.s_id}</td>
+			<td>{$vo.s_user}</td>
+			<td>{$vo.s_name}</td>
+			<td>{$vo['s_sex']==1?'男':'女'}</td>
+			<td>{$vo.g_name}级</td>
+			<td>{$vo.c_name}</td>
+			<!-- <td>{$vo.ci_id}</td> -->
+			<td><volist name="vole_city" id="v_city">
+			{$v_city['ci_id']==$vo['ci_id']?$v_city['ci_name']:''}
+			</volist></td>
+			<td><if condition="$vo.s_type eq 1">编程<else />美工</if></td>
+			<td>{$vo.s_tel}</td>
+			<td>{$vo.s_email}</td>
+			<!--<if condition="$vo.s_head eq ''"><td>还未上传头像</td><else />
+			<td><a href="__ROOT__/public/uploads/stuhead/{$vo.s_head}"
+				target="_blank">查看大图</a></td>
+			</if>-->
+			<td><a href="__ROOT__/Public/Uploads/StuHead/slt/s_{$vo.s_head}"
+				target="_blank">查看大图</a></td>
+			<!--<td class="click"><a-->
+			<!--href="__URL__/state/id/{$vo['s_id']}/state/{$vo['s_state']}">{$vo['s_state']==1?'已审核':'<b>未审核</b>'}</a></td>-->
+			<td>
+			<if condition="$vo.s_state eq '3' "><a href="__URL__/state/s_id/{$vo.s_id}/id/1"><font color="blue">通过</font></a> | <a href="__URL__/state/s_id/{$vo.s_id}/id/2"><font color="blue">不通过</font></a><elseif  condition="$vo.s_state eq 1 " /><font color="green">已通过</font><else /><font color="red">未通过</font></if></td>
+			<td><a href="__URL__/edit/id/{$vo.s_id}">修改</a> | <a
+				href="__URL__/del/id/{$vo.s_id}">删除</a></td>
+		</tr>
+		</volist>
+	</tbody>
+</table>
+<div class="clear"></div>
+<div class="pagin">
+<div class="message">{$page}</div>
+</div>
+</div>
+</body>
+<script language="javascript">
+	$(".classlist li").css({width:"300px",height:"170px",overflow:"true"});
+	$("#gr").change(function(){
+		var g_id=$("#gr").val();
+		$.get("__ROOT__/admin.php/Public/getClass",{c_gid:g_id},function(data){
+			$("#cl").html(data);
+		})
+	});
+
+	$(".state").change(function(){
+		id	=	$(this).attr("id");
+		val	=	$(this).val();
+		$.post("__URL__/state",{id:id,val:val},function(data){
+			alert(data);
+				});
+	})
+</script>
+</html>

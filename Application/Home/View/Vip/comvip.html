@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>企业会员中心 </title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="" />
+<meta name="copyright" content="__APP__" />
+<link href="__PUBLIC__/home/templates/default/css/user.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js" type='text/javascript' language="javascript"></script>
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css">
+		
+<script src="__PUBLIC__/home/templates/default/js/jquery.reasontip-min.js" type='text/javascript' language="javascript"></script>
+
+
+</head>
+<body>
+<link href="__PUBLIC__/home/templates/default/css/global.css" rel="stylesheet" type="text/css">
+<include file="Common:head" />
+<div class="page_location link_bk">
+当前位置：<a href="__APP__">首页</a>&nbsp;>>&nbsp;<a href="__APP__/Vip/comvip">会员中心</a> 
+</div>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+    <if condition="$arr.c_id eq '' ">
+<script type="text/javascript">
+$(document).ready(function()
+{
+
+
+	dialog("系统提示","text:<div style=\" height:150px; font-size:14px;line-height:400%;font-weight:bold;text-align:center\">您还没有完善信息，建议您立即完善信息，让好人才找上门！<br/><a href=\"__APP__/Company/com_info\"><img src=\"__PUBLIC__/home/templates/default/images/888.gif\" alt=\"完善信息\"  border=\"0\"  /></a></div>","500px","auto","");
+
+
+
+});
+</script>
+</if>
+<script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+		
+	$('#chk').click(function(){$("#form1 :checkbox").attr('checked',$("#chk").attr('checked'))});
+	$(".left_menu_btop").css("display","block");
+	//$("#index .left_menu_btop").css("display","block");
+	//$("#index .left_menu_img img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+	$(".left_menu_bg").click(function(){
+		var tb=$(this).next();
+		var tb_display=tb.css("display");
+		if (tb_display=="block")
+		{
+		tb.css("display","none");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/06.gif");
+		}
+		else
+		{
+		tb.css("display","block");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+		}
+	});
+	
+	
+	$("input[type='text'],input[type='password']").focus(function(){
+	$(this).css("border-color","#0066CC #9DCEFF #9DCEFF #0066CC");
+	});
+	$("input[type='text'],input[type='password']").blur(function(){
+	$(this).css("border-color","");
+	});
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	
+	$("#tabshow li:nth-child(1)>a").addClass("selected");
+	
+	$("#show_avatars_url").mouseover(function() {
+		$(".avatars_edit").show();
+		$("#show_avatars_url").mouseout(function() {
+		$(".avatars_edit").hide();
+		});	
+	});
+
+
+
+
+	vtip_reason("/","company_reason");
+
+});
+</script>
+<include file="Common:left1" />	</td>
+		
+   <td valign="top" class="link_lan">
+			
+							<div class="com_user_box">
+  <div class="titbox">
+  	<div class="lefttit"><u>欢迎：{$arr.c_name}</u>(uid:{$arr.c_id})&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="__APP__/Company/com_info">会员资料</a></div>
+
+<div class="rightip">上次登录时间：{$time}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+	<div class="clear"></div>
+  </div>
+ 
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="5" >
+            <tr>
+              <td width="120">
+			  <table border="0" cellpadding="0" cellspacing="1" bgcolor="#CDE6F3" style="margin:3px; padding:3px;" ><tr > <td align="center" bgcolor="white" >企业LOGO</td></tr>
+                <tr>
+
+                  <td bgcolor="#FFFFFF"  > 
+				  <div style=" position:relative"  id="show_avatars_url">
+
+				  <a href="__APP__/Company/logo">
+				  <if condition="$arr.c_logo eq ''">
+				  <img src="__PUBLIC__/home/data/avatar/no_photo.gif" border="0"  width="100" height="100" />
+				  <else /> <img src="__PUBLIC__/Uploads/logo/{$arr.c_logo}" border="0"  width="100" height="100" /></if>
+				  </a>
+				  <div class="avatars_edit">修改LOGO</div>
+
+				  </div>				  </td>
+                </tr>
+              </table>			  </td>
+              <td valign="top">
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0"  style="color:#666666">
+                <tr>
+                  <td  style=" padding-top:22px;" class="butimglink">
+				  公司名称：{$arr.c_name}
+									  </td>
+                </tr>
+                <tr>
+                  <td style=" padding-top:12px;">公司规模：<if condition="$arr.c_size eq 1">大型<elseif condition="$arr.c_size eq 2" />中型<else />小型</if>
+				  </td>
+                </tr>
+                <tr>
+                  <td style=" padding-top:12px;">企业网址：{$arr.c_url}
+				  </td>
+                </tr>
+				
+              </table>
+		</td>
+              <td width="180" valign="top"><table width="100%" border="0" cellspacing="16" cellpadding="0">
+                <tr>
+                  <td align="right"><a href="__APP__/Company/recruit"><img src="__PUBLIC__/home/templates/default/images/71.gif" alt="发布职位"  border="0"  /></a></td>
+                </tr>
+                <tr>
+                  <td align="right"><a href="__APP__/Company/jobs"><img src="__PUBLIC__/home/templates/default/images/81.gif" alt="管理职位"  border="0"  /></a></td>
+                </tr>
+              </table></td>
+          </tr>
+      </table>	
+</div>
+<if condition="$arr eq ''">
+	<div class="com_user_box" style="margin-top:10px;">
+	  <div class="titbox">
+	  	<div class="lefttit" ><u>企业信息</u></div>
+		<div class="rightip" ><a href="__APP__/Company/com_info/">完善</a></div>
+		<div class="clear"></div>
+	  </div>
+	    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="9">
+	      <tr>
+	       <td align="center"><font color="red">您还没有完善信息 </font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;去<a href="__APP__/Company/com_info/">完善</a></td>
+	      </tr>
+	    
+	    </table>
+	  </div>
+<else />
+<div class="com_user_box" style="margin-top:10px;">
+  <div class="titbox">
+  	<div class="lefttit" ><u>企业信息</u></div>
+	<div class="rightip" ><a href="__APP__/Company/com_info/">修改</a></div>
+	<div class="clear"></div>
+  </div>
+    <table width="98%" border="0" align="center" cellpadding="0" cellspacing="9">
+      <tr>
+        <td>公司名称：{$arr.c_name}</td>
+        <td>公司规模：<if condition="$arr.c_size eq 1">大型<elseif condition="$arr.c_size eq 2" />中型<else />小型</if></td>
+        <td>企业网址：{$arr.c_url}</td>
+      </tr>
+      <tr>
+        <td>联 系 人：{$arr.c_telname}</td>
+        <td>联系电话：{$arr.c_tel}</td>
+        <td>联系邮箱：{$arr.c_email}</td>
+      </tr>
+		<tr>
+     
+        <td colspan="2">通讯地址：{$arr.c_address}</td>
+        
+     
+        <td>企业LOGO： <if condition="$arr.c_logo eq ''"><a href="__APP__/Company/logo">未上传</a><else />已上传</if></td>
+        <td>&nbsp;</td>
+		</tr>
+    </table>
+  </div>
+ 
+</if>
+
+<div class="com_user_box" style="margin-top:10px;">
+  <div class="titbox">
+  	<div class="lefttit"><u>您可能感兴趣的人才</u></div>
+	<div class="rightip"><a href="__APP__/Student/stu_list"> 更多>></a></div>
+	<div class="clear"></div>
+  </div>
+    					  					  <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" class="link_lan">
+                       <volist name="jobs" id="vo">
+                        <tr>
+                          <td width="130" height="28" class="us_list_title" style="padding-left:10px;">姓名</td>
+
+                          <td class="us_list_title">意向职位</td>
+                        </tr>
+                        <tr>
+                          <td width="130" height="30" style="padding-left:10px;"><a href="__APP__/Student/info/s_id/{$vo.s_id}" target="_blank">{$vo.s_name}</a></td>
+    
+                          <td  >{$vo.re_job}</td>
+                        </tr>
+                        <tr>
+                          <td height="22" colspan="2" valign="top" class="us_list" style="padding-left:10px; color:#999999">
+						  性别：<if condition="$vo.s_sex eq 1">男<else />女</if>&nbsp;&nbsp;|&nbsp;&nbsp;
+						  年龄：<?php $date=date("Y",time());?>{$date-$vo.s_bir}岁&nbsp;&nbsp;|&nbsp;&nbsp;
+				
+						  工作经验：{$vo.re_scale}&nbsp;&nbsp;|&nbsp;&nbsp;
+						  
+						 
+						  更新日期：{$vo.re_time|date="Y-m-d",###}&nbsp;&nbsp;|&nbsp;&nbsp;
+						  
+						 
+						  期望城市：{$vo.re_city}
+						  </td>
+                        </tr>
+						 </volist>                      
+    
+						                       
+						        </table>
+					   </div>
+ </td>
+      </tr>
+    </table>
+<include file="Common:foot" />
+</body>
+</html>

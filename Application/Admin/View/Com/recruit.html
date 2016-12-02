@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__PUBLIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/select-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/editor/kindeditor.js"></script>
+<script type="text/javascript">
+function dele(){
+    var obj=document.getElementsByName('re_id[]');
+    var str='';
+     for(var i=0;i<obj.length;i++){
+       if(obj[i].checked){
+        str+=obj[i].value+",";
+       }
+      }
+      if(str==''){
+        alert("请选择一项");
+        return false;
+      }
+            var t="__ROOT__/admin.php/Com/del";
+            //alert(t);
+           var c=t.replace("#","")
+            //   alert(c);
+           var strlen=str.lastIndexOf(",");
+            var strnew=str.substr(0,strlen);
+//alert(strlen); alert(strnew);
+           var b=c.lastIndexOf("?");
+           //alert(b);
+           if(b>0){
+             cc=c.substr(0,b);
+            // alert(cc);
+           }else{
+             cc=c;
+           }
+          // alert(cc);
+           document.location.href=cc+"?id="+strnew;
+
+}
+function jian(){
+    var obj=document.getElementsByName('re_id[]');
+    var str='';
+     for(var i=0;i<obj.length;i++){
+       if(obj[i].checked){
+        str+=obj[i].value+",";
+       }
+      }
+      if(str==''){
+        alert("请选择一项");
+        return false;
+      }
+            var t="__ROOT__/admin.php/Com/re_jian";
+            //alert(t);
+           var c=t.replace("#","")
+            //   alert(c);
+           var strlen=str.lastIndexOf(",");
+            var strnew=str.substr(0,strlen);
+//alert(strlen); alert(strnew);
+           var b=c.lastIndexOf("?");
+           //alert(b);
+           if(b>0){
+             cc=c.substr(0,b);
+            // alert(cc);
+           }else{
+             cc=c;
+           }
+
+           document.location.href=cc+"?id="+strnew;
+
+}
+    KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+  </script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".click").click(function(){
+  $(".tip").fadeIn(200);
+  });
+  
+  $(".tiptop a").click(function(){
+  $(".tip").fadeOut(200);
+});
+
+  $(".sure").click(function(){
+  $(".tip").fadeOut(100);
+});
+
+  $(".cancel").click(function(){
+  $(".tip").fadeOut(100);
+});
+
+});
+</script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+   $("#print").click(function(){
+   location.href="__URL__/recruit/print/1";
+  });
+    $("#checked").toggle(function(){
+    if($("#checked :checked")){
+        $("input[name='re_id[]']").attr("checked","checked");
+    }
+        },function(){
+    if($("#checked :not(:checked)")){
+        $("input[name='re_id[]']").removeAttr("checked","checked");
+    }
+        });
+  });
+
+$(document).ready(function(e) {
+    $(".select1").uedSelect({
+        width : 345           
+    });
+    $(".select2").uedSelect({
+        width : 80 
+    });
+    $(".select3").uedSelect({
+        width : 80
+    });
+    
+});
+</script>
+
+
+</head>
+
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">数据表</a></li>
+    <li><a href="#">基本内容</a></li>
+    </ul>
+    </div>
+     
+    <div class="rightinfo">
+    <div  class="tabson">
+  <ul class="toolbar">
+      
+        <li onclick="return dele()"><span><img src="__PUBLIC__/admin/images/t03.png"  /></span>删除</li>
+        <li onclick="return jian()"><span><img src="__PUBLIC__/admin/images/t05.png"  /></span>推荐</li>
+        </ul>
+            
+    
+   <ul class="seachform">
+    <form action="" method="post">      
+    <li ><label>名称</label><input name="c_name" type="text" class="scinput" value="{$val.c_name}" style="width:80px;"/></li>
+    <li ><label>联系人</label><input name="re_telname" type="text" class="scinput" value="{$val.re_telname}" style="width:80px;"/></li>
+    <li><label>地区</label>  
+    <div class="vocation">
+    <select class="select2" name="re_city">
+     <option value="">请选择</option>
+     <volist name="city" id="vo">
+     <option value="{$vo}" <if condition="$val.re_city eq $vo">selected="selected"</if>>{$vo}</option>
+     </volist>
+    </select>
+    </div>
+    </li>
+     <li><label>职位</label>  
+    <div class="vocation">
+    <select class="select2" name="re_job">
+     <option value="">请选择</option>
+     <volist name="job" id="vo">
+     <option value="{$vo}" <if condition="$val.re_job eq $vo">selected="selected"</if>>{$vo}</option>
+     </volist>
+    </select>
+    </div>
+    </li>
+    <li><label>推荐</label>  
+    <div class="vocation">
+    <select class="select2" name="re_jian">
+     <option value="">请选择</option>
+     <option value="1" <if condition="$val.re_jian eq 1">selected="selected"</if>>推荐</option>
+     <option value='0' <if condition="$val.re_jian eq '0'">selected="selected"</if>>不推荐</option>
+  
+     
+    </select>
+    </div>
+    </li>
+    <li><label>审核</label>  
+    <div class="vocation">
+    <select class="select2" name="re_state">
+     <option value="">请选择</option>
+     <option value='0' <if condition="$val.re_state eq '0'">selected="selected"</if>>未审核</option>
+     <option value="1" <if condition="$val.re_state eq 1">selected="selected"</if>>通过</option>
+     <option value="2" <if condition="$val.re_state eq 2">selected="selected"</if>>不通过</option>
+    </select>
+    </div>
+    </li>
+    
+    <li><label>&nbsp;</label><input name="sub" type="submit" class="scbtn" value="查询" style="width:60px;" /></li>
+    <input name="submit" type="button" id="print" class="scbtn" value="导出" style="width:60px;" />
+</form>
+    
+        </ul>
+       
+
+    
+  <form action="" method="post">
+  
+    
+    <table class="tablelist">
+    	<thead>
+    	<tr>
+        <th><input name="check" type="checkbox"  id="checked"/></th>
+        <th >编号<i class="sort"><img src="__PUBLIC__/admin/images/px.gif" /></i></th>
+        <th>企业姓名</th>
+        <th>招聘职位</th>
+        
+        <th>人数</th>
+        <th>截止日期</th>
+        <th>工作地区</th>
+        <th>工资范围</th>
+      
+        <th>联系人</th>
+        <th>联系方式</th>
+        <th>推荐</th>
+        <th>审核</th>
+        <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="data" id="vo">
+        <tr>
+        <td><input name="re_id[]" type="checkbox" value="{$vo.re_id}" /></td>
+        <td>{$key+1}</td>
+        <td>{$vo.c_name}</td>
+        <td>{$vo.re_job}</td>
+        
+        <td>{$vo.re_sum}</td>
+        <td>{$vo.re_endtime}</td>
+        <td>{$vo.re_city}</td>
+        <td>{$vo.re_money}</td>
+       
+        <td>{$vo.re_telname}</td>
+        <td>{$vo.re_tel}</td>
+         <td><if condition="$vo.re_jian eq 1"><a href="__URL__/re_jian/re_id/{$vo.re_id}/rid/1"><font color="green">推荐</font></a><else /><a href="__URL__/re_jian/re_id/{$vo.re_id}/rid/'0'"><font color="red">不推荐</font></a></if></td>
+        <td><if condition="$vo.re_state eq '0' "><a href="__URL__/rec_state/re_id/{$vo.re_id}/id/1"><font color="blue">通过</font></a> | <a href="__URL__/rec_state/re_id/{$vo.re_id}/id/2"><font color="blue">不通过</font></a><elseif  condition="$vo.re_state eq 1 " /><font color="green">已通过</font><else /><font color="red">未通过</font></if></td>
+        <td align="center" width="100px"><a href="__MODULE__/Com/rec_update/re_id/{$vo.re_id}" class="tablelink" >修改</a>  &nbsp; |  &nbsp;  <a href="__MODULE__/Com/delete/re_id/{$vo.re_id}" class="tablelink"> 删除</a></td>
+        </tr> 
+        </volist>
+       
+        
+       
+      
+        
+           
+        </tbody>
+    </table>
+    </form>
+    {$page}
+   </div>
+   
+    
+    
+    <div class="tip">
+    	<div class="tiptop"><span>提示信息</span><a></a></div>
+        
+      <div class="tipinfo">
+        <span><img src="__PUBLIC__/admin/images/ticon.png" /></span>
+        <div class="tipright">
+        <p>是否确认对信息的修改 ？</p>
+        <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+        </div>
+        </div>
+        
+        <div class="tipbtn">
+        <input name="" type="button"  class="sure" value="确定" />&nbsp;
+        <input name="" type="button"  class="cancel" value="取消" />
+        </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <script type="text/javascript">
+	$('.tablelist tbody tr:odd').addClass('odd');
+	</script>
+
+<div style="display:none"></div>
+<script type="text/javascript"> 
+      $("#usual1 ul").idTabs(); 
+    </script>
+    
+    <script type="text/javascript">
+    $('.tablelist tbody tr:odd').addClass('odd');
+    </script>
+    
+
+</body>
+</html>

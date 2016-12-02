@@ -1,0 +1,198 @@
+/* TYPE */
+body { font: 12px/18px "宋体", Arial; background-color: #FFF; color: #666; }
+h1, h2, h3, h4, h5, h6, strong { font-weight: bold; }
+a { color: #0099CC; }
+a:link, a:visited, a:active { text-decoration: none; }
+a:hover { text-decoration: underline; }
+.nowrap { white-space:nowrap; }
+.container { width: 980px; margin-right: auto; margin-left: auto; margin-top: 8px; }
+.newsleft { float: left; width: 700px; }
+.newsright { float: right; width: 290px; }
+.newsnavi { height: 40px; line-height: 40px; background: #118ED2; margin-bottom: 10px; }
+.newsnavi li { font-size: 14px; font-weight: bold; float: left; text-align: center; height: 40px; }
+.newsnavi a:link,.newsnavi a:visited  { color: #FFFFFF; text-decoration: none; display: block; padding-right: 10px; padding-left: 10px; }
+.newsnavi a:hover,.newsnavi a:active { text-decoration: none; background: #139AE3; }
+.newsnavi li.newshome { background: #0C608D; }
+.newsbox1 { border: 1px solid #D9D9D9; margin-bottom: 10px; }
+.newstitle1 { height: 36px; font-size: 15px; color: #FF3300; line-height: 36px; text-indent: 0.5em; border-bottom: 2px solid #E45B00; }
+.newslist1 { margin: 10px; font-family: "宋体"; }
+.newslist1 li { padding-top: 5px; padding-bottom: 5px; }
+.newslist1 a, .newslist1 a:visited { text-decoration: none; }
+.newslist1 a:hover { text-decoration: underline; }
+/**/
+.newsbox2 { border: 1px solid #D9D9D9; margin-bottom: 10px; background-color: #F6F6F6; }
+.newstitle2 { height: 36px; font-size: 15px; color: #333; line-height: 36px; text-indent: 0.5em; border-bottom: 2px solid #E45B00; }
+.newslist2 { margin: 10px; font-family: "宋体"; }
+.newslist2 span a { font-weight: bold; color: #339900; }
+.newslist2 li { padding-top: 5px; padding-bottom: 5px; }
+.newslist2 a, .newslist2 a:visited { color: #666; text-decoration: none; }
+.newslist2 a:hover { text-decoration: underline; color: #F60; }
+.newsmore a, .newsmore a:visited { font-size: 14px; font-weight: normal; color: #F60; text-decoration: none; margin-right: 12px; float:right; }
+.newsmore a:hover { text-decoration: underline; color: #F60; }
+.newsad { margin-bottom: 10px; }
+.newsmain1 { float: left; width: 300px; }
+.newsmain2 { float: right; width: 390px; }
+.newsmainclass { margin-top: 0px; margin-bottom: 10px; border: 1px solid #D9D9D9; padding: 8px; height: 1%; }
+.newsmainclass a { color: #666666; text-decoration: none; }
+.newsmainclass a:hover { color: #FF6600; text-decoration: underline; }
+.newsmainclass li { float: left; width: 320px; font-family: "宋体"; border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #D9D9D9; padding-top: 7px; padding-bottom: 7px; background-image: url("../images/bullet_delete.gif")/*tpa=http://www.lpsjob.com/skin2013/images/bullet_delete.gif*/; background-repeat: no-repeat; background-position: 0px 3px; padding-left: 14px; margin-right: 3px; margin-left: 3px; }
+.input20 { line-height: 18px; background-color: #FFFFFF; background-image: url("../images/ico03.gif")/*tpa=http://www.lpsjob.com/skin2013/images/ico03.gif*/; background-repeat: no-repeat; background-position: 0px 0px; height: 22px; border: 1px solid #999999; padding-left: 20px; line-height:22px; color: #666666; }
+.input21 { background-image: url("../images/ico04.gif")/*tpa=http://www.lpsjob.com/skin2013/images/ico04.gif*/; background-repeat: repeat-x; border: 1px solid #FF9900; height: 24px; line-height: 24px; padding-right: 10px; padding-left: 10px; background-color: #FFC128; margin-top: 0px; margin-right: 5px; margin-bottom: 0px; margin-left: 5px; cursor:pointer; }
+.newsearch { margin-top: 10px; border: 1px solid #D9D9D9; padding: 10px; color: #666666; background-color: #F6F6F6; }
+.newskey { padding: 10px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: #D9D9D9; border-bottom-color: #D9D9D9; border-left-color: #D9D9D9; line-height: 25px; height:58px; }
+.newsfont1 { font-weight: bold; color: #FF3300; }
+.newsmain3 { margin-bottom: 10px; }
+.newsbox3 { float: left; width: 345px; border: 1px solid #D9D9D9; }
+.newsbox4 { float: right; width: 345px; border: 1px solid #D9D9D9; }
+.newstitle3 { height: 36px; font-size: 15px; color: #333333; background: #F3F3F3; line-height: 36px; text-indent: 0.5em; }
+.newsmore2 a, .newsmore2 a:visited { font-size: 14px; font-weight: normal; text-decoration: none; margin-right: 12px; float:right; color: #F60; }
+.newsmore2 a:hover { text-decoration: underline; color: #F60; }
+.newsphoto { margin-top: 10px; margin-right: 10px; margin-left: 10px; height: 80px; line-height: 20px; border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #CCCCCC; }
+.newsphoto p a, .newsphoto p a:visited { font-size: 14px; font-weight: bold; }
+.newsphoto img { float: left; margin-right: 5px; margin-left: 5px; border: 1px solid #666666; }
+/**/
+.newhomeli { padding-left: 40px; width: 650px; background-image: url("../images/newsnavibg2.jpg")/*tpa=http://www.lpsjob.com/skin2013/images/newsnavibg2.jpg*/; background-position: left top; background-repeat: no-repeat; }
+.newhomeli a, .newhomeli a:visited { font-size: 12px; font-weight: normal; color: #FFFFFF; float: left; }
+.peixun_box { background-color: #FFFFFF; padding: 10px; }
+.peixun_box span a { font-size: 14px; font-weight: bold; color: #FF6600; }
+.peixun_box li { font-size: 12px; line-height: 23px; border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #CCCCCC; padding-top: 5px; padding-bottom: 5px; background-image: url("../images/blite_04.gif")/*tpa=http://www.lpsjob.com/skin2013/images/blite_04.gif*/; background-repeat: no-repeat; background-position: 0px 10px; padding-left: 18px; }
+.mart10 { margin-top: 10px; margin-bottom: 0px; }
+.peixun_login { background-color: #FFFFFF; margin-top: 0px; position: relative; padding-top: 10px; padding-right: 10px; padding-bottom: 1px; padding-left: 10px; }
+.peixun_login li { padding-top: 4px; padding-bottom: 4px; }
+.peixun_login p { padding-bottom: 4px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; margin-bottom: 5px; }
+.peixun_input { width: 120px; height: 18px; }
+.peixun_submit { position: absolute; top: 45px; right: 15px; }
+.peixun_search { padding: 0px; border: 1px solid #8ACAED; background-color: #CAE7F7; }
+.peixun_search ul { background-image: url("../images/peixun_searchico.gif")/*tpa=http://www.lpsjob.com/skin2013/images/peixun_searchico.gif*/; background-repeat: no-repeat; background-position: 0px 0px; margin-top: 10px; }
+.peixun_search li { padding-top: 2px; padding-right: 4px; padding-bottom: 3px; padding-left: 4px; margin-left: 50px; line-height: 22px; }
+.peixun_search li.peixun_key { background-color: #F7FDFF; margin-left: 0px; }
+.mart0 { margin: 0px; }
+.gad08 { margin-top: 10px; margin-left: 0px; padding-bottom: 3px; line-height: 20px; }
+.gad08 p { padding-left: 5px; width:120px; overflow:hidden; text-overflow:clip; -moz-text-overflow:clip; white-space:nowrap; }
+.gad08 img { height: 34px; width: 126px; }
+.gad08 li { float: left; text-align: left; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: dashed; border-right-style: dashed; border-bottom-style: dashed; border-left-style: dashed; border-top-color: #CCCCCC; border-right-color: #CCCCCC; border-bottom-color: #CCCCCC; border-left-color: #CCCCCC; margin-top: 3px; margin-right: 2px; margin-bottom: 3px; margin-left: 1px; height: 80px; }
+.peixunlist1 { margin: 10px; font-family: "宋体"; }
+.peixunlist1 span a { font-weight: bold; color: #FF6600; }
+.peixunlist1 li { padding-top: 5px; padding-bottom: 5px; line-height: 18px; border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #666666; }
+.peixunlist1 a, .peixunlist1 a:visited { color: #0066CC; text-decoration: none; }
+.peixunlist1 a:hover { text-decoration: underline; }
+.peixun_comp { background-color: #FFFFFF; padding: 10px; line-height: 18px; }
+.peixun_comp a, .peixun_comp a:visited { color: #666666; text-decoration: none; }
+.peixun_comp a:hover { color: #ff6600; text-decoration: underline; }
+.peixun_comp p { margin-bottom: 5px; background-image: url("../images/dot5.gif")/*tpa=http://www.lpsjob.com/skin2013/images/dot5.gif*/; background-repeat: no-repeat; background-position: 0px 5px; padding-left: 15px; }
+.peixun_comp p a, .peixun_comp p a:visited { font-size: 14px; font-weight: bold; color: #0066CC; }
+.peixun_comp p a:hover { font-size: 14px; font-weight: bold; }
+.peixun_comp li { float: left; width: 212px; margin-top: 0px; margin-right: 2px; margin-bottom: 0px; margin-left: 2px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; padding: 5px; }
+.peixun_bg01 { background-color:#E8FBFF }
+.peixun_bg02 { background-color:#FFFFFF }
+.peixun_title { font-family: "微软雅黑", "宋体"; font-size: 18px; line-height: 28px; font-weight: bold; color: #FF6600; background-image: url("../images/Star.gif")/*tpa=http://www.lpsjob.com/skin2013/images/Star.gif*/; background-repeat: no-repeat; background-position: 0px 6px; padding-left: 35px; padding-bottom: 10px; padding-top: 10px; }
+.font11 { font-size: 12px; font-weight: normal; color: #999999; }
+.peixun_navbg { background-image: url("../images/peixun_navbg.gif")/*tpa=http://www.lpsjob.com/skin2013/images/peixun_navbg.gif*/; background-repeat: no-repeat; height: 30px; font-size: 14px; font-weight: bold; color: #666666; padding-top: 7px; padding-left: 50px; }
+.fieldset01 { font-size: 14px; line-height: 22px; padding: 10px; margin-bottom: 10px; }
+.legend01 { background-image: url("../images/i_3.gif")/*tpa=http://www.lpsjob.com/skin2013/images/i_3.gif*/; background-repeat: no-repeat; background-position: 0px 0px; font-size: 14px; font-weight: bold; color: #FF6600; padding-left: 20px; margin-bottom: 10px; }
+.pxnoimg { border: 1px solid #999999; float: right; }
+.peixunlist2 { margin: 10px; font-family: "宋体"; }
+.peixunlist2 li { padding-top: 5px; padding-bottom: 5px; line-height: 18px; border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #666666; font-size: 12px; float: left; width: 48%; }
+.peixunlist2 a, .peixunlist2 a:visited { color: #0066CC; text-decoration: none; font-size: 12px; }
+.peixunlist2 a:hover { text-decoration: underline; }
+.peixun_rz { margin-top: 20px; }
+.peixun_rz p { font-size: 12px; text-align: left; padding-left: 20px; padding-right: 20px; }
+.peixun_rz li { float: left; width: 32%; text-align: center; }
+.peixun_rz img { height: 200px; width: 262px; padding: 5px; border: 1px solid #999999; }
+/**/
+.newpage { float: left; width: 725px; }
+.newscontent { font-size: 14px; line-height: 28px; color: #666666; position: relative; padding-bottom: 40px; }
+.newsclose1 { background-image: url("../images/bottom_bg.gif")/*tpa=http://www.lpsjob.com/skin2013/images/bottom_bg.gif*/; background-repeat: repeat-x; font-size: 12px; width: 80px; text-align: center; position: absolute; top: -74px; right: 5px; }
+.newsclose1 a, .newsclose1 a:visited { display:block; color: #FFFFFF; text-decoration:none; }
+.newscontent p { text-indent: 28px; }
+.newsdown { padding: 20px; }
+.newsdown li { border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #CCCCCC; padding-top: 7px; padding-bottom: 7px; }
+.newbarb { padding: 8px; height: 1%; border: 1px solid #D9D9D9; border-top: 0px solid #D9D9D9; }
+.newlist05 { float: right; width: 245px; }
+.newsnavi2 { background-image: url("../images/news_navibg.jpg")/*tpa=http://www.lpsjob.com/skin2013/images/news_navibg.jpg*/; background-repeat: repeat-x; padding-top: 6px; padding-right: 0px; padding-bottom: 5px; padding-left: 0px; color: #07519A; }
+.newsnavi2 p { color: #07519A; padding-bottom: 8px; padding-left: 8px; }
+.newssub { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #5CB1E8; }
+.newssub a { margin-right: 3px; }
+.newssub p { line-height:20px; }
+.ins04 { color: #333333; background-color: #F4DF86; border-bottom-color: #FFC643; }
+.ins05 { background-color: #FFFFFF; }
+.ins06 { border: 1px solid #FFC643; }
+/**/
+.newsboxdown { border: 1px solid #FFF; }
+.newslistdown li { font-family: "宋体"; float: left; border: 1px solid #CCCCCC; margin-top: 4px; margin-bottom: 2px; margin-right: 2px; margin-left: 2px; overflow:hidden; }
+.newslistdown a, .newslistdown a:visited { color: #0066CC; text-decoration: none; display: block; width: 216px; line-height:25px; padding-left:10px; }
+.newslistdown a:hover { text-decoration: underline; background-color: #EAEBEC; color: #FF6600; }
+.mar10 { padding: 10px; }
+.newbart2 { font-size: 14px; font-weight: bold; color: #006699; height: 25px; padding-top: 6px; padding-left: 20px; border: 1px solid #D9D9D9; }
+.newstuijian { display:none; }
+.newbiglist { margin-top: 10px; line-height: 24px; }
+.newbiglist span.newtime { float:right; margin-right:10px; }
+.newbiglist li { padding-top: 4px; padding-bottom: 4px; padding-left: 15px; background-image: url("../images/dot4.gif")/*tpa=http://www.lpsjob.com/skin2013/images/dot4.gif*/; background-repeat: no-repeat; background-position: 0px 10px; }
+.newbiglist a { font-size: 14px; text-decoration: none; color: #333333; }
+.newbiglist a:hover { color: #FF6600; text-decoration: underline; }
+.right_title01 { background-color: #999999; padding-top: 5px; padding-bottom: 5px; padding-left: 15px; font-size: 12px; font-weight: bold; color: #FFFFFF; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #D9D9D9; }
+.right_list01 { margin-bottom: 10px; border: 1px solid #D9D9D9; }
+.right_cont01 { background-color: #F6F6F6; padding: 10px; }
+.right_cont01 li { line-height: 22px; height:22px; font-family: "宋体"; margin-bottom: 4px; white-space:normal; overflow:hidden; width:220px; }
+.newstitle { text-align: center; color: #333; padding-top:20px; padding-bottom:20px; border: 1px solid #D9D9D9; border-bottom: 0px solid #D9D9D9; }
+.newstitle h3 { font-size: 24px; line-height: 30px; margin: 0; font-family: "Microsoft Yahei", Tahoma; font-weight: normal; text-align: center; }
+.newstitle a { color:#0099CC; }
+.newstitle a:hover { color: #FF6600; text-decoration: none; }
+.fontSize { height:30px; line-height:30px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; background-color:#efefef; color:#666; }
+.fontSize ul.size2 { float:right; margin-right:10px; line-height:24px; margin-top:3px; }
+.fontSize li { float:left; white-space:nowrap; padding:0px 5px; cursor:pointer; }
+.fontSize li.active { background-color:#f60; color:#fff; font-weight:bold; }
+.newsshuoming { line-height:30px; }
+.fenxiang { padding: 5px; margin-bottom: 20px; margin-left: 12px; margin-top: 10px; overflow:hidden; zoom:1; }
+.fenxiang #bdshare { float:left; width:400px; }
+.fenxiang .fontSize2 { float:right; }
+.fenxiang .fontSize2 li { float:left; white-space:nowrap; padding:0px 5px; cursor:pointer; }
+.fenxiang .fontSize2 li.active { background-color:#f60; color:#fff; font-weight:bold; }
+.xinwenxiangguan { font-size: 12px; margin-left: 10px; line-height:35px; height:35px; }
+.xinwenxiangguan li { float:left; width:48%; }
+.newsxiangguan { font-size:14px; overflow:hidden; zoom:1; }
+.newsxiangguan li { line-height:24px; float:left; width:48%; white-space: nowrap; line-height:30px; }
+.newsxiangguan ul { padding:0px 10px; }
+.newsxiangguan p { font-size:14px; font-weight:bold; margin-bottom:10px; background-color:#efefef; margin:0px; height:30px; line-height:30px; padding:0px 10px; }
+.xinwenpl { border:1px solid #999999; padding : 10px; height: 1%; clear:both; }
+.newspinluntext { overflow:hidden; border:1px solid #999999; }
+.xinwenpinglun { border-top-width:3px; border-top-color:#99CCFF; margin-left:5px; margin-bottom:10px; margin-top:5px; }
+.xinwenpinglun p { color:Red; margin-bottom:5px; }
+.xinwenpinglun li { line-height:24px; padding-bottom:4px; }
+.newsdown { padding: 20px; }
+.newsdown li { border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #CCCCCC; padding-top: 7px; padding-bottom: 7px; }
+/* 评论 */
+ .pl { width: 100%; float: left; border: 1px solid #cad5e0; clear:both; margin-bottom:5px; }
+.title_pl { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #cad5e0; padding: 6px; }
+.title_pl ul { margin-bottom: 4px; line-height:34px; }
+.hot { padding: 6px; background-color: #f3f6f8; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #FFFFFF; border-right-color: #FFFFFF; border-bottom-color: #cad5e0; border-left-color: #FFFFFF; }
+.title_hot { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #cad5e0; font-family: "黑体"; font-size: 18px; margin-top: 6px; margin-bottom: 12px; }
+.hot ul { border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: #CCCCCC; margin-bottom: 6px; margin-top: 6px; }
+.wy_name { color: #999999; margin-bottom:5px; }
+.wy_name span { float: right; }
+.content_hot { font-size: 14px; line-height:30px; }
+.page_down { text-align: right; padding: 6px; background-color: #f3f6f8; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #FFFFFF; border-top-width: 1px; border-top-style: solid; border-top-color: #FFFFFF; }
+.declare { background-color:#efefef; padding:10px; border:1px solid #ddd; color:#999; }
+/*NES搜索*/
+.news_lite_search { border:1px solid #82BCD2; background-color:#fff; height:28px; padding-left:10px; margin-bottom:9px; }
+.news_lite_search input.news_lite_input { height:26px; width:200px; border:none; float:left; outline:none; color:#666; line-height:24px; }
+.news_lite_search input.news_lite_sub { cursor:pointer; width:26px; height:26px; float:left; border:none; background:url("../images/icon_24.png")/*tpa=http://www.lpsjob.com/skin2013/images/icon_24.png*/ no-repeat; background-position:0px 0px }
+.news_lite_ico { overflow:hidden; zoom:1; margin:0px auto 10px auto; border:1px solid #ccc; background-color:#fff; width:178px; padding:5px; line-height:25px; }
+.news_lite_ico a { display:block; background:url("../images/icon_24.png")/*tpa=http://www.lpsjob.com/skin2013/images/icon_24.png*/ no-repeat; width:120px; float:left; background-position:0px -51px; padding-left:30px; margin-left:10px; }
+.news_lite_ico a.c2 { background-position:0px -79px; }
+.news_lite_ico a.c3 { background-position:0px -102px; }
+.news_lite_ico a.c4 { background-position:0px -128px; }
+/* 分页 */
+.allpersonal { padding:10px }
+.allpersonal a { margin-left:267px; width:133px; height:30px; line-height:30px; text-indent:30px; font-size:14px; font-weight:bold; display:block }
+.allpersonal a:hover { background:url("../images/base.gif")/*tpa=http://www.lpsjob.com/skin2013/images/base.gif*/ -133px -274px no-repeat; color:#0067E0; text-decoration:none }
+.page-next { padding:10px; height:30px; line-height:30px; margin:10px 3px 3px 3px; text-align:center; font-size:12px; }
+.page-next a { border:1px solid #ddd; margin:2px; color:#494949; padding:3px 6px; border-radius:2px; box-shadow:0px 2px 0px #eee; background:#fff }
+.page-next a:hover { border:1px solid #908f8f; text-decoration:none; background:#f5f5f5 }
+.page-next a:active { border:1px solid #ddd; COLOR:#FF6600; text-decoration:none; background:#eee }
+.page-next .select { font-weight:bold; margin:2px; color:#fff; padding:3px 6px; background:#f7881a; border:1px solid #e95801; border-radius:2px; box-shadow:0px 2px 0px #eee }
+.page-next .disabled { border:1px solid #eee; padding:3px 6px; margin:2px; color:#ddd; ; box-shadow:0px 2px 0px #eee }
+.page-next .input-1 { border:1px solid #dedede; padding:6px; outline:none; position:relative; top:0px; *top:7px;
+_top:7px; border-radius:2px; box-shadow:0px 2px 0px #eee; font-family:Verdana }
+.page-next .submit-1 { border:1px solid #dddddd; background:#f5f5f5; padding:6px; cursor:pointer; position:relative; top:0px; *top:7px;
+_top:7px; border-radius:2px; box-shadow:0px 2px 0px #eee }

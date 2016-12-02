@@ -1,0 +1,147 @@
+@charset "gb2312";
+/* CSS Document */
+
+.link_bk a{color:#057BD2;text-decoration: none;}
+.l-search-bar{padding-left:10px}
+.l-search{margin-left:0}
+.l-search .l-input{width:396px}
+
+/* 搜索条件 */
+.search-nav{border-bottom:2px solid #008fd7}
+.search-nav ul li{border:1px solid #dcdee1;border-bottom:none}
+.search-nav #cur{border:1px solid #0876b5;background:#008fd7;border-bottom:none}
+.search-term{border:1px solid #c0e9ff;border-top:none;background:#f6f9fb}
+.search-term dl dd .selected{background:#0076b4;}
+.cate-selected dd a{background-color:#0075c8;color:#0076b4;}
+.cate-selected dd a:hover{background-color:#008bd1;color:#0076b4}
+.cate-selected .save-term a {background-color:#f7881a}
+.cate-selected .save-term a:hover{background-color:#e95700}
+.search-main{border-top:2px solid #0076b4}
+.sch-box .drop-box ol li span a{color:#0076b4}
+.s-title .spages a.selected{border:1px solid #008fd7;color:#0076b4}
+
+/* 详情 */
+.d-s-r a.d-job-app,.lst-search a.lst-job-app{
+background-color: #0086c9;
+background-image: linear-gradient(top,#008ed6 0,#0080c0 100%);
+background-image: -moz-linear-gradient(top,#008ed6 0,#0080c0 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#008ed6),color-stop(100%,#0080c0));
+background-image: -o-linear-gradient(top,#008ed6 0,#0080c0 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#008ed6,endColorstr=#0080c0,GradientType=0);
+background-image: -ms-linear-gradient(top,#008ed6 0,#0080c0 100%);
+}
+.d-s-r .d-job-app:hover,.lst-search a.lst-job-app:hover{
+color:#fff;text-decoration:none;
+background-color: #0086c9;
+background-image: linear-gradient(top,#0086c9 0,#0173a8 100%);
+background-image: -moz-linear-gradient(top,#0086c9 0,#0173a8 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#0086c9),color-stop(100%,#0173a8));
+background-image: -o-linear-gradient(top,#0086c9 0,#0173a8 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0086c9,endColorstr=#0173a8,GradientType=0);
+background-image: -ms-linear-gradient(top,#0086c9 0,#0173a8 100%);
+}
+.d-s-r .d-job-app b{background:url("../images/UI2013/list-search/d-resume-facer-icon.png")/*tpa=http://www.lpsjob.com/skin2013/images/UI2013/list-search/d-resume-facer-icon.png*/ center no-repeat;margin:10px 5px 0 22px}
+.d-s-r a.d-job-app,.d-s-r .job-ov{float:left;width:132px;border-radius:0 3px 3px 0;}
+.d-s-r a.fav,.d-s-r .fav-ov{width:43px;float:left;height:40px;line-height:40px;font-size:12px;color:#fff;display:inline-block;border-radius:3px 0 0 3px;box-shadow:2px 2px 2px #c8c5c5;background:#006fa7;text-align:center}
+.d-s-r a:hover.fav{background:#005f8f;text-decoration:none}
+.d-s-l .pos-name dfn{font-style:normal;margin-left:20px;font-size:12px;color:#228822;}
+.d-s-l .pos-info strong{margin-left:20px}
+.d-s-r .pos-time{margin-top:20px}
+.d-s-r .pos-fav{margin-top:0}
+
+/* 列表 */
+.lst-search p{ height:40px;}
+.lst-search .p1{width:80px}
+.lst-search .p2{width:65px;text-align:center}
+.lst-search .p3{width:65px}
+.lst-search .p5{width:100px;}
+.lst-search .p7{ width:44px; text-align: center; }
+.lst-search .p8{width:180px;white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}
+.lst-search .p9{width:124px;text-align:center}
+.lst-search .lst-job-app b{background:url("../images/UI2013/list-search/l-resume-facer-icon.png")/*tpa=http://www.lpsjob.com/skin2013/images/UI2013/list-search/l-resume-facer-icon.png*/ center no-repeat;margin:3px 3px 0 10px}
+.lst-search .p7 .fav,.lst-search .p7 .rec,.lst-search .p7 .fav-ov{width:40px;background:#006fa7;box-shadow:1px 1px 1px #c8c5c5;border-right:1px solid #006fa7}
+.lst-search .p7 a:hover.fav,.lst-search .p7 a:hover.rec{background:#005f8f}
+.lst-search .p7 .fav-ov,.lst-search .job-ov,.d-s-r .fav-ov,.d-s-r .job-ov{background:#eee;text-align:center;color:#999;font-size:12px;font-weight:normal}
+.lst-search .p7 .fav-ov{border-right:1px solid #eee}
+.lst-search .p7 a,.lst-search .p7 .fav-ov,.lst-search .job-ov{ float:none; height:28px; line-height:28px; font-size:12px; display:inline-block; color: #060; }
+
+/* 企业信息不完整 */
+.more-resume{width:200px;height:50px;line-height:50px;margin:20px auto auto auto;text-align:center}
+.more-resume a{width:200px;display:block;color:#fff;font-size:14px;font-weight:bold;border-radius:3px;box-shadow:2px 2px 2px #c8c5c5;
+background-color: #ff7e0c;
+background-image: linear-gradient(top,#ff7e0c 0,#f07100 100%);
+background-image: -moz-linear-gradient(top,#ff7e0c 0,#f07100 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#ff7e0c),color-stop(100%,#f07100));
+background-image: -o-linear-gradient(top,#ff7e0c 0,#f07100 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff7e0c,endColorstr=#f07100,GradientType=0);
+background-image: -ms-linear-gradient(top,#ff7e0c 0,#f07100 100%);
+}
+.more-resume a:hover{
+color:#fff;text-decoration:none;
+background-color: #e46300;
+background-image: linear-gradient(top,#fc7014 0,#f76503 100%);
+background-image: -moz-linear-gradient(top,#fc7014 0,#f76503 100%);
+background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#fc7014),color-stop(100%,#f76503));
+background-image: -o-linear-gradient(top,#fc7014 0,#f76503 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fc7014,endColorstr=#f76503,GradientType=0);
+background-image: -ms-linear-gradient(top,#fc7014 0,#f76503 100%);
+}  
+#picList{width:1000px;zoom:1;margin:20px auto;height:770px;}
+#picList li{padding-bottom:15px;width:158px;border-bottom:none;display:block;z-index:1; float:left; padding-left:8px;}
+#picList img{width:136px;display:block;padding:10px 10px 0;border:1px solid #e2e2e2;border-bottom:none;;background:#fff;border-radius:3px 3px 0 0;box-shadow:0 1px 1px 0 #ddd}
+#picList .subtool{height:71px;padding:10px 1px 0 1px;text-align:left;border:1px solid #e2e2e2;border-top:none;border-radius:0 0 3px 3px;box-shadow:0 2px 3px 0 #ddd;background:#fff;z-index:1;position:relative}
+#picList .subtool span{width:136px;display:inline-block;margin:0 9px}
+#picList .subtool .name{font-size:14px;font-weight:bold;}
+#picList .subtool .check{float:right;background:url("../images/UI2013/list-search/pic-check.png")/*tpa=http://www.lpsjob.com/skin2013/images/UI2013/list-search/pic-check.png*/ left center no-repeat;padding-left:15px;color:#999;font-style:normal}
+#picList .subtool .jobs{display:inline-block;border-top:1px solid #e9e9e9;background:#f9f9f9;height:40px;line-height:40px;position:relative;padding:0 8px;width:132px;margin:5px 0 0 0;white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}
+
+#picList .picWarp{position:relative;z-index:2}
+#picList .picMark,#picList .picBut{position:absolute;left:11px;top:11px;width:170px;display:none;}
+#picList .picMark{background:#000;filter:alpha(opacity=20);-moz-opacity:0.2;opacity:0.2;}
+#picList .picMark .a1{display:block;width:100%;height:100%}
+#picList .picBut a,#picList .picBut a:hover{background:url("../images/UI2013/list-search/pic-btn.png")/*tpa=http://www.lpsjob.com/skin2013/images/UI2013/list-search/pic-btn.png*/ no-repeat}
+#picList .picBut a{width:70px;height:29px;line-height:29px;color:#333;display:inline-block;float:left;margin:10px 0 0 10px;text-indent:33px;border-radius:2px}
+#picList .picBut a:hover{text-decoration:none}
+#picList .picBut .fav:hover {background-position:0 -30px}
+#picList .picBut .app{background-position:0 -60px}
+#picList .picBut .app:hover{background-position:0 -90px}
+#picList .picWarp .r-ding{position:absolute;top:5px;left:-3px;width:30px;height:22px;background:url("../images/UI2013/global/re-ding.png")/*tpa=http://www.lpsjob.com/skin2013/images/UI2013/global/re-ding.png*/ no-repeat;z-index:3}
+
+.resume-nav{width:1003px;  margin:0 auto; margin-top:8px; height:28px; background-color:#F2F2F2; border-bottom:3px  #009900 solid}
+.resume-nav a{display:block; float:left; height:28px;width:auto;color: #666666; cursor:pointer;text-decoration:none; line-height:28px; padding:0px 20px; font-size:14px;font-family:"microsoft yahei","宋体";}
+.resume-nav a:hover {color: #009900;}
+.resume-nav a.select{background:url("../images/29.gif")/*tpa=http://www.lpsjob.com/skin2013/images/29.gif*/ repeat-x 0px -29px; color:#FFFFFF;font-weight:bold;}
+.resumesearchbox{width:1000px;border:1px solid #c0e9ff;border-top:none;background:#f6f9fb}
+.resumesearchbox .loading{background:url("../images/90.gif")/*tpa=http://www.lpsjob.com/skin2013/images/90.gif*/ no-repeat center; background-color: #FFFFFF;  height:25px;}
+.resumesearchbox .myselbox{width:1000px;  margin:0 auto; border-top:1px #D5D5D5 solid;background-color:#F2F2F2; display:none;padding-bottom:5px;}
+.resumesearchbox .myselbox .left{float:left; width:80px; text-align:right; padding-top:5px;}
+.resumesearchbox .myselbox .optcentet{float:left; width:805px; padding-left:5px;}
+.resumesearchbox .myselbox .optcentet a{display:block;float:left; color: #009900; border:1px #009900 solid; height:19px;  line-height:19px; padding-left:5px; padding-right:20px; text-decoration:none; margin-right:8px;background:url("../images/80.gif")/*tpa=http://www.lpsjob.com/skin2013/images/80.gif*/ no-repeat right -274px;background-color: #EBFFDD;white-space: nowrap; margin-top:5px;}
+.resumesearchbox .myselbox .optcentet a u{ color:#666666; text-decoration:none}
+.resumesearchbox .myselbox .optcentet a:hover{background:url("../images/80.gif")/*tpa=http://www.lpsjob.com/skin2013/images/80.gif*/ no-repeat right -297px;background-color: #FFFFFF; border-color: #009900}
+.resumesearchbox .myselbox .right{float:left; width:90px;}
+.resumesearchbox .myselbox .right a{display:block;color:#009900; border:1px #ADC581 solid; height:19px;  line-height:19px; padding-left:23px; width:55px; text-decoration:none;  background:url("../images/80.gif")/*tpa=http://www.lpsjob.com/skin2013/images/80.gif*/ no-repeat 0px -320px;background-color:#FFFFFF;white-space: nowrap; margin-top:5px;}
+.resumesearchbox .myselbox .right a:hover{background-color: #F1FEDA; border-color: #009900}
+.resumesearchbox .bottomheight{ height:10px;}
+.s1 { padding-top:10px;}
+.s1 .litit { width:70px; margin-top:0px; float:left; text-align:right; }
+.s1 .litit.keysel{ padding-top:15px;}
+.s1 .litit.csel{ padding-top:3px;}
+.s1 .littxt{  width:880px; margin-top:8px;float:left;padding-bottom:8px; padding-left:8px;border-bottom:1px solid #eee;}
+.s1 .littxt .keybox{background-color:#E9FFD9; padding-left:4px; padding-top:4px; height:36px; float:left; padding-right:4px;}
+.s1 .littxt .keybox .keyinputbox{ width:342px; float:left}
+.s1 .littxt .keybox .keyinputbox input{ width:330px; border:1px   #B9B9B9 solid; background-color:#FFFFFF; height:22px; padding-left:10px; padding-top:6px; border-right:0px; line-height:18px;}
+.s1 .littxt .keybox .subinputbox{ width:70px; height:31px; float:left;}
+.s1 .littxt .keybox .subinputbox input{ width:70px; height:31px;background:url("../images/80.gif")/*tpa=http://www.lpsjob.com/skin2013/images/80.gif*/ no-repeat; border:0px; color:#FFFFFF; font-family:"microsoft yahei","宋体"; font-size:15px; line-height:31px; *margin-top:1px;}
+.s1 .littxt .keybox .subinputbox1{ width:70px; height:31px; float:left;}
+.s1 .littxt .keybox .subinputbox1 input{ width:70px; height:31px;background:url("../images/80.gif")/*tpa=http://www.lpsjob.com/skin2013/images/80.gif*/ no-repeat 0px -32px; border:0px; color: #666666; font-family:"microsoft yahei","宋体"; font-size:15px; line-height:31px; *margin-top:1px;}
+.s1 .littxt .keymore{ width:200px;background:url("../images/80.gif")/*tpa=http://www.lpsjob.com/skin2013/images/80.gif*/ no-repeat 40px -64px; float:left; padding-left:63px; padding-top:10px; color:#FF6600; }
+.s1 .littxt li{ float:left;width:145px; height:25px; line-height:25px; overflow:hidden; }
+.s1 .littxt li.hide{ display:none}
+.s1 .littxt li.more a{ display:block; width:40px; height:21px; line-height:21px; padding-left:8px; border:1px #CCCCCC solid;background:url("../images/80.gif")/*tpa=http://www.lpsjob.com/skin2013/images/80.gif*/ no-repeat right -350px;}
+.s1 .littxt li.more a:hover{ background-position:right -375px; border-color: #009900}
+.s1 .littxt .min li{ width:95px; overflow:hidden}
+.s1 .littxt li span{background:#0076b4;color:#fff;padding:3px;border-radius:2px;font-weight:700}
+.s1 .advbox{ display:none}
+.sub-type { background:#EFEFEF; border: 1px solid #F4F4F4; margin: 8px 0 0; padding: 8px 10px 5px;}
+

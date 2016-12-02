@@ -1,0 +1,169 @@
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css">
+<link href="/job/home/Tpl/Index/style/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/job/home/Tpl/Index/style/style2.css" />
+<link rel="stylesheet" type="text/css" href="/job/home/Tpl/Shuoshuo/style/douban.css" />
+<script type="text/javascript" src="/job/home/Tpl/Index/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="/job/home/Tpl/Index/js/index.js"></script>
+<script type="text/javascript" src="/job/home/Tpl/Shuoshuo/js/dialog.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#dianzan").click(function(){
+            $.get("__APP__/Shuoshuo/like",{ "si_id":$("#si_id").val() },function($data){
+                alert($data);
+            })
+        })
+    })
+</script>
+<style type="text/css">
+.dui-dialog .bd { padding: 40px; font-size: 10pt; }
+.dui-dialog .ft { background: #e4e4e4; height: 40px; }
+.dui-dialog .ft div { padding-top: 15px; }
+.dui-dialog .dui-dialog-prompt { float: left; }
+.dui-dialog.group-promote-dialog .bn-flat { color: #ffffff; float:right; width: 50px; cursor:pointer;}
+.dui-dialog .btn-ok { background: #6fb45d; }
+.dui-dialog .btn-cancel { background: #999999; }
+.aside .mod { margin-bottom: 20px; }
+
+.topic-doc,.reply-doc{position: relative;}
+.topic-doc .via,.reply-doc .via{color: #bbb;position: absolute;left: 0;bottom: 0;font-size: 12px;}
+.topic-doc .via a,.reply-doc .via a{color:#bbb;}
+.topic-doc .via a:hover,.reply-doc .via a:hover{color: #FFF;background-color: #bbb;}
+.topic-doc .fix{bottom:-40px;}
+.topic-reply li .reply-doc p{padding-bottom:10px;}
+</style>
+   <include file="Common:head" />
+ <div id="wrapper" class="landing">     
+<div id="content">
+    <div class="article-single">
+                <nav class="article-nav">
+                    <ul>
+                        <li class="slash"><a href="__APP__/Index/index"><i class="c icon-home"></i>首页</a></li>
+                        <li class="slash"><a href="__APP__/Shuoshuo/index_select">说说中心</a></li>
+                        <li class="slash"><a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}">{$info.s_name}的说说</a></li>
+                        <li class="slash"><a href="__APP__/Shuoshuo/index/id/{$info.si_id}">{$info.si_title}</a></li>
+                    </ul>
+                </nav>
+                </div>
+    <h1 style="padding-top:30px;">
+    {$info.si_title}
+</h1>
+    <div class="grid-16-8 clearfix">
+        <div class="article">
+    <input type="hidden" id="si_id" value="{$info.si_id}">
+    <div class="topic-content clearfix">
+        <div class="user-face">
+            <a href="http://www.douban.com/people/bitu/"><img class="pil" src="/job/Public/Uploads/StuHead/{$info.s_head}" alt="{$info.s_name}"></a>
+        </div>
+        <div class="topic-doc">
+            <h3>
+                <span class="from">来自: <a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}">{$info.s_name}</a></span>
+                <span class="color-green">{$info.si_time|date="Y-m-d H:i:s",###}</span>
+            </h3>
+            <div id="link-report" class="">
+                <div class="topic-content">
+                    <img src="/job/Public/Uploads/Sinfo/{$info.si_photo}" width="500" />
+                          <p>{$info.si_content}</p>
+              </div>
+            </div>
+        </div>
+        <div class="sns-bar" id="sep">
+            <div class="sns-bar-rec">
+            </div>
+            <div class="sns-bar-fav">
+    <a class="fav-add btn-fav j a_show_login" id="dianzan" title="标为喜欢？" href="" style="padding-left:10px;">({$click}) 喜欢</a>
+            </div>
+        </div>
+
+    </div>
+<div class="tabs" id="reviews">
+  <a href="" class="on">回应</a>
+
+        <span style="float:right">
+            <a href="">共有({$count1})条评论</a>
+        </span>
+</div>
+<!-----------回复之回复区-------------->            
+<ul class="topic-reply" id="comments">
+    <volist name="hui" id="hui">
+        <li class="clearfix comment-item" id="71292345" data-cid="71292345">
+            <div class="user-face">
+                <a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}"><img class="pil" src="/job/Public/Uploads/StuHead/{$hui.s_head}" alt="{$hui.s_name}"></a>
+            </div>
+            <div class="reply-doc content" style="padding-left:0px;">
+                <div class="bg-img-green">
+                  <h4>
+                      <a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}" class="">{$hui.s_name}</a>
+                      <span class="pubtime">{$hui.ri_time|date="Y-m-d H:i:s",###}</span>
+                  </h4>
+                </div>
+                <p class="">{$hui.ri_content}</p>
+            <!------------判断 是否是本人登陆 ------------->
+                <assign name="a" value="$info.s_id" />
+                <assign name="b" value="$hui.s_id" />
+                <if condition="$Think.session.s_id eq $a || $Think.session.s_id eq $b">
+                    <div class="operation_div" id="3740928">
+                        <div class="operation-more">
+                            <a rel="nofollow" href="javascript:void(0);" onclick="return confirm('真的要删除{$hui.s_name}的发言?')">删除</a>
+                        </div>
+                        <a href="http://www.douban.com/group/topic/7531857/?cid=71292345#last" class="lnk-reply">回应</a>
+                    </div>
+                </if>
+            </div>
+        </li>
+    </volist>
+</ul>
+<!----------- the end 回复之回复区--------------> 
+    <h2>
+        你的回应
+    </h2>
+
+    <span class="pl3" align="right">
+    </span>
+    <div class="txd">
+        <form action="__APP__/Shuoshuo/huifu" method="post">
+            <input type="hidden" name="ri_siid" value="{$info.si_id}" />
+            <textarea class="j a_show_login" name="ri_content" rows="8" cols="54"></textarea><br>
+            <span class="bn-flat-hot rr">
+            <input name="submit_btn" type="submit" class="j a_show_login" value="加上去">
+            </span>
+        </form>
+    </div>
+        </div>
+<div class="aside" style="position: static; left: 849.5px; bottom: 200px;">
+<div id="g-side-info" class="side-reg">
+  <div class="bd">
+      <div class="group-item">
+          <div class="pic">
+               <a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}"><img class="pil" src="/job/Public/Uploads/StuHead/{$info.s_head}" alt="{$info.s_name}"></a>
+          </div>
+          <div class="info">
+              <div class="title">
+				  <a href="">{$info.s_name}</a>
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="mod">
+    <h2>
+        他的最新话题
+            <span class="pl">&nbsp;(
+                
+                    <a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}" target="_self">更多</a>
+                ) </span>
+    </h2>
+
+        <div class="topic-list">
+          <ul>
+              <volist name="info1" id="info1">
+                <li><a href="__APP__/Shuoshuo/index/id/{$info1.si_id}" title="{$info1.si_title}">{$info1.si_title}</a> &nbsp;</li>
+                  </volist>
+        </ul>
+        </div>
+      </div>
+
+        </div>
+    </div>
+</div>
+    </div>
+  <include file="Common:foot" />

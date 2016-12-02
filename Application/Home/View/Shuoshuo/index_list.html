@@ -1,0 +1,94 @@
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/job/home/Tpl/Index/style/style2.css" />
+<link rel="stylesheet" type="text/css" href="/job/home/Tpl/Index/style/bao-list.css" />
+<script type="text/javascript" src="/job/home/Tpl/Index/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="/job/home/Tpl/Index/js/index.js"></script>
+<script type="text/javascript" src="/job/home/Tpl/Shuoshuo/js/dialog.js"></script>
+<style type="text/css">
+.dui-dialog .bd { padding: 40px; font-size: 10pt; }
+.dui-dialog .ft { background: #e4e4e4; height: 40px; }
+.dui-dialog .ft div { padding-top: 15px; }
+.dui-dialog .dui-dialog-prompt { float: left; }
+.dui-dialog.group-promote-dialog .bn-flat { color: #ffffff; float:right; width: 50px; cursor:pointer;}
+.dui-dialog .btn-ok { background: #6fb45d; }
+.dui-dialog .btn-cancel { background: #999999; }
+.aside .mod { margin-bottom: 20px; }
+
+.topic-doc,.reply-doc{position: relative;}
+.topic-doc .via,.reply-doc .via{color: #bbb;position: absolute;left: 0;bottom: 0;font-size: 12px;}
+.topic-doc .via a,.reply-doc .via a{color:#bbb;}
+.topic-doc .via a:hover,.reply-doc .via a:hover{color: #FFF;background-color: #bbb;}
+.topic-doc .fix{bottom:-40px;}
+.topic-reply li .reply-doc p{padding-bottom:10px;}
+</style>
+  
+ <div id="wrapper" class="landing">    
+<div id="content">
+    <div class="article-single">
+                <nav class="article-nav">
+                    <ul>
+                        <li class="slash"><a href="__APP__/Index/index"><i class="c icon-home"></i>首页</a></li>
+                        <li class="slash"><a href="__APP__/Shuoshuo/index_select">说说中心</a></li>
+                        <li class="slash"><a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}">{$info.s_name}的说说</a></li>
+                    </ul>
+                </nav>
+                </div>
+    <h1 style="padding-top:30px;">
+    {$info.si_title}
+</h1>
+<div class="grid-16-8 clearfix">
+    <div class="article">
+    <div class="topic-content clearfix">
+    <volist name="list1" id="info">
+    <article class="article-list-item" style=" width:600px; padding:0; margin:0 0 20px 0;">
+        <div>
+            <h3><a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}" style="color:#0E5691">[{$info.s_name}]</a>&nbsp;<a href="__APP__/Shuoshuo/index/id/{$info.si_id}">{$info.si_title}</a></h3>
+            <span>{$info.si_time|date="Y-m-d H:i:s",###}</span>
+            <p>{$info.si_content}<if condition="$info.si_photo neq ''"><span style="color:#f00;">[有图]</span></if></p>
+            <a href="__APP__/Shuoshuo/index/id/{$info.si_id}" class="view-more"> 查看详细 <i class="icon-angle-right"></i></a>
+        </div>
+    </article>
+    </volist>
+    
+    <nav class="page-nav">{$page}</nav>
+    </div>
+    </div>
+<div class="aside" style="position: static; left: 849.5px; bottom: 200px;">
+<div id="g-side-info" class="side-reg">
+  <div class="bd">
+      <div class="group-item">
+          <div class="pic">
+               <a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}"><img width="100px" src="/job/Public/Uploads/StuHead/{$info.s_head}" alt="{$info.s_name}"></a>
+          </div>
+          <div class="info">
+              <div class="title">
+				  <a href="">{$info.s_name}</a>
+              </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="mod">
+    <h2>
+        他的最新话题
+            <span class="pl">&nbsp;(
+                
+                    <a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}" target="_self">更多</a>
+                ) </span>
+    </h2>
+
+        <div class="topic-list">
+          <ul>
+              <volist name="list1" id="info1">
+                <li><a href="__APP__/Shuoshuo/index/id/{$info1.si_id}" title="{$info1.si_title}">{$info1.si_title}</a> &nbsp;</li>
+                  </volist>
+        </ul>
+        </div>
+      </div>
+
+        </div>
+    </div>
+</div>
+    </div>
+<include file="./Job/Tpl/Public/footer.html" />

@@ -1,0 +1,58 @@
+
+.res-body{background:#f8f8f8}
+.resume_show { margin-top:-15px; width:960px;}
+.resume_show .top_a{ text-align:right}
+.resume_show .top_a a{ padding-left:10px;}
+.res-warp{width:1000px;margin:auto;text-align:left}
+.mt-10{margin-top:10px}
+.res-main{ border:1px solid #dadada; border-top:2px solid #f78918; background:#fff; margin-top:20px; padding:20px; box-shadow:2px 2px 2px #eee; border-radius:3px; position:relative; overflow: hidden; }
+.head table{border-bottom:2px solid #e5e5e5;padding-bottom:10px}
+.title h1{color:#e95700;font-size:20px;font:normal 22px/30px "Microsoft Yahei","SimSun","Tahoma";float:left;text-align:left}
+.title .res-info{color:#999;clear:both;line-height:30px}
+.basic {margin-top:20px}
+.basic table{text-align:left}
+.basic .td-l{color:#666;text-align:right;line-height:30px}
+.basic .td-r{color:#333}
+.basic img{padding:4px;border:1px solid #e5e5e5;box-shadow:2px 2px 2px #eee;border-radius:5px}
+.tit{border-bottom:1px solid #008dd4;color:#333;padding-bottom:10px;font-family:Î¢ÈíÑÅºÚ;font-size:20px;margin-top:20px}
+
+#resume table{width:100%;border:1px solid #fff;}
+#resume td{height:28px;padding:0 5px}
+#resume th{font-weight:normal;text-align:left;padding:0 5px;height:28px}
+#resume .c0,#resume .c1,#resume .c2{border:1px solid #EAEAEA;margin-top:10px;line-height:28px;color:#4D4D4D}
+#resume .c0 table .td1{background:#F5F5F5;border-right:1px solid #ddd;border-bottom:1px solid #EAEAEA;width:100px;text-align:right}
+#resume .c0 table .td2{border-bottom:1px solid #EAEAEA}
+#resume .c1 th{background:#F5F5F5;border-right:1px solid #EAEAEA;}
+#resume .c1 td{border-top:1px solid #ddd;border-right:1px solid #EAEAEA}
+.resume-down{width:165px;height:42px;display:block;background:url('../../Images/UI2013/member/resume-down.png') no-repeat;text-indent:-99999px;margin-top:20px}
+.resume-down:hover{background-position:0 -42px}
+.resume-fun{width:500px;float:left;margin-top:20px}
+.resume-fun a{width:72px;height:29px;line-height:27px;text-align:center;display:block;background:url('../../Images/UI2013/member/resume-btn.png') no-repeat;margin-right:10px;float:left;color:#333}
+.resume-fun a:hover{background-position:0 -29px;text-decoration:none}
+.next-page{float:right;color:#999;margin-top:20px}
+.tips{border:1px solid #c7bf93;background:#fff9c9;line-height:35px;padding:0 10px;margin-top:10px}
+.tips a{color:#cf2700}  
+.tips li{ line-height:25px; height:25px; padding-left:10px;}
+.tips .add_resume_pool{ cursor:pointer; color:#0066CC} 
+
+.company-info{width:200px;border:1px solid #dadada;border-top:2px solid #f78918;border-right:none;background:url('../../Images/UI2013/member/resume-nav-bg.png') right top repeat-y;position:absolute;left:-201px;*left:-201px;_left:-221px;top:-2px;*top:-2px;_top:0px}
+.company-info .tits,.resume-all .tits{background:#f0f0f0 url('../../Images/UI2013/member/resume-nav-tit.png') right top repeat-y;border-bottom:1px solid #dadada;line-height:30px;font-size:12px;font-weight:bold;text-indent:10px}
+.company-info p{padding:5px}
+.company-info p a{color:#057BD2}
+
+.resume-all{width:100px;border:1px solid #dadada;border-top:2px solid #f78918;border-right:none;background:url('../../Images/UI2013/member/resume-nav-bg.png') right top repeat-y;position:absolute;top:10px;text-align:left;border-radius:3px 0 0 3px;}
+.resume-all ul {padding-left:5px}
+.resume-all ul li{position:relative;text-indent:10px;height:26px;line-height:26px;width:95px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
+.resume-all ul li em{position:absolute;right:10px;top:9px;background:url('../../Images/UI2013/member/resume-nav-close.png') no-repeat;width:9px;height:9px;display:inline-block}
+.resume-all ul li em a{display:block;height:9px;line-height:9px}
+.resume-all ul li em a:hover,.resume-all ul #cur a:hover{background:none;width:auto}
+.resume-all ul li a{display:block;width:100%}
+
+.resume-all ul li a:hover{background:#f0f0f0;text-decoration:none;width:93px}
+.resume-all ul #cur{background:url('../../Images/UI2013/member/resume-nav-cur.png') no-repeat;}
+.resume-all .btn {padding:5px;background:#fff;border-right:1px solid #dadada;border-top:1px solid #dadada}
+.resume-all .btn a{border:1px solid #007cb6;background:#008fd6;color:#fff;cursor:pointer;border-radius:3px;box-shadow:2px 2px 0px #ddd;display:inline-block;width:87px;height:25px;line-height:25px;text-align:center;}
+.resume-all .btn a:hover{background:#019fed;text-decoration:none;color:#fff}
+.copyright{text-align:center;color:#999;margin-top:20px;padding-bottom:20px}
+.copyright a{color:#999}
+.container { width:1000px; text-align:left; margin:10px auto auto auto; overflow: hidden; }

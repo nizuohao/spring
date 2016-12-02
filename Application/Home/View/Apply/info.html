@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> 查看简历</title>
+<include file="Common:head" />
+<!-- 头部文件 -->
+<link rel="shortcut icon" href="/favicon.ico" />
+<link href="__PUBLIC__/home/templates/default/css/global.css"
+	rel="stylesheet" type="text/css" />
+	<link href="__PUBLIC__/home/templates/default/css/style.css"
+	rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/home/templates/default/css/resume-style.css"
+	rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/home/templates/default/js/jquery.js"
+	type='text/javascript'></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js"
+	type='text/javascript'></script>
+
+<div class="res-warp">
+<div class="res-main">
+<table cellpadding="0" cellspacing="0" style="width: 100%">
+	<td style="width: 80%" class="title">
+	<h1>{$stuarr.s_name}的个人简历</h1>
+	<div class="res-info">更新时间：{$vole_res.re_time|date='Y-m-d',###} 会员编号：{$stuarr.s_id}
+	</div>
+	</td>
+	</tr>
+
+<div class="basic">
+<table cellpadding="0" cellspacing="0" style="width: 100%">
+	<tr>
+		<td>
+		<table cellpadding="0" cellspacing="0" style="width: 100%">
+			<tr>
+				<td class="td-l" style="width: 65px"></td>
+				<td class="td-r" style="width: 30%"></td>
+				<td class="td-l" style="width: 65px"></td>
+				<td class="td-r"></td>
+			</tr>
+			<tr>
+				<td class="td-l">姓 名：</td>
+				<td class="td-r">{$stuarr.s_name}</td>
+				<td class="td-l">性 别：</td>
+				<td class="td-r"><if condition="$stuarr.s_sex eq 1">男<else />女</if></td>
+			</tr>
+			<tr>
+				<td class="td-l">技术标签：</td>
+				<td class="td-r">{$vole_res.re_keyword}</td>
+				<td class="td-l">刷新时间：</td>
+				<td class="td-r">{$vole_res.re_time|date="Y-m-d h:i:s",###}</td>
+			</tr>
+			<tr>
+				<td class="td-l">专业类型 ：</td>
+				<td class="td-r"><if condition="$vole_stu.s_type eq 1">编程<elseif
+					condition="$vole_stu.s_type eq 2" />美工<else />未选择专业</if></td>
+				<td class="td-l">联系电话：</td>
+				<td class="td-r">{$stuarr.s_tel}</td>
+			</tr>
+			<tr>
+				<td class="td-l">电子邮箱：</td>
+				<td class="td-r">{$stuarr.s_email}</td>
+				
+			</tr>
+		</table>
+		</td>
+		<td style="width: 200px">
+		<div style="height: 200px"><img
+			src="__PUBLIC__/Uploads/StuHead/{$stuarr.s_head}" width="140"
+			height="140" border="0" alt=""></div>
+		</td>
+	</tr>
+</table>
+</div>
+<div id="resume">
+<div class="tit">求职意向</div>
+<div class="c0 m-t">
+<table cellpadding=0 cellspacing=0 border=0>
+</table>
+<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class=td1>期望职位：</td>
+		<td class=td2>{$vole_res.re_job}</td>
+	</tr>
+	<tr>
+		<td class=td1>期望薪资：</td>
+		<td class=td2>{$vole_res.re_money}</td>
+	</tr>
+	<tr>
+		<td class=td1>期望期望城市：</td>
+		<td class=td2>{$vole_res.re_city}</td>
+	</tr>
+	<tr>
+		<td class=td1>工作经验：</td>
+		<td class=td2>{$vole_res.re_scale}年</td>
+	</tr>
+	<tr>
+		<td class=td1>自我介绍：</td>
+		<td class=td2>{$vole_res.re_text}</td>
+	</tr>
+</table>
+</div>
+<div class="tit">作品展示</div>
+<div class="c0">
+<table cellpadding=0 cellspacing=0 border=0>
+	<volist name="vole_show" id="vo">
+	<tr>
+		<th colspan="2" class="td1" style="text-align: left">{$vo.sh_project}</th>
+	</tr>
+	<tr>
+		<th align="right" class="td1">项目描述：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vo.sh_desc}</td>
+	</tr>
+	<tr>
+		<th align="right" class="td1">项目网址：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vo.sh_href}</td>
+	</tr>
+	<tr>
+		<th align="right" class="td1">服务公司：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vo.sh_com}</td>
+	</tr>
+	</volist>
+</table>
+</div>
+<div class="tit">工作经验</div>
+<div class="c0">
+<table cellpadding="0" cellspacing="0" border="0">
+	<volist name="vole_cou" id="vo">
+	<tr>
+		<th colspan="2" class="td1" style="text-align: left"><strong>{$vo.c_coname}</strong>
+		- {$vo.c_job}</th>
+	</tr>
+	<tr>
+		<th width="80" align="right" class="td1">起止日期：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vo.c_stime}至{$vo.c_endtime}&nbsp;</td>
+	</tr>
+	<tr>
+		<th align="right" class="td1">企业名称：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vo.c_coname}</td>
+	</tr>
+	<tr>
+		<th align="right" class="td1">从事职位：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vo.c_job}</td>
+	</tr>
+	<tr>
+		<th align="right" class="td1">企业介绍：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vo.c_intro}</td>
+	</tr>
+	</volist>
+</table>
+</div>
+<div class="tit">联系方式</div>
+<div class="c0">
+
+<table cellpadding=0 cellspacing=0 border=0>
+	<tr>
+		<th align="right" class="td1">联系电话：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$vole_res.re_tel}</td>
+	</tr>
+	<tr>
+		<th align="right" class="td1">联系邮箱：</th>
+		<td bgcolor="#FFFFFF" class="td2">{$stuarr.s_email}</td>
+	</tr>
+</table>
+</div>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 底部文件 -->
+<include file="Common:foot" />

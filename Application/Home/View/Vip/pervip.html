@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人会员中心 - </title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="" />
+<meta name="copyright" content="__APP__" />
+<link href="__PUBLIC__/home/templates/default/css/user.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js" type='text/javascript' ></script>
+
+<if condition="$ar.s_id eq '' ">
+<script type="text/javascript">
+$(document).ready(function()
+{
+
+
+	dialog("系统提示","text:<div style=\" height:150px; font-size:14px;line-height:400%;font-weight:bold;text-align:center\">您还没有创建简历，建议您立即创建简历，让好工作找上门！<br/><a href=\"__APP__/Student/person\"><img src=\"__PUBLIC__/home/templates/default/images/83.gif\" alt=\"创建简历\"  border=\"0\"  /></a></div>","500px","auto","");
+
+
+
+});
+</script>
+</if>
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$("#tabshow li:nth-child(1)>a").addClass("selected");
+	
+	$("#show_avatars_url").mouseover(function() {
+		$(".avatars_edit").show();
+		$("#show_avatars_url").mouseout(function() {
+		$(".avatars_edit").hide();
+		});	
+	});
+
+
+
+
+});
+</script>
+</head>
+<body>
+<link href="__PUBLIC__/home/templates/default/css/global.css" rel="stylesheet" type="text/css">
+<include file="Common:head" /><div class="page_location link_bk">
+当前位置：<a href="__APP__/Index/index">首页</a>&nbsp;>>&nbsp;<a href="">会员中心</a> 
+</div>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+	<script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+//
+$(".left_menu_bg").click(function(){
+		var tb=$(this).next();
+		var tb_display=tb.css("display");
+		if (tb_display=="block")
+		{
+		tb.css("display","none");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/06.gif");
+		}
+		else
+		{
+		tb.css("display","block");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+		}
+	});
+	
+	$("input[type='text'],input[type='password']").focus(function(){
+	$(this).css("border-color","#0066CC #9DCEFF #9DCEFF #0066CC");
+	});
+	$("input[type='text'],input[type='password']").blur(function(){
+	$(this).css("border-color","");
+	});
+
+});
+</script>
+<include file="Common:left" />		</td>
+    <td valign="top" class="link_lan">
+<div class="com_user_box">
+  <div class="titbox">
+  	<div class="lefttit"><u>欢迎：{$arr.u_name}</u>(uid:{$arr.u_id})&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="__APP__/Student/person">会员资料</a></div>
+		
+	<div class="rightip">上次登录时间：{$time}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+	<div class="clear"></div>
+  </div>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="5" >
+            <tr>
+              <td width="120">
+			  <table border="0" cellpadding="0" cellspacing="1" bgcolor="#CDE6F3" style="margin:3px; padding:3px;" >
+                <tr>
+                  <td bgcolor="#FFFFFF"  >
+				  <div style=" position:relative"  id="show_avatars_url">
+				  <a href="__APP__/Student/person">
+				  <if condition="$ar.s_head eq ''">
+				  <img src="__PUBLIC__/home/data/avatar/no_photo.gif" border="0"  width="100" height="100" />
+				  <else /> <img src="__PUBLIC__/Uploads/head/{$ar.s_head}" border="0"  width="100" height="100" /></if></a>
+				  <div class="avatars_edit">修改头像</div>
+				  </div>				  </td>
+                </tr>
+              </table>			  </td>
+              <td valign="top">
+			  
+			  <table width="100%" border="0" cellspacing="0" cellpadding="0"  style="color:#666666">
+                <tr>
+                  <td  style=" padding-top:22px;" class="butimglink">
+				 学生姓名：{$ar.s_name}
+									  </td>
+                </tr>
+                <tr>
+                  <td style=" padding-top:12px;">
+                  学生性别：<if condition=" $ar.s_sex eq 1 ">男<elseif condition="$ar.s_sex eq 2" />女
+				</if> 
+				  </td>
+                </tr>
+				<tr>
+                  <td style=" padding-top:12px;">
+				
+				  				  
+				  
+				  </td>
+                </tr>
+              </table></td>
+              <td width="150" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td  style="padding-top:15px;"><a href="__APP__/Student/person"><img src="__PUBLIC__/home/templates/default/images/83.gif" alt="创建简历"  border="0"  /></a></td>
+                </tr>
+                <tr>
+                  <td style="padding-top:15px;"><a href="__APP__/Student/jianli"><img src="__PUBLIC__/home/templates/default/images/82.gif" alt="管理简历"  border="0"  /></a></td>
+                </tr>
+              </table></td>
+              
+          </tr>
+      </table>	
+</div>
+	
+<div class="com_user_box" style="margin-top:10px;">
+  <div class="titbox">
+  	<div class="lefttit"><u>您可能感兴趣的职位</u></div>
+	<div class="rightip"><a href="__APP__/Job/joblist"> 更多>></a></div>
+	<div class="clear"></div>
+  </div>
+   <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"  class="link_lan">
+                        <tr>
+                          <td width="250" height="28" class="us_list_title" style="padding-left:10px;">职位名称</td>
+                          <td class="us_list_title">公司名称</td>
+                          <td width="170" align="center" class="us_list_title">薪资</td>
+                          <td width="220" align="center" class="us_list_title">更新日期</td>
+                        </tr>
+					  </table>
+				<volist name="job" id="vo">
+							  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"  class="link_lan">
+                        <tr>
+                          <td width="250" height="30" style="padding-left:10px;"><a href="__APP__/Company/jobshow/re_id/{$vo.re_id}" target="_blank">月薪{$vo.re_money}招{$vo.re_jname}</a></td>
+                          <td ><a href="__APP__/Company/company/co_id/{$vo.co_id}" target="_blank">{$vo.co_name}</a></td>
+                          <td width="170" align="center" >{$vo.re_money}</td>
+                          <td width="220" align="center">{$vo.re_addtime}</td>
+                        </tr>
+                   
+					
+      </table>
+	      			  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0"  class="link_lan">
+					  <tr>
+                          <td height="22" colspan="4" valign="top" class="us_list" style="padding-left:10px;">
+						  
+						  工作地区：{$vo.re_workarea}&nbsp;&nbsp;|&nbsp;&nbsp;
+						  学历要求：不限制&nbsp;&nbsp;|&nbsp;&nbsp;
+	 点击：{$vo.re_click}次&nbsp;&nbsp;|&nbsp;&nbsp;
+							招聘截至：{$vo.re_endtime}						  </td>
+                        </tr>
+						</table>
+							</volist>
+	  		
+	  						  
+</div>
+	
+	</td>
+  </tr>
+</table>
+<include file="Common:foot" />
+</body>
+</html>

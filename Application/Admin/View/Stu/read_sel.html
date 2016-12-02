@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>学生详细信息</title>
+<link href="__ROOT__/Public/admin/css/style.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="__ROOT__/Public/admin/js/jquery.js"></script>
+</head>
+<body>
+<div class="place"><span>位置：</span>
+<ul class="placeul">
+	<li><a href=http://localhost/project/Admin.php/admin/index.html>首页</a></li>
+	<li><a href="__URL__/student">学生信息</a></li>
+	<li><a href="#">详情</a></li>
+</ul>
+</div>
+<div class="formbody">
+<div class="formtitle"><span>基本信息</span></div>
+<ul class="forminfo">
+	<li><label>姓&nbsp;名：</label> <input name="s_name" type="text"
+		class="dfinput" value="{$vole.s_name}" readonly="readonly" /></li>
+	<li><label>性&nbsp;别：</label> <input name="s_sex" type="radio"
+		value="1" {$vole['s_sex']== 1?'checked':''}/>男 <input name="s_sex"
+		type="radio" value="2" {$vole['s_sex']== 2?'checked':''}/>女</li>
+	<li><label>出生日期：</label> <input name="s_birthday" type="text"
+		class="dfinput" value="{$vole.s_bir}" readonly="readonly" /></li>
+	<li><label>班&nbsp;级：</label>
+		<select class="dfinput" style="width:172px" id="gr" disabled="disabled">
+			<option value="" selected>------请选择------</option>
+			<volist name="vole_g" id="vo">
+			<option value="{$vo.g_id}" {$vole['g_id']== $vo['g_id']?'selected':''}>{$vo.g_name}</option>
+			</volist>
+		</select>
+		<select name="c_id" class="dfinput" style="width:172px" id="cl" disabled="disabled">
+			<option value="">------请选择------</option>
+			<volist name="vole_c" id="c">
+				<option value="{$c.c_id}" {$vole['c_id']== $c['c_id']?'selected':''}>{$c.c_name}</option>
+			</volist>
+		</select>
+	</li>
+	<li><label>身份证号：</label> <input name="s_card" type="text"
+		class="dfinput" value="{$vole.s_card}" readonly="readonly" /></li>
+	<li><label>家庭住址：</label> <input name="s_address" type="text"
+		value="{$vole.s_address}" readonly="readonly" class="dfinput" /></li>
+	<li><label>登陆账号：</label><input name="s_user" type="text"
+		class="dfinput" value="{$vole.s_user}"  readonly="readonly" /></li>
+	<li><label>登录密码：</label><input name="s_pwd" type="text"
+		class="dfinput" value="{$vole.s_pwd}"  readonly="readonly" /></li>
+	<li><label>头像</label> <img src="__ROOT__/Public/Uploads/StuHead/slt/s_{$vole.s_head}" /></li>
+	<li><label>&nbsp;</label>
+	<input id="but" type="button" class="btn" value="返回上一级" />
+	<a href="__URL__/edit/id/{$vole.s_id}">修改</a></li>
+</ul>
+</div>
+
+<script type="text/javascript">
+$("#tar").css({height:"100px"});
+$("#but").click(function(){
+	window.history.go(-1);
+});
+$("#gr").change(function(){
+	var g_id=$(this).val();
+	$.get("__ROOT__/admin.php/Public/getClass",{c_gid:g_id},function(data){
+		$("#cl").html(data);
+	})
+});
+</script>
+</body>
+</html>

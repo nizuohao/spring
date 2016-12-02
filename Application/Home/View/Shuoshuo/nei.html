@@ -1,0 +1,148 @@
+<include file="Common:head" />
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="__PUBLIC__/home/templates/default/css/www.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="Think.config.jsurl}jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="Think.config.jsurl}jquery.form.js"></script>
+<script language="javascript" type="text/javascript" src="Think.config.jsurl}chekform.js" charset="UTF-8"></script>
+<!--代码高亮显示调试-->
+
+   <!--代码高亮显示调试--> 
+<!--<div class="container">container-begin -->
+  <div class="pagebody"><!--pagebody-begin -->
+    
+    <div class="leftpage"> <!--leftpage-begin -->
+     
+      <div class="updow">  <!-- updow-begin -->
+      
+        <div class="down"></div>
+		<div class="up"><a title="pageup['title']}" href="/wblog/web/2.html">«&nbsp;pageup['title']}</a></div>
+
+		</div>
+      <!-- updow-end -->
+     <div class="info">
+        <!-- info-begin -->
+        <div class="postinfo">
+          <div class="date">
+            <!-- date-begin -->
+            <div class="t"><strong>3月</strong></div>
+            <div class="d"><strong>3</strong></div>
+          </div>
+          <!-- date-end -->
+          <div class="title"><strong><a title="vo['title']}" href="/wblog/web/1.html">vo['title']}</a></strong></div>
+		
+          <div class="line"></div>
+        </div>
+        <!-- postinfo-end -->
+        <div class="post">11</div>
+        <div class="tag">111</div>
+        <div class="comnum"><!--<a href="#comment">【已有人发表了看法，你呢？】</a>--></div>
+      </div>
+      <!-- info-end -->
+      <!-- rela- -->
+      <div class="rela">
+      <div class="title"><strong>相关阅读</strong></div>
+      
+      <div class="relainfo">
+            </div>
+      
+      </div>
+      <div class="comtit">〖评论〗</div>
+      <div class="rcomment">
+	   <div class="line10"></div>
+           <div class="cominfo">
+           
+            <span class="reply"></span>
+        <a href="Think.config.rooturl}tourl/id/ct['id']}/url/ct['url']|tourl}"> &nbsp;&nbsp;ct['username']} </a><span style="margin-left: 5px;margin-right: 5px;">于</span>ct['inputtime']|date="Y-m-d H:i:s",###}<span style="margin-left: 5px;margin-right: 5px;">回复</span>ct['tousername']}
+       
+       
+      </div>
+	  <div class="cominfo">
+       
+      </div>
+	  <div class="rcominfo">
+        ct['content']}
+      </div>
+       <div class="cominfo">
+     
+      </div>
+      <div class="line10"></div>
+	  </div><!-- comment-end --> 
+      <div class="pages"><div class="page">page}</div></div>   
+	   <div class="comment">
+      <div id="form">
+     <a name="postComment"></a>
+	<form method="post" action="/wblog/web/add.html" id="form1" name="form1" onsubmit="return regs('click')">
+		<p>&nbsp;</p>
+		<div class="fieldset">
+			<span class="legend">发表评论</span>
+            <div id="result" class="none result" style="font-family:微软雅黑,Tahoma;margin-bottom: 10px;font-size:18px;color:green;text-align:center"></div>
+			<table style="vertical-align:top;">
+					
+                 <tr>
+					<td><label for="references">评论内容:</label></td>
+					<td><textarea name="content" id="content" cols="0" rows="0" style="width: 450px; height: 100px;"></textarea></td>
+				</tr>
+			</table>
+			<br />
+             <input type="hidden" name="pid" value="" id="pid">
+             <input type="hidden" name="nid" value="vo.id}" id="nid" />
+			<input type="submit" name="dosubmit" id="dosubmit" value="发表"  />
+		</div>
+	</form>
+</div>
+	   </div>
+      
+   <div class="line10"></div>
+    </div><!--leftpage-end -->
+
+<include file="Common:foot" />
+<div id="bootom">&nbsp;</div>
+  </body>
+</html>
+<script>
+function getPid(i){
+	pid=document.getElementById('pid');
+	pid.value=i;
+}
+</script>
+<script type="text/javascript">
+(function(){
+var tab_tit  = document.getElementById('think_page_trace_tab_tit').getElementsByTagName('span');
+var tab_cont = document.getElementById('think_page_trace_tab_cont').getElementsByTagName('div');
+var open     = document.getElementById('think_page_trace_open');
+var close    = document.getElementById('think_page_trace_close').childNodes[0];
+var trace    = document.getElementById('think_page_trace_tab');
+var cookie   = document.cookie.match(/thinkphp_show_page_trace=(\d\|\d)/);
+var history  = (cookie && typeof cookie[1] != 'undefined' && cookie[1].split('|')) || [0,0];
+open.onclick = function(){
+	trace.style.display = 'block';
+	this.style.display = 'none';
+	close.parentNode.style.display = 'block';
+	history[0] = 1;
+	document.cookie = 'thinkphp_show_page_trace='+history.join('|')
+}
+close.onclick = function(){
+	trace.style.display = 'none';
+this.parentNode.style.display = 'none';
+	open.style.display = 'block';
+	history[0] = 0;
+	document.cookie = 'thinkphp_show_page_trace='+history.join('|')
+}
+for(var i = 0; i < tab_tit.length; i++){
+	tab_tit[i].onclick = (function(i){
+		return function(){
+			for(var j = 0; j < tab_cont.length; j++){
+				tab_cont[j].style.display = 'none';
+				tab_tit[j].style.color = '#999';
+			}
+			tab_cont[i].style.display = 'block';
+			tab_tit[i].style.color = '#000';
+			history[1] = i;
+			document.cookie = 'thinkphp_show_page_trace='+history.join('|')
+		}
+	})(i)
+}
+parseInt(history[0]) && open.click();
+tab_tit[history[1]].click();
+})();
+</script>

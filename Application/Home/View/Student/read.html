@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>学生就业服务_软件工程系</title>
+
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.user.selectlayer.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<link href="__ROOT__/Public/home/templates/default/css/user.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="__ROOT__/Public/home/templates/default/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	href="__ROOT__/Public/home/data/css/style.css" />
+<script type="text/javascript"
+	src="__ROOT__/Public/home/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/home/js/index.js"></script>
+<!-- 头部文件 -->
+<include file="Common:head" />
+<!-- end -->
+
+<div class="page_location link_bk">当前位置：<a href="">首页</a>&nbsp;&gt;&gt;&nbsp;<a
+	href="">个人信息</a></div>
+<table width="985" border="0" align="center" cellpadding="0"
+	cellspacing="0" style="margin-top: 8px; margin-left: 175px">
+	<tr>
+		<td width="173" valign="top" class="link_bk"><script
+			src="__PUBLIC__/home/templates/default/js/jquery.dialog.js"
+			type='text/javascript'></script> <!-- 左侧栏目 --> <include
+			file="Common:left" /> <!-- end -->
+		<td valign="top">
+		<div class="user_right_box">
+		<div class="user_right_top_tit_bg">
+		<h1>个人资料</h1>
+		</div>
+		<div class="us_tab"><a href="" class="select">基本资料</a> <a href="__MODULE__/Student/head">我的头像</a>
+		<div class="clear"></div>
+		</div>
+		<form method="post" action="__URL__/edit">
+		<table width="100%" border="0" cellpadding="4" cellspacing="0"
+			style="margin-top: 10px;">
+			<tbody>
+				<tr>
+					<td width="120" height="30" align="right">用户名：</td>
+					<td>{$vole.s_user}</td>
+				</tr>
+				<tr>
+					<td height="30" align="right"><span
+						style="color: #FF3300; font-weight: bold">*</span>真实姓名：</td>
+					<td><input name="s_name" type="text" class="input_text_200"
+						id="realname" maxlength="10" value="{$vole.s_name}"></td>
+				</tr>
+				<tr>
+					<td height="30" align="right">性别：</td>
+					<td><label><input name="s_sex" type="radio" value="1"
+						{$vole['s_sex']==1?'checked':''}> 男</label>&nbsp;&nbsp; <label><input
+						type="radio" name="s_sex" value="2" {$vole['s_sex']==2?'checked':''}>女</label></td>
+				</tr>
+				<tr>
+					<td height="30" align="right"><span
+						style="color: #FF3300; font-weight: bold"></span>班级：</td>
+						<td>{$vole.g_name}级&nbsp;{$vole.c_name}</td>
+					
+				</tr>
+				<tr>
+					<td height="30" align="right"><span
+						style="color: #FF3300; font-weight: bold"></span>专业：</td>
+					<td>{$vole['s_type']==1?'编程':'美工'}</td>
+				</tr>
+				<tr>
+					<td height="30" align="right">期望城市：</td>
+					<td>{$vole.ci_name}</td>
+				</tr>
+				<tr>
+					<td height="30" align="right">出生日期：</td>
+					<td><input name="s_bir" type="date" class="input_text_200"
+						id="birthday" maxlength="50" value="{$vole.s_bir}"></td>
+				</tr>
+				<tr>
+					<td height="30" align="right">身份证号：</td>
+					<td><input name="s_card" type="text" class="input_text_200"
+						maxlength="50" value="{$vole.s_card}"></td>
+				</tr>
+				<tr>
+					<td height="30" align="right">家庭住址：</td>
+					<td><input name="s_address" type="text" class="input_text_200"
+						maxlength="50" value="{$vole.s_address}"></td>
+				</tr>
+				<tr>
+					<td height="30" align="right">手机号：</td>
+					<td><input name="s_tel" type="text" class="input_text_200"
+						maxlength="50" value="{$vole.s_tel}"></td>
+				</tr>
+				<input type="hidden" name="id" value="{$vole.s_id}">
+				<tr>
+					<td height="30" align="right">&nbsp;</td>
+					<td><input type="submit" name="Submit" value="保存"
+						class="user_submit"></td>
+				</tr>
+				<tr>
+					<td height="30" align="right">&nbsp;</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+		</div>
+		</td>
+	</tr>
+</table>
+<!-- 底部文件 -->
+<include file="Common:foot" />
+<!-- end -->

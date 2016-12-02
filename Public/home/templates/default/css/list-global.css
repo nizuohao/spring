@@ -1,0 +1,120 @@
+.link_bk a{color:#057BD2;text-decoration: none;}
+.link_bks a{color:#228822;text-decoration: none;}
+input {font-family:Arial, Helvetica, sans-serif;font-size:12px; color: #666666;}
+.min a{color:#333;}
+/* 小图标 */
+.jobtype-more .on,.jobtype-more .off,.cate-selected dd a,.cate-selected .save-term a,.search-nav .sch-box dfn,.sch-box-active dfn,.lChoose,.l-search .l-submit,.lChoose .lChoosePop .li1,.more-term a{background:url(../images/UI2013/list-search/search-inco.png) no-repeat}
+
+/* 搜索导航 */
+.search-nav ul {float:left;width:800px}
+.search-nav ul li{width:90px;float:left;height:36px;line-height:36px;text-align:center;font-size:14px;margin-right:-1px;background:#fff}
+.search-nav ul li a{width:100%;display:block;color:#666}
+.search-nav #cur a{color:#fff;font-weight:bold}
+	/* -搜索器- */
+.search-nav .sch-box{float:right;width:90px;height:36px;line-height:36px;text-align:left;position:relative;font-size:14px;margin-right:2px;_margin-right:0px;z-index:2}
+.search-nav .sch-box dfn{background-position:55px -45px;width:92px;display:block;border:1px solid #fafafa;border-bottom:none;text-indent:20px;cursor:pointer}
+/*.search-nav .sch-box a{background-position:55px -45px;width:100%;display:block;border:1px solid #fbfbfb;border-bottom:none;text-indent:20px}*/
+/*.search-nav .sch-box a:hover{background-position:55px -70px;text-decoration:none;border:1px solid #dcdee1;border-bottom:none;background-color:#fff;box-shadow:2px 2px 2px #e5e5e5}*/
+.sch-box-active dfn{width:90px!important;background-position:55px -70px!important;text-decoration:none;border:1px solid #e7e7e7!important;border-bottom:none;background-color:#fff!important;box-shadow:2px 2px 2px #e5e5e5;}
+.search-nav .sch-box .drop-box{position:absolute;top:37px;right:-2px;_right:0px;border:1px solid #dcdee1;background-color:#fff;width:175px;box-shadow:2px 2px 2px #e5e5e5;display:none;}
+.sch-box .drop-box .line{width:90px;background:#fff;height:1px;overflow:hidden;position:absolute;top:-1px;right:0px}
+.sch-box .drop-box ol{padding:10px;}
+.sch-box .drop-box ol li {font-size:12px;border-bottom:1px dotted #e7e7e7;line-height:28px;height:28px}
+.sch-box .drop-box ol li span{float:right}
+.sch-box .drop-box ol li a{display:inline;border:none;background:none;}
+.sch-box .drop-box ol li a:hover{border:none;background:none;text-decoration:underline}
+.sch-box .drop-box ol .drop-box-none{border:none;text-align:center;color:#666}
+ 
+/* 菜单 */
+.s-title{height:42px;line-height:42px;background:url(../images/UI2013/list-search/s-title-bg.png) repeat-x;border-bottom:1px solid #dedede;width:998px;margin:auto;}
+.s-title ul li{float:left;border-left:1px solid #fff;border-right:1px solid #d8d8d8;height:42px}
+.s-title .select{width:75px;line-height:none;text-align:center}
+
+/*
+.s-title .select label{left:10px;top:8px}
+.s-title .select .input1{cursor:pointer;position:absolute;top:12px;left:12px}
+.s-title .select em{position:absolute;top:0;*top:3px;_top:3px;left:32px;font-style:normal}
+*/
+.s-title .domain{padding:0 10px 0 15px}
+.s-title .domain a{border:1px solid #cfcfcf;height:19px;line-height:19px;float:left;width:45px;text-align:center;display:inline-block;background:#fff url(../images/UI2013/list-search/s-title-bg.png) left -43px repeat-x;border-radius:2px;box-shadow:0px 2px 0px #e5e5e5;margin:10px 5px 0 0}
+.s-title .domain a:hover{background:#fff;text-decoration:none}
+.s-title .sort a,.s-title .sort .selected,.s-title .view-toggle a{background:url(../images/UI2013/list-search/s-title-inco.png) no-repeat}
+.s-title .sort{width:70px;text-indent:15px}
+.s-title .sort a{background-position:-3px -70px;padding-right:18px}
+.s-title .sort a.select{background-position:-3px -49px;color:#e95700}
+.s-title .spages span{float:left}
+.s-title .spages a{width:25px}
+.s-title .spages a.selected{background:#fff}
+.s-title .spages a.select{ color:#FFF; background: #FF6600; }
+.s-title .line-w{float:left;background:#fff;width:1px;border:none}
+.s-title .line-b{float:right;background:#d8d8d8;width:1px;border:none}
+.s-title .view-toggle{float:right;border:none;width:68px;line-height:22px!important}
+.s-title .view-toggle span{display:inline-block;float:left;width:22px;height:22px;border:1px solid #cfcfcf;border-radius:3px;display:inline-block;margin:10px 0 0 5px;box-shadow:0px 2px 0px #e5e5e5}
+.s-title .view-toggle a{width:100%;height:22px;line-height:22px;display:inline-block;background-color:#fff}
+.s-title .view-toggle a:hover{background-color:#f3f3f3}
+.s-title .view-toggle .detail a{background-position:-22px 0}
+.s-title .view-toggle .list a{background-position:-22px -22px}
+.s-title .view-toggle .detail a.selected{background-color:#666;background-position:0 0}
+.s-title .view-toggle .list a.selected{background-color:#666;background-position:0 -22px}
+.navFix {top:0px;left:0px;width:100%;position:fixed;_position: absolute;z-index:5}
+.search-main{ margin-top:10px; border:1px solid #dedede; border-bottom:none; border-top:none; zoom:1 }
+/* 详情 */
+.d-search{color:#666}
+.d-search ul li{border-bottom:1px solid #dedede;padding:15px;background:#fff}
+.d-search ul .bg-row,.lst-search .bg-row{background:#fafafa}
+.d-search ul .bg-ding,.lst-search .bg-ding{background:#fff8eb}
+.d-search ul li:hover,.lst-search li:hover{background:#fafef0}
+.d-s-l{ width:750px; float:left; position:relative; line-height:22px; z-index:2; overflow: hidden; }
+.d-s-l p{padding-left:20px}
+.d-s-l .pos_input{position:absolute;top:1px;left:-22px;zoom:1}
+.d-s-l .pos-info,.d-s-l .pos-depict,.d-s-l .pos-weal,.d-s-r .pos-fav{margin-top:5px}
+.d-s-l .pos-info a{}
+.d-s-l .pos-name{font-size:14px}
+.d-s-l .pos-weal a{border:1px solid #b9e3b9;background:#fff;;color:#418441;padding:2px 5px;margin-right:5px;border-radius:5px;box-shadow:0px 2px 0px #eee}
+.d-s-l .pos-weal a:hover{text-decoration:none}
+.d-s-r{width:190px;float:right;border-left:1px solid #e5e5e5}
+.d-s-r p{margin-left:15px}
+.d-s-r .pos-time{background:url(../images/UI2013/list-search/d-job-time.png) left center no-repeat;padding-left:20px;color:#999;margin-top:20px}
+.d-s-r .d-job-app span{display:inline-block;float:left;cursor:pointer}
+.d-s-r .d-job-app b{width:20px;height:20px;display:inline-block;float:left;margin:10px 5px 0 38px}
+.d-s-r .d-job-app,.d-s-r .job-ov{width:100%;height:40px;line-height:40px;font-size:14px;font-weight:bold;color:#fff;display:inline-block;border-radius:3px;box-shadow:0px 2px 0px #ddd;}
+
+/* 列表 */
+.lst-search{}
+.lst-search li{height:50px;line-height:50px;border-bottom:1px solid #dedede;background:#fff;color:#666}
+.lst-search .tit{font-weight:bold;background:#fafafa;height:35px;line-height:35px}
+.lst-search .tit .p6{color:#666}
+.lst-search .tit .p7{text-align:center}
+.lst-search .tit:hover{background:none}
+.lst-search p{display:inline-block;float:left}
+.lst-search .p1{padding-left:35px;position:relative}
+.lst-search .p1 input{position:absolute;top:16px;*top:13px;left:13px;zoom:1}
+.lst-search .p3{text-align:center}
+.lst-search .p4{width:60px;text-align:center;;white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}
+.lst-search .p5{text-align:center}
+.lst-search .p6{width:100px;text-align:center;color:#999}
+.lst-search .p7 a,.lst-search .p7 .fav-ov,.lst-search .job-ov{ margin-top:11px; float:left; height:28px; line-height:28px; font-size:12px; display:inline-block; color: #FFF; }
+.lst-search .p7 .fav,.lst-search .p7 .rec,.lst-search .p7 .fav-ov{width:37px;text-align:center;}
+.lst-search .p7 a:hover.fav,.lst-search .p7 a:hover.rec{text-decoration:none}
+.lst-search .p7 .fav,.lst-search .p7 .fav-ov{;border-radius:3px 0 0 3px;}
+.lst-search .lst-job-app span{display:inline-block;float:left;cursor:pointer}
+.lst-search .lst-job-app b{width:20px;height:20px;display:inline-block;float:left;}
+.lst-search .lst-job-app,.lst-search .job-ov{width:95px;border-radius:0 3px 3px 0;box-shadow:1px 1px 1px #c8c5c5}
+
+.search-error{height:100px!important;line-height:100px!important;font-size:14px;padding:0 0 0 450px!important;background:url(../images/UI2013/list-search/search-error.png) 400px 20px no-repeat!important;}
+.allpersonal {padding:10px}
+.allpersonal a {margin-left:267px;width:133px;height:30px;line-height:30px;text-indent:30px;font-size:14px;font-weight:bold;display:block}
+.allpersonal a:hover {background:url(../images/base.gif) -133px -274px no-repeat;color:#0067E0;text-decoration:none}
+.page-next{padding:10px;height:30px;line-height:30px;margin:10px 3px 3px 3px;text-align:center;font-size:12px;}
+.page-next a{border:1px solid #ddd;margin:2px; color:#494949;padding:6px 10px;border-radius:2px;box-shadow:0px 2px 0px #eee;background:#fff}
+.page-next a:hover{border:1px solid #908f8f;text-decoration:none;background:#f5f5f5}
+.page-next a:active{border:1px solid #ddd;COLOR:#FF6600;text-decoration:none;background:#eee}
+.page-next .select{font-weight:bold; margin:2px;color:#fff;padding:6px 10px;background:#f7881a;border:1px solid #e95801;border-radius:2px;box-shadow:0px 2px 0px #eee}
+.page-next .select:hover{font-weight:bold; margin:2px;color:#fff;padding:6px 10px;background:#f7881a;border:1px solid #e95801;border-radius:2px;box-shadow:0px 2px 0px #eee}
+.page-next .disabled{border:1px solid #eee;padding:6px 10px;margin:2px; color:#ddd;;box-shadow:0px 2px 0px #eee}
+.page-next .input-1{border:1px solid #dedede;padding:6px;outline:none;position:relative;top:0px;*top:7px;_top:7px;border-radius:2px;box-shadow:0px 2px 0px #eee;font-family:Verdana}
+.page-next .submit-1{border:1px solid #dddddd;background:#f5f5f5;padding:6px;cursor:pointer;position:relative;top:0px;*top:7px;_top:7px;border-radius:2px;box-shadow:0px 2px 0px #eee}
+.bnt-gray{border:1px solid #cfcfcf;height:21px;line-height:21px;float:left;padding:0 10px;text-align:center;display:inline-block;background:#fff url(../images/UI2013/list-search/s-title-bg.png) left -43px repeat-x;border-radius:2px;box-shadow:0px 2px 0px #e5e5e5;cursor:pointer}
+.bnt-gray:hover{background:#fff;text-decoration:none}
+.bnt-gray b{background:url(../images/UI2013/list-search/search-inco.png) -8px -55px no-repeat;width:13px;height:14px;display:inline-block}
+.jobs_list_tip{margin:0 auto;padding-left:10px; height:24px; background-color:#FFFDEC; border:1px #FF9900 solid; margin-top:8px; color: #FF3300; overflow:hidden; padding-top:4px;}

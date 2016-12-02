@@ -1,0 +1,17 @@
+这个是数据库的设置
+设置文件总共有四处：
+①Spring\ThinkPHP\Conf\convention.php;
+②Spring\Application\Common\Conf\config.php
+③Spring\Application\Admin\Conf\config.php
+④Spring\Application\Home\Conf\config.php
+/* 数据库设置 */
+    'DB_TYPE'               =>  'mysql',     // 数据库类型
+    'DB_HOST'               =>  'localhost', // 服务器地址
+    'DB_NAME'               =>  'nizuohao_blog',          // 数据库名
+    'DB_USER'               =>  'nizuohao_nzh',      // 用户名
+    'DB_PWD'                =>  'nizuohao123',          // 密码
+    'DB_PORT'               =>  '3306',        // 端口
+    'DB_PREFIX'             =>  'job_',    // 数据库表前缀
+    'DB_FIELDTYPE_CHECK'    =>  false,       // 是否进行字段类型检查
+    'DB_FIELDS_CACHE'       =>  true,        // 启用字段缓存
+'DB_CHARSET'            =>  'utf8',      // 数据库编码默认采用utf8

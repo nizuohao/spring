@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的就业回执 - 个人会员中心 </title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="copyright" content="__APP__" />
+<script type="text/javascript"  src="__PUBLIC__/home/data/js/laydate.js"></script>
+<script src="__PUBLIC__/home/templates/default/js/uploadPreview.js"></script>
+<link href="__PUBLIC__/home/templates/default/css/user.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+  !function(){
+  laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+}();
+
+$(".left_menu_bg").click(function(){
+    var tb=$(this).next();
+    var tb_display=tb.css("display");
+    if (tb_display=="block")
+    {
+    tb.css("display","none");
+    $(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/06.gif");
+    }
+    else
+    {
+    tb.css("display","block");
+    $(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+    }
+  });
+  
+  
+
+});
+</script>
+</head>
+<body>
+<link href="__PUBLIC__/home/templates/default/css/global.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/home/templates/default/css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+<include file="Common:head"/>
+<div class="page_location link_bk">
+当前位置：<a href="__APP__">首页</a>&nbsp;>>&nbsp;<a href="__APP__/Student/centre">会员中心</a>&nbsp;>>&nbsp;就业回执&nbsp;
+</div>
+<table width="1100px" border="0" align="center" cellpadding="0" cellspacing="0" id="table" style="margin-top:8px;margin-left:165px" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+
+<include file="Common:left" />
+</td>
+    <td valign="top" >
+	<div class="user_right_box" style="height:920px;">
+		<div class="user_right_top_tit_bg">		
+		  <h1>我的就业回执</h1>
+		</div>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" >
+        <tr>
+          <td  valign="top">
+         
+            
+ <table width="100%" border="0" cellspacing="0" cellpadding="4" style="margin-bottom:150px; ">
+                 
+			<form id="Form1" name="Form1" method="post" action="" enctype="multipart/form-data"><tr>
+			<if condition="$list.hz_id eq ''">
+                <td height="23" colspan="2" valign="top" bgcolor="#E0F0F5"  style=" border-bottom:1px #CCCCCC dashed; color:#003399; border-top:1px #CCCCCC dashed; color:#003399; padding-left:35px;">添加就业回执</td>
+                <else/>
+                <td height="23" colspan="2" valign="top" bgcolor="#E0F0F5"  style=" border-bottom:1px #CCCCCC dashed; color:#003399; border-top:1px #CCCCCC dashed; color:#003399; padding-left:35px;">修改就业回执
+                </if>
+                </tr >
+                <tr height="30px">
+                 <input type="hidden" name="id" value="{$list.hz_id}" />
+          		</tr>
+				 
+               <tr>
+                    <td width="242" height="28" align="right" valign="top"><strong  style="color:#FF0000">*</strong>学生姓名：</td>
+                    <td>
+            				<div>
+            				<input name="hz_name" type="text" class="input_text_200 date_input" readonly="readonly" value="{$name}" />
+            						</div>
+    					     </td>
+              </tr>
+               <tr>
+                   <td width="242" height="28" align="right" valign="top"><strong  style="color:#FF0000">*</strong>所在公司：</td>
+                     <td>
+                    <div>
+                    <input name="hz_cname" type="text" class="input_text_200 date_input" id="r_com" value="{$list.hz_cname}" />
+                    </div>
+                     </td>
+              </tr>
+               <tr>
+                   <td width="242" height="28" align="right" valign="top"><strong  style="color:#FF0000">*</strong>工作职位：</td>
+                     <td>
+                    <div>
+                    <input name="hz_job" type="text" class="input_text_200 date_input" id="r_com" value="{$list.hz_job}" />
+                    </div>
+                     </td>
+              </tr>
+               <tr>
+                   <td width="242" height="28" align="right" valign="top"><strong  style="color:#FF0000">*</strong>工作待遇：</td>
+                     <td>
+                    <div>
+                    <input name="hz_dy" type="text" class="input_text_200 date_input" id="r_com" value="{$list.hz_dy}" />
+                    </div>
+                     </td>
+              </tr>
+               <tr>
+                   <td width="242" height="28" align="right" valign="top"><strong  style="color:#FF0000">*</strong>是否满意：</td>
+                     <td>
+                    <div>
+                    <input name="hz_goods" type="text" class="input_text_200 date_input" id="r_com" value="{$list.hz_goods}" />
+                    </div>
+                     </td>
+              </tr>
+              <tr>
+          <td width="242" height="28" align="right" valign="top"><strong  style="color:#FF0000">*</strong>带队老师：</td>
+                <td>
+                  <div>
+                  <select name="hz_teacher"style="width:100px;height:24px;">
+                    <option value="">请选择</option> 
+                    <volist name="teacher" id="vo">
+                    <option value="{$vo.ci_tea}" <if condition="$list.hz_teacher eq $vo.ci_tea ">selected=selected</if>>{$vo.ci_tea}</option> 
+                    </volist>
+                  </select>
+                    </div>
+               </td>
+               </tr>
+               <tr>
+                    <td width="242" height="28" align="right" valign="top">联系方式：</td>
+                    <td><input name="hz_tel" type="text" class="input_text_200 date_input"  value="{$list.hz_tel}" />
+                     </td>
+              </tr>
+               <tr>
+                    <td width="242" height="28" align="right" valign="top">联系ＱＱ：</td>
+                    <td><input name="hz_qq" type="text" class="input_text_200 date_input"  value="{$list.hz_qq}" />
+                     </td>
+              </tr>
+              <tr>
+                    <td width="242" height="28" align="right" valign="top"><strong  style="color:#FF0000">*</strong>联系邮箱：</td>
+                    <td>
+                    <div>
+                    <input name="hz_email" type="text" class="input_text_200 date_input"  value="{$list.hz_email}" />
+                        </div>
+                   </td>
+              </tr>
+            
+              <tr>
+                    <td width="242" height="28" align="right" valign="top" ><strong  style="color:#FF0000">*</strong>就业照片：</td>
+                    <td width="836" id="warp" ><li><input name="hz_photo" type="file"  id="up_img_WU_FILE_0"/> 
+                    <br> <img  width="120px" height="120px" id="imgShow_WU_FILE_0" <if condition="$list.hz_photo neq '' ">src="__PUBLIC__/Uploads/hui/{$list.hz_photo}"></if></li></td>
+              </tr>
+              <tr>
+                    <td width="242" height="28" align="right" valign="top">就业感言：</td>
+                    <td><textarea name="hz_desc" rows="10" cols="60">{$list.hz_desc}</textarea>
+                     </td>
+              </tr>
+              <tr >
+                <td height="10" align="center" >
+               </td>
+                <td height="50"  >
+                 <input type="submit" name="submit" value="保存"   class="user_submit"  />                  
+                &nbsp;
+                  <br /></td>
+              </tr>
+
+         </form>
+             </table>
+
+           </td>   
+        </tr>
+</table>
+        </div>
+    </td>
+  </tr>
+</table>
+<include file="Common:foot" />
+</body>
+</html>

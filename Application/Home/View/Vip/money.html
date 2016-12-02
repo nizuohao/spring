@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>充值中心</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+
+
+<link href="__PUBLIC__/home/templates/default/css/user.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.user.selectlayer.js" type='text/javascript' language="javascript"></script>
+
+</head>
+<body>
+<link href="__PUBLIC__/home/templates/default/css/global.css" rel="stylesheet" type="text/css">
+<include file="Common:head" />
+</div><div class="page_location link_bk">
+当前位置：<a href="__APP__">首页</a>&nbsp;>>&nbsp;<a href="__APP__/Vip/comvip">会员中心</a>&nbsp;>>&nbsp;充值&nbsp;>>&nbsp;
+</div>
+<table width="985" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:8px;" >
+  <tr>
+    <td width="173" valign="top" class="link_bk">
+	<script src="__PUBLIC__/home/templates/default/js/jquery.dialog.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+//
+
+
+
+$(".left_menu_bg").click(function(){
+		var tb=$(this).next();
+		var tb_display=tb.css("display");
+		if (tb_display=="block")
+		{
+		tb.css("display","none");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/06.gif");
+		}
+		else
+		{
+		tb.css("display","block");
+		$(this).find("img").attr("src","__PUBLIC__/home/templates/default/images/07.gif");
+		}
+	});
+	
+	$("input[type='text'],input[type='password']").focus(function(){
+	$(this).css("border-color","#0066CC #9DCEFF #9DCEFF #0066CC");
+	});
+	$("input[type='text'],input[type='password']").blur(function(){
+	$(this).css("border-color","");
+	});
+
+});
+</script>
+
+
+   <include file="Common:left1" />
+               
+</td>
+    <td valign="top">
+	<div class="user_right_box">
+		<div class="user_right_top_tit_bg">		
+		  <h1>充值中心</h1>
+		</div>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="22" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="4" >
+            <tr>
+              <td height="50" bgcolor="#F5FAFC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:14px; color:#0033CC">充值信息</span> 
+			  
+			  	  			  </td>
+              </tr>            
+          </table>
+          
+		              <table width="100%" border="0" cellspacing="0" cellpadding="4" style="margin-bottom:150px; line-height:180%;">
+			<form id="Form1" name="Form1" method="post" action="" ><tr>
+			<td height="23" colspan="2" valign="top" bgcolor="#E0F0F5"  style=" border-bottom:1px #CCCCCC dashed; color:#003399; border-top:1px #CCCCCC dashed; color:#003399; padding-left:35px;">充值</td>
+                </tr>
+                <tr height="50px">
+           
+                 
+				   <tr>
+                <td width="242" height="23" align="right" valign="top"><strong  style="color:#FF0000">*</strong>充值类型：</td>
+                <td>
+				        <div>
+			       	  <input type="radio" name="m_vid" value="2" id="">临时会员 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="m_vid" value="3" id="">年费会员 &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="m_vid" value="4" id="">永久会员
+                
+				       	</div>
+				     	</td>
+         </tr>
+              <tr>
+                <td width="242" height="23" align="right" valign="top"><strong  style="color:#FF0000">*</strong>充值金额：</td>
+                <td>
+				<div>
+				<input name="m_money" type="text" readonly="readonly" class="input_text_200 date_input" id="money" value="" style="width:160px" />&nbsp; <span id="span"></span>
+                  
+						</div>
+					</td>
+              </tr>
+             
+           
+              <tr>
+                <td height="60" align="center" >
+				
+			
+				 
+				 
+				</td>
+                <td height="60"  >
+				 				 <input type="submit" name="submit" value="充值"   class="user_submit"/>                  
+           
+				 				
+                  <br /></td>
+              </tr></form>
+            </table>
+			</td>
+          <td width="150" valign="top" class="resume_right_box" >
+		 <script type="text/javascript" src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js"></script>
+
+
+   <script type="text/javascript">
+$(function(){
+  $("input[type='radio']").click(function(){
+     var val=$("input[type='radio']:checked").val();
+     if (val==3) {
+        $("#money").val("60");
+        $("#span").text("/年");
+     };
+     if (val==4) {
+        $("#money").val("200");
+        $("#span").text("/年");
+     };
+     if (val==2) {
+        $("#money").val("10");
+         $("#span").text("/次");
+     };
+  });
+ 
+});
+   </script>
+
+	
+        </tr>
+      </table>
+        </div>
+    </td>
+  </tr>
+</table>
+<include file="Common:foot" />
+</body>
+</html>

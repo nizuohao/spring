@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__PUBLIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/select-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/editor/kindeditor.js"></script>
+
+<script type="text/javascript">
+function dele(){
+    var obj=document.getElementsByName('co_id[]');
+    var str='';
+     for(var i=0;i<obj.length;i++){
+       if(obj[i].checked){
+        str+=obj[i].value+",";
+       }
+      }
+      if(str==''){
+        alert("请选择一项");
+        return false;
+      }
+            var t="__ROOT__/admin.php/Company/delete";
+            //alert(t);
+           var c=t.replace("#","")
+            //   alert(c);
+           var strlen=str.lastIndexOf(",");
+            var strnew=str.substr(0,strlen);
+//alert(strlen); alert(strnew);
+           var b=c.lastIndexOf("?");
+           //alert(b);
+           if(b>0){
+             cc=c.substr(0,b);
+            // alert(cc);
+           }else{
+             cc=c;
+           }
+          // alert(cc);
+           document.location.href=cc+"?id="+strnew;
+
+}
+$(document).ready(function(){
+  $(".click").click(function(){
+  $(".tip").fadeIn(200);
+  });
+  
+  $(".tiptop a").click(function(){
+  $(".tip").fadeOut(200);
+});
+
+  $(".sure").click(function(){
+  $(".tip").fadeOut(100);
+});
+
+  $(".cancel").click(function(){
+  $(".tip").fadeOut(100);
+});
+
+});
+KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".select1").uedSelect({
+        width : 345           
+    });
+    $(".select2").uedSelect({
+        width : 167  
+    });
+    $(".select3").uedSelect({
+        width : 100
+    });
+    $("#checked").toggle(function(){
+    if($("#checked :checked")){
+        $("input[name='co_id[]']").attr("checked","checked");
+    }
+        },function(){
+    if($("#checked :not(:checked)")){
+        $("input[name='co_id[]']").removeAttr("checked","checked");
+    }
+        });
+  });
+
+
+
+</script>
+
+</head>
+
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">数据表</a></li>
+    <li><a href="#">基本内容</a></li>
+    </ul>
+    </div>
+    
+    <div class="rightinfo">
+    
+    <div class="tools">
+    
+    	<ul class="toolbar">
+        
+        <li onclick="return dele()"><span ><img src="__PUBLIC__/admin/images/t03.png" /></span>删除</li>
+        </ul>
+        
+        
+        <ul class="toolbar1">
+        <li><span><img src="__PUBLIC__/admin/images/t05.png" /></span>设置</li>
+        </ul>
+            
+  <ul class="seachform">
+    <form action="" method="get">      
+    <li ><label>名称</label><input name="co_name" type="text" class="scinput"/></li>
+    <li><label>地区</label>  
+    <div class="vocation">
+    <select class="select2" name="co_area">
+     <option value="">请选择</option>
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="济南">济南</option>
+    <option value="青岛">青岛</option>
+     <option value="临沂">临沂</option>
+      <option value="泰安">泰安</option>
+    </select>
+    </div>
+    </li>
+    
+ 
+    <li><label>企业性质</label>  
+    <div class="vocation">
+    <select class="select3" name="co_nature">
+    <option value="">请选择</option>
+    <option>国有企业</option>
+    <option>私有企业</option>
+    <option>股份制企业</option>
+    <option>集体企业</option>
+    </select>
+    </div>
+    </li>
+    
+    <li><label>&nbsp;</label><input name="submit" type="submit" class="scbtn" value="查询"/></li>
+    
+</form>
+    
+        </ul>
+    </div>
+    
+     <ul class="classlist">
+      <volist name="value" id="vo" >
+        <li>
+        <span>
+        <if condition="$vo.s_head neq ''">
+        <div style="height:137px">
+          <img src="__ROOT__/Public/Pho/StuHead/slt/s_{$vo.s_head}" />
+        </div>
+          <a class="enter" href="del/id/{$vo.s_id}">删除</a>
+        <else/>
+        <div style="height:137px">
+          <img src="__ROOT__/Public/admin/images/001.jpg"/>
+        </div>
+          <a class="enter" href="del/id/{$vo.s_id}">删除</a>
+        </if>
+        </span>
+        <div class="lright">
+          <h2>{$vo.s_name}</h2>
+          <div style="height:110px">
+          <p>性别：{$vo['s_sex']==1?'男':'女'}<br />班级：{$vo.g_name}{$vo.c_name}<br /><div id="yc">出生日期：{$vo.s_bir}</div><br />
+          审核状态:<a href="__URL__/state/id/{$vo['s_id']}/state/{$vo['s_state']}">{$vo['s_state']==1?'已审核':'<b>未审核</b>'}</a></p>
+          </div><a class="enter" href="__URL__/read_sel/id/{$vo.s_id}">详细信息</a>
+        </div>
+        </li>
+      </volist>
+    </ul>
+    
+   
+    <div class="pagin">
+    
+    </div>
+    
+    
+    <div class="tip">
+    	<div class="tiptop"><span>提示信息</span><a></a></div>
+        
+      <div class="tipinfo">
+        <span><img src="__PUBLIC__/admin/images/ticon.png" /></span>
+        <div class="tipright">
+        <p>是否确认对信息的修改 ？</p>
+        <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+        </div>
+        </div>
+        
+        <div class="tipbtn">
+        <input name="" type="button"  class="sure" value="确定" />&nbsp;
+        <input name="" type="button"  class="cancel" value="取消" />
+        </div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+    
+    <script type="text/javascript">
+	$('.tablelist tbody tr:odd').addClass('odd');
+	</script>
+
+<div style="display:none"></div>
+</body>
+</html>

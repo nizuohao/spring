@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>反馈信息修改</title>
+<link href="__ROOT__/Public/admin/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__ROOT__/Public/admin/js/jquery.js"></script>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data">
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    	<li><a href="__ROOT__/admin.php">首页</a></li>
+	    <li><a href="#">反馈信息</a></li>
+	    <li><a href="#">修改</a></li>
+    </ul>
+    </div>
+    <div class="formbody">
+    <div class="formtitle"><span>基本信息</span></div>
+    <ul class="forminfo">
+	    <li><label>姓名：</label><input 	readonly="readonly" name="re_name" 	type="text" 	class="dfinput" value="{$role.s_name}" /></li>
+	     
+	    <li><label>就业城市：</label><input 	name="r_city" 	type="text" 	class="dfinput" value="{$role.r_city}" /></li>
+	   
+	    <li><label>就业公司：</label><input 	name="r_company" 	type="text" 	class="dfinput" value="{$role.r_company}" /></li>
+	    <li><label>公司网址：</label><input 	name="r_url" 	type="text" 	class="dfinput" value="{$role.r_url}" /></li>
+	    <li><label>工作职位：</label><input 	name="r_job" 	type="text" 	class="dfinput" value="{$role.r_job}" /></li>
+	    <li><label>主营项目：</label><input 	name="r_bus" 	type="text" 	class="dfinput" value="{$role.r_bus}" /></li>
+	    <li><label>应用技术：</label><input 	name="r_tec" 	type="text" 	class="dfinput" value="{$role.r_tec}" /></li>
+	   <li><label>待遇：</label><input 	name="r_dy" 	type="text" 	class="dfinput" value="{$role.r_dy}" /></li>
+	   <li><label>转正工资：</label><input 	name="r_pay" 	type="text" 	class="dfinput" value="{$role.r_pay}" /></li>
+	   <li><label>实习工资：</label><input 	name="r_spay" 	type="text" 	class="dfinput" value="{$role.r_spay}" /></li>
+	   <li><label>就业时间：</label><input 	name="r_stime" 	type="text" 	class="dfinput" value="{$role.r_stime}" /></li>
+	   <li><label>离职时间：</label><input 	name="r_etime" 	type="text" 	class="dfinput" value="{$role.r_etime}" /></li>
+	   <if condition=" $role.r_photo neq ''">
+	    <li><label>反馈照片：</label><img src="__PUBLIC__/Uploads/ret/{$role.r_photo}" width="100px" height="100px"></li>
+	    </if>
+	    <li><label>&nbsp;</label>
+	    	<input name="r_id" type="hidden" value="{$role.r_id}"/>
+	    	<input name="sub" type="submit" class="btn" value="确认修改"/>
+	    </li>
+    </ul>
+    </div>
+</form>
+<script type="text/javascript">
+$("#tar").css({height:"100px"});
+</script>
+</body>
+</html>

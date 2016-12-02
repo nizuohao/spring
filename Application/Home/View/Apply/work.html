@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的简历 - 个人会员中心 </title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<meta name="author" content="" />
+<meta name="copyright" content="__MODULE__" />
+<link href="__PUBLIC__/home/templates/default/css/user.css"
+	rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/home/data/js/laydate.js"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.js"
+	type='text/javascript' language="javascript"></script> <script
+	src="__PUBLIC__/home/templates/default/js/jquery.idTabs.min.js"
+	type='text/javascript' language="javascript"></script> <script
+	src="__PUBLIC__/home/templates/default/js/jquery.validate.min.js"
+	type='text/javascript' language="javascript"></script> <script
+	src="__PUBLIC__/home/templates/default/js/jquery.user.selectlayer.js"
+	type='text/javascript' language="javascript"></script> <script
+	type="text/javascript">
+!function(){
+	laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+	
+}();
+</script>
+</head>
+<body>
+<link href="__PUBLIC__/home/templates/default/css/style.css"
+	rel="stylesheet" type="text/css"><include file="Common:head" />
+<div class="page_location link_bk">当前位置：<a href="__MODULE__">首页</a>&nbsp;>>&nbsp;<a
+	href="__MODULE__/Student/centre">会员中心</a>&nbsp;>>&nbsp;创建简历&nbsp;>>&nbsp;第二步 -
+工作经历</div>
+<table width="985" border="0" align="center" cellpadding="0"
+	cellspacing="0" style="margin-top: 8px;">
+	<tr>
+		<td width="173" valign="top" class="link_bk"><script
+			src="__PUBLIC__/home/templates/default/js/jquery.dialog.js"
+			type='text/javascript'></script>
+			<!-- 左侧栏目 --> <include
+			file="Common:left" /> <!-- end --></td>
+		<td valign="top">
+		<div class="user_right_box">
+		<div class="user_right_top_tit_bg">
+		<h1>我的简历</h1>
+		</div>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="22" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="4">
+					<tr>
+						<td height="50" bgcolor="#F5FAFC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							style="font-size: 14px; color: #0033CC">第二步 - 工作经历</span> <span
+							style="color: #666666">(带<strong style="color: #FF0000">*</strong>的为必填)</span>
+
+						</td>
+					</tr>
+				</table>
+				<table width="100%" border="0" cellspacing="1" cellpadding="5"
+					class="link_lan">
+					<tr>
+						<td height="23" align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">起止年月</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">企业名称</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">企业介绍</td>
+						<td align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">职务名称</td>
+						<td width="120" align="center" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed;">编辑</td>
+					</tr>
+					<volist name="arr" id="vo">
+					<tr>
+						<td height="23" align="center">{$vo.c_stime}至{$vo.c_endtime}</td>
+						<td align="center">{$vo.c_coname}</td>
+						<td align="center">{$vo.c_intro}</td>
+						<td align="center">{$vo.c_job}</td>
+						<td align="center"><a href="__URL__/work/c_id/{$vo.c_id}/re_id/{$vo.re_id}">修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a
+							href="__URL__/delwork/c_id/{$vo.c_id}/re_id/{$vo.re_id}"
+							onClick="return confirm('您确定删除吗?')">删除</a></td>
+					</tr>
+					</volist>
+				</table>
+				<table width="100%" border="0" cellspacing="0" cellpadding="4"
+					style="margin-bottom: 150px; line-height: 180%;">
+					<form id="Form1" name="Form1" method="post" action="">
+					<tr>
+						<if condition="$list.c_id eq ''">
+						<td height="23" colspan="2" valign="top" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed; color: #003399; padding-left: 35px;">添加工作经历
+						<span style="color: #FF0000">(无工作经验者请跳过这一步 ) </span></td>
+						<else />
+						<td height="23" colspan="2" valign="top" bgcolor="#E0F0F5"
+							style="border-bottom: 1px #CCCCCC dashed; color: #003399; border-top: 1px #CCCCCC dashed; color: #003399; padding-left: 35px;">修改工作经历
+						
+						</if>
+					</tr>
+					<tr height="30px">
+						<input type="hidden" name="c_id" value="{$list.c_id}" />
+					</tr>
+					<tr>
+						<td width="242" height="23" align="right" valign="top"><strong
+							style="color: #FF0000">*</strong>开始日期：</td>
+						<td>
+						<div><input name="c_stime" type="text"
+							class="input_text_200 date_input" id="start"
+							value="{$list.c_stime}"
+							onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" /> <span
+							style="color: #666666">(如：2003年8月)</span></div>
+						</td>
+					</tr>
+					<tr>
+						<td width="242" height="23" align="right" valign="top"><strong
+							style="color: #FF0000">*</strong>结束日期：</td>
+						<td>
+						<div><input name="c_endtime" type="text"
+							class="input_text_200 date_input" id="endtime"
+							value="{$list.c_endtime}"
+							onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" /> <span
+							style="color: #666666">(如：2006年5月)</span></div>
+						</td>
+					</tr>
+					<tr>
+						<td width="242" height="23" align="right" valign="top"><strong
+							style="color: #FF0000">*</strong>企业名称：</td>
+						<td width="836"><input name="c_coname" type="text"
+							class="input_text_200" id="companyname" value="{$list.c_coname}" /></td>
+					</tr>
+					<tr>
+						<td width="242" height="23" align="right" valign="top"><strong
+							style="color: #FF0000">*</strong>职务名称：</td>
+						<td><input name="c_job" type="text" class="input_text_200"
+							id="jobs" value="{$list.c_job}" /></td>
+					</tr>
+					<tr>
+						<td width="242" height="23" align="right" valign="top">企业介绍：</td>
+						<td><textarea name="c_intro" id="companyprofile"
+							style="width: 350px; height: 90px; line-height: 160%; font-size: 12px">{$list.c_intro}</textarea>
+						<br />
+						请简要说明公司性质、规模、业务、发展历程等</td>
+					</tr>
+					
+					<tr>
+						<td height="60" align="center"><input name="pid"
+							type="hidden" id="pid" value="184973" /></td>
+						<td height="60"><input type="submit" name="submit"
+							value="保存" class="user_submit" /> &nbsp; <input type="button"
+							name="next" value="跳到下一步" class="user_submit"
+							onclick="window.location='__URL__/show/re_id/{$re_id}'" /> &nbsp; <input
+							type="button" name="next" value="返回上一步" class="user_submit"
+							onclick="Javascript:window.history.go(-1)" /> <br />
+						</td>
+					</tr>
+					</form>
+				</table>
+				</td>
+				<td width="150" valign="top" class="resume_right_box"><script
+					type="text/javascript"
+					src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js"></script>
+				<table width="142" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="35" align="center" style="color: #006600">简历完成状态</td>
+					</tr>
+				</table>
+				<table width="130" border="0" cellpadding="0" cellspacing="5"
+					align="center">
+					<tr>
+						<td height="25" align="center"
+							background="__PUBLIC__/home/templates/default/images/46.gif"
+							class="user_right_box">
+						<table width="100" border="0" cellpadding="0" cellspacing="3"
+							style="cursor: help" class="vtip"
+							title="简历完整指数为：<span style=color:#FF0000><strong>60</strong> %</span><br />完整指数小于<strong>60%</strong>的为无效简历。<br />简历完整指数越高，排名越靠前">
+							<tr>
+								<td width="70" align="left">
+								<div
+									style="border: 1px #006600 solid; width: 70px; height: 8px;">
+								<div style="width: 60%; background-color: #99CC00; height: 8px;">
+								</div>
+								</div>
+								</td>
+								<td style="color: #009900; font-size: 12px;">33%</td>
+							</tr>
+						</table>
+
+						</td>
+					</tr>
+				</table>
+				<table width="130" border="0" align="center" cellpadding="0"
+					cellspacing="5" class="link_bk" style="margin-bottom: 10px;">
+					<tr>
+						<td height="28" align="center"
+							background="__PUBLIC__/home/templates/default/images/46.gif"
+							class="user_right_box"><a href="?act=resume_show&pid=184973"
+							style="color: #006600">显示简历所有内容</a></td>
+					</tr>
+				</table>
+				<table width="142" border="0" cellspacing="0" cellpadding="0"
+					class="link_bk">
+					<tr>
+						<td height="32" align="center"><img
+							src="__PUBLIC__/home/templates/default/images/49.png"
+							align="absmiddle" /> &nbsp;&nbsp;<a href="__URL__/addResume/re_id/{$re_id}">求职意向</a>
+						</td>
+					</tr>
+					<tr>
+						<td height="32" align="center"  class="resume_right_on"><img
+							src="__PUBLIC__/home/templates/default/images/50.png"
+							align="absmiddle" />&nbsp;&nbsp;<a href="__URL__/work/re_id/{$re_id}">工作经历</a></td>
+					</tr>
+					<tr>
+						<td height="32" align="center"><img
+							src="__PUBLIC__/home/templates/default/images/50.png"
+							align="absmiddle" /> &nbsp;&nbsp;<a href="__URL__/show/re_id/{$re_id}">作品展示</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</div>
+		</td>
+	</tr>
+</table>
+<include file="Common:foot" />
+</body>
+</html>

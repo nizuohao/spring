@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__PUBLIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/admin/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/select-ui.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/editor/kindeditor.js"></script><script type="text/javascript" src="__ROOT__/Public/admin/js/jquery.js"></script>
+<script type="text/javascript">
+ KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+$(document).ready(function(){
+ 
+$(".select1").uedSelect({
+        width : 345           
+    });
+    $(".select2").uedSelect({
+        width : 167  
+    });
+    $(".select3").uedSelect({
+        width : 100
+    });
+    $("#checked").toggle(function(){
+    if($("#checked :checked")){
+        $("input[name='co_id[]']").attr("checked","checked");
+    }
+        },function(){
+    if($("#checked :not(:checked)")){
+        $("input[name='co_id[]']").removeAttr("checked","checked");
+    }
+        });
+  
+  function getclass(){
+
+      var c=$("#grade").val();
+     $.get('__ROOT__/admin.php/Common/getclass',{cid:c},function(data){
+       $("#class").html(data);
+     });
+
+   };
+    a='';
+    $("#update").click(function(){
+      if(a){
+          $('#update').attr('href','__ROOT__/admin.php/Info/city_add?g_id='+a);
+          return true;
+      }else{
+          alert('请选择需要修改的信息');
+          return false;
+      }
+    });
+    $("#delete").click(function(){
+      if(a){
+          if(confirm('确定删除么？')){
+          $('#delete').attr('href',"__ROOT__/admin.php/Public/delete?table=City&id="+a+"&url=Info/city");
+          return true;
+          }else{ return false;}
+      }else{
+          alert('请选择需要删除的信息');
+          return false;
+      }
+    });
+    $(".click2").click(function(){
+    a = $(this).children('.poid').val();
+        $(this).addClass('ccc').siblings('tr').removeClass('ccc');
+  });
+    $('.imgtable tbody tr:odd').addClass('odd');
+    $(".huifu_hid").hide();
+    $(".huifu").toggle(function(){
+        $(this).next(".huifu_hid").show(0);
+        $(this).next(".huifu_hid").next(".huifu_hid").show(0);
+    },function(){
+        $(this).next(".huifu_hid").hide(0);
+        $(this).next(".huifu_hid").next(".huifu_hid").hide(0);
+    })
+});
+function checkYes(id,xh){	$.get("__MODULE__/StuInfo/checkYes",{id:id},	function(data)	{		if(data == 1)	       {	    	   $(".sh").eq(xh-1).replaceWith("<span class='sh'>已通过</span>");		   }			}	)	return false;}function checkNo(id,xh){	$.get("__MODULE__/StuInfo/checkNo",{id:id},	function(data)	{		if(data == 1)	       {	    	   $(".sh").eq(xh-1).replaceWith("<span class='sh'>不通过</span>");		   }			}	)	return false;}
+</script>
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">学生发布信息</a></li>
+    </ul>
+    </div>
+    
+    <div class="rightinfo">
+    
+    <div class="tools">
+    	
+    	<ul class="seachform">
+    <form action="__MODULE__/StuInfo/stuInfoSel" method="post">      
+    
+     <li ><label>标题</label><input name="si_title" type="text" class="scinput" /></li>
+      <li ><label>内容</label><input name="si_content" type="text" class="scinput"/></li>
+    <li><label>年级</label>  
+    <div class="vocation">
+     <select name="g_id" id="grade" class="select3" onchange="getclass()">
+              <option value="">请选择</option>
+            <volist name="s" id="vo">
+              <option value="{$vo.g_id}">{$vo.g_name}</option>
+            </volist>
+     </select>
+    </div>
+    </li>
+    <li><label>审核</label>  
+    <div class="vocation">
+    <select class="select3" name="si_state">
+     <option value="">请选择</option>
+     <option value="0" >未审核</option>
+     <option value="1">已通过</option>
+     <option value="2" >不通过</option>
+    </select>
+    </div>
+    </li>
+    <li><label>&nbsp;</label><input name="sub" type="submit" class="scbtn" value="查询"/></li>
+    
+</form>
+    
+        </ul>
+
+    </div>
+    
+    
+    <table class="tablelist">
+    	<thead>
+    	<tr>
+        <th>编号<i class="sort"><img src="__PUBLIC__/admin/images/px.gif" /></i></th>
+        <th>标题</th>
+        <th>内容</th>
+        <th>发布者</th>
+        <th>审核状态</th>
+        <th>查看</th>
+        <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist id="si" name="list">
+            <tr class="click2" style="border-bottom:1px solid #ccc; border-top:1px solid #ccc;">
+                <input type="hidden"  value="{$si.si_id}" class="poid" />
+            <td>{$key+1}</td>
+            <td><a href="">{$si.si_title}</a><p>发布时间：{$si.si_time|date="Y-m-d h:i:s",###}</p></td>
+            <td>{$si.si_content}</td>
+            <td>{$si.s_name}</td>
+            <td><if condition="$si.si_state eq 0">	    <span class='sh'>未通过</span>	    <elseif condition="$si.si_state eq 1" />	    <span class='sh'>已通过</span>	    <else />	    <span class="sh">		    <a href="" onclick="return checkYes({$si.si_id},{$key-1});">通过</a> /		    <a href="" onclick= "return checkNo({$si.si_id},{$key-1})">不通过</a>	    </span>	    </if></td>
+            <td><a href="__MODULE__/StuInfo/stuInfoSle?id={$si.si_id}">查看评论</a></td>
+            <td><a href="__MODULE__/StuInfo/stuInfoDel?id={$si.si_id}" onClick="return confirm('您确定删除吗?')">删除</a></td>
+            </tr>
+        
+        </volist>
+        </tbody>
+    </table>
+    	<div class="page-next">{$page}</div><div class="clear"></div></div></div>
+        
+    
+    
+    
+    </div>
+</div>

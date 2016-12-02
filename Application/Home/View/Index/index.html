@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>学生就业服务_软件工程系</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/templates/default/css/style.css" />
+<script type="text/javascript" src="__PUBLIC__/home/templates/default/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="__PUBLIC__/home/templates/default/js/index.js"></script>
+<script type="text/javascript">
+	document.createElement("header");
+	document.createElement("section");
+	document.createElement("footer");
+	document.createElement("time");
+</script>
+<style type="text/css">
+.vip{font-size: 18px;padding: 10px 30px;font-weight: 300;}
+.xin{text-align:center;display: block;float:left;width:100px;line-height:40px;background-color: #10646F;margin-right:30px;color: white;margin-top:10px;}
+</style>
+</head>
+<body>
+<header>
+	<div id="top">
+    	<h1 class="logo"><a href="#"><img src="__PUBLIC__/home/data/images/logo.png" width="193" height="45" /></a></h1>
+        <nav class="list">
+        	<a href="__ROOT__/index.php" class="selected">首页</a>
+            <a href="__MODULE__/News/info_select">就业快讯</a>
+            <a href="__MODULE__/Return/huizhi">入职信息</a>
+            <a href="__MODULE__/Return/serve">就业跟踪</a>
+          <a href="__MODULE__/Shuoshuo/index_select">我要说说</a>
+        </nav>
+        <form action="#" method="post" id="search">
+        	<input type="search" class="sear" placeholder="搜索…" />
+            <input type="submit" class="sub" value="" />
+        </form>
+    </div><!--/top-->
+</header>
+<div id="notice">
+	<marquee scrollamount="3" scrolldelay="20" direction="left" width="1000" height="30" class="public"
+    onMouseOver="stop()" onMouseOut="start()"><volist name="info5" id="info5"><a href="__MODULE__/News/info/id/{$info5.i_id}">标题：{$info5.i_title}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</volist></marquee>
+</div><!--/notice-->
+<div id="box">
+    <div id="banner">
+         <volist name="info" id="vo">
+            <dl class="ban"><dt><a href="__MODULE__/News/info/id/{$vo.i_id}"><img src="__PUBLIC__/Uploads/Info/{$vo.i_photo}" width="738" height="247" /></a></dt>
+                <dd><a href="__MODULE__/News/info/id/{$vo.i_id}">{$vo.i_title}</a></dd>
+            </dl>
+        </volist>
+        <p></p>
+    </div><!--/banner-->
+
+    <div id="login">
+    <if condition="$session neq ''">
+  <div style="border-bottom:1px #C4DBE9 solid;height:120px;background-color:#F4F7F9;">
+		<div style="" class="vip">会员信息</div>
+		<div class="">
+			<a class="xin" style="margin-left:30px;" <if condition="session('s_id') eq ''"> href="__MODULE__/Vip/comvip" <else /> href="__MODULE__/Student/centre" </if>>会员中心</a>
+			<a href="__MODULE__/Vip/protect" class="xin" >密码保护</a>
+	   </div>
+   </div>
+<div class="user-info shadow">
+  <ul>																<!-- 更改过 -->
+    <li class="col-b" style="font-size:13px;margin-top:15px;margin-left:20px;">欢迎你：<a <if condition="session('s_id') eq ''"> href="__MODULE__/Vip/comvip" <else /> href="__MODULE__/Student/centre" </if> style="color:#057BD4;">{$name}</a>&nbsp;|&nbsp;<if condition="session('s_id') eq ''"> <a href="__MODULE__/Company/jobs" style="color:#333;">管理职位</a> <else /> <a href="__MODULE__/Apply/resume" style="color:#333;">管理简历</a> </if>&nbsp;|&nbsp;<a href="__MODULE__/Index/tc" style="color:#333;">退出登录</a></li>
+    <li class="sli1" style="margin-top:15px;margin-left:20px;color:#666;font-size:13px;"><span>会员类型：</span><if condition="session('s_id') eq ''"> <span>企业会员</span> <else /> <span>个人会员</span> </if>
+    <li style="margin-top:15px;margin-left:20px;color:#666;font-size:13px;">登录时间：<?php echo session("time");?></li>
+  </ul>
+</div>
+
+<else />
+    	<p class="tit"><span>个人登录</span><span class="currs">企业登录</span></p>
+        <form action="__MODULE__/Index/login" method="post" class="log">
+			<input type="hidden" name="hide" value="1" >
+        	<p class="case"><label>用户名：</label><input type="text" class="name" name="username"/></p>
+            <p class="case"><label>密&nbsp;码：</label><input type="password" class="pwd" name="userpwd"/></p>
+            <div id="logins"><p><input type="submit" value="登录"  name="submit" class="subm" /><input type="reset" value="重置" class="reset" /></p>
+        	<p class="secret"><a href="__MODULE__/Reg/info">忘记密码？</a></p></div>
+        </form>
+        <form action="__MODULE__/Index/login" method="post" class="log">
+			<input type="hidden" name="hide" value="2" >
+        	<p class="case"><label>用户名：</label><input type="text" class="name" name="username" /></p>
+            <p class="case"><label>密&nbsp;码：</label><input type="password" class="pwd" name="userpwd"/></p>
+            <div id="logins"><p><input type="submit" value="登录" class="subm" name="submit" /><input type="reset" value="重置" class="reset" /></p>
+        	<p class="secret"><a href="__MODULE__/Reg/info">忘记密码？</a></p></div>
+        </form>
+        <p class="accoun">没有账号？点此进行<a href="__MODULE__/Reg/stu_reg"> 个人注册 </a>或<a href="__MODULE__/Reg/com_reg"> 企业注册 </a></p>
+    
+  </if>
+    </div><!--/login-->
+    <section id="news">
+    	<h1 class="title">
+        	<span>就业快讯</span><a href="__MODULE__/News/info_select">更多>></a>
+        </h1>
+        <div class="press">
+        	<p class="tab"><span>部门快讯</span><span>毕业生快讯</span><span>行业快讯</span></p>
+            <ul class="admin">
+            	<volist name="info2" id="info2">
+                   <li><a href="__MODULE__/News/info/id/{$info2.i_id}"><span>{$info2.i_title}</span><time>{$info2.i_time|date="Y-m-d",###}</time></a></li>
+                </volist>
+            </ul><!--/admin-->
+            <ul class="admin">
+            	<volist name="info3" id="info3">
+                   <li><a href="__MODULE__/News/info/id/{$info3.i_id}"><span>{$info3.i_title}</span><time>{$info3.i_time|date="Y-m-d",###}</time></a></li>
+                </volist>
+            </ul><!--/admin-->
+            <ul class="admin">
+            	<volist name="info4" id="info4">
+                   <li><a href="__MODULE__/News/info/id/{$info4.i_id}"><span>{$info4.i_title}</span><time>{$info4.i_time|date="Y-m-d",###}</time></a></li>
+                </volist>
+            </ul><!--/admin-->
+        </div><!--/press-->
+    </section><!--/news-->
+    <section id="job">
+    	<h1 class="title">
+        	<span>企业招聘</span><a href="__MODULE__/Job/job_list">更多>></a>
+        </h1>
+        <ul class="bring">
+        <volist name="joblist" id="vo" >
+        	<li>·<a href="__MODULE__/Company/company/c_id/{$vo.c_id}"><?php   $s=mb_substr($vo["c_name"],0,15)."..."; echo $s; ?></a><volist name="vo.job" id="job" offset="0" length="2"><a href="__MODULE__/Company/jobshow/re_id/{$job.re_id}">{$job.re_job}</a>|</volist></li>
+        </volist>
+        </ul><!--/bring-->
+    </section><!--/job-->
+    <section class="company">
+    	<h1 class="caption">
+        	<span>推荐企业专区</span><a href="__MODULE__/Job/job_jian">更多>></a>
+        </h1>
+        <volist name="jian" id="vo">
+        <dl class="firm">
+          	<dt><a href="__MODULE__/Company/company/c_id/{$vo.c_id}"><?php   $s=mb_substr($vo["c_name"],0,48)."..."; echo $s; ?></a> <img src="__PUBLIC__/home/templates/default/images/ico4.png" width="13" height="13" /></dt>
+          	<dd><span>聘</span><volist name="vo.job" id="job" offset="0" length="2"> <a href="__MODULE__/Company/jobshow/re_id/{$job.re_id}">{$job.re_job}</a>-<a  href="__MODULE__/Company/jobshow/re_id/{$job.re_id}" class="money">{$job.re_money}</a></span></a>|</volist></dd>
+        </dl>
+        </volist>
+    </section><!--/company-->
+    <section class="company">
+    	<h1 class="captions">
+        	<span>合作单位</span><a href="__URL__/hezuo">更多>></a>
+        </h1>
+         <volist name="hezuo" id="hz">
+            <dl class="join">
+                <dt><a href="{$hz.hz_url}" target="_blank"><img src="__PUBLIC__/Uploads/Hezuo/{$hz.hz_logo}" width="147" height="40" /></a></dt>
+                <dd><a href="{$hz.hz_url}" target="_blank">{$hz.hz_name}</a></dd>
+            </dl>
+        </volist>
+    </section><!--/company-->
+</div><!--/box--> 
+<include file="Common:foot" />
+</body>
+</html>

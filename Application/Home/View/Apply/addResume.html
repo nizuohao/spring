@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的简历 - 个人会员中心</title>
+
+<script src="__PUBLIC__/home/templates/default/js/jquery.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.idTabs.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.validate.min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.user.selectlayer.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js" type='text/javascript' language="javascript"></script>
+<script src="__PUBLIC__/home/data/cache_classify.js" type="text/javascript" charset="utf-8"></script>
+<link href="__ROOT__/Public/home/templates/default/css/user.css"
+	rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css"
+	href="__ROOT__/Public/home/templates/default/css/style.css" />
+<link rel="stylesheet" type="text/css"
+	href="__ROOT__/Public/home/data/css/style.css" />
+<script type="text/javascript"
+	src="__ROOT__/Public/home/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/home/js/index.js"></script>
+<!-- 头部文件 -->
+<include file="Common:head" />
+<!-- end -->
+<div class="page_location link_bk">当前位置：<a href="__MODULE__">首页</a>&nbsp;>>&nbsp;<a
+	href="__MODULE__/Student/centre">用户中心</a>&nbsp;>>&nbsp;创建简历&nbsp;>>&nbsp;第一步
+- 基本信息</div>
+<table width="1000" border="0" align="center" cellpadding="0"
+	cellspacing="0" style="margin-top: 8px;">
+	<tr>
+		<td width="173" valign="top" class="link_bk"><script
+			src="__PUBLIC__/home/templates/default/js/jquery.dialog.js"
+			type='text/javascript'></script> <!-- 左侧栏目 --> <include
+			file="Common:left" /> <!-- end --></td>
+		<td valign="top">
+		<div class="user_right_box">
+		<div class="user_right_top_tit_bg">
+		<h1>我的简历</h1>
+		</div>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td height="22" valign="top">
+				<table width="100%" border="0" cellspacing="0" cellpadding="4">
+					<tr>
+						<td height="50" bgcolor="#F5FAFC">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+							style="font-size: 14px; color: #0033CC">第一步 - 基本信息</span> <span
+							style="color: #666666">(带<strong style="color: #FF0000">*</strong>的为必填)</span>
+
+						</td>
+					</tr>
+				</table>
+				<form action="" method="post">
+				<table width="100%" border="0" cellpadding="4" cellspacing="0"
+					style="margin-top: 8px;">
+					<input type="hidden" value="{$value['re_id']}" name="id" />
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span> 简历名称：</td>
+						<td><input name="re_name" type="text" class="input_text_200"
+							value="{$value['re_name']}" style="width: 295px;" /></td>
+					</tr>
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span> 期望职位：</td>
+						<td><input name="re_job" type="text" class="input_text_200"
+							value="{$value['re_job']}" style="width: 295px;" /></td>
+					</tr>
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span> 期望薪资：</td>
+						<td><input name="re_money" type="text" class="input_text_200"
+							value="{$value['re_money']}" style="width: 295px;" /></td>
+					</tr>
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span> 期望城市：</td>
+						<td>
+						<select name="re_city"style="width:100px;height:24px;">
+		                    <option value="">请选择</option> 
+		                    <volist name="city" id="vo">
+		                    <option value="{$vo.ci_name}" <if condition="$arr.r_city eq $vo.ci_name ">selected=selected</if>>{$vo.ci_name}</option>  
+		                    </volist>
+		                  </select>
+                  </td>
+					</tr>
+					
+					
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span> 工作经验：</td>
+						<td><input name="re_scale" type="text" class="input_text_200"
+							value="{$value['re_scale']}" style="width: 90px;" /><span>年</span></td>
+					</tr>
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span>技术关键词：</td>
+						<td>
+						<if condition="$key_word eq ''"> 
+							&nbsp;<input type="text" name="keyword[]" class="input_text_200 keyword"
+								style="width: 60px">
+						<else /> 
+						<foreach name="key_word" item="vo">
+							&nbsp;<input type="text" name="keyword[]" class="input_text_200 keyword"
+							style="width: 60px" value="{$vo}">
+						</foreach>
+						</if>
+						<a href="" onclick="return add()"><img
+							src="__PUBLIC__/home/templates/default/images/06.gif"
+							title="点击添加下一个关键词" /></a></td>
+					</tr>
+					<script type="text/javascript">
+						function add()
+						{
+							if(!$(":input[name='keyword[]']").last().val())
+							{
+								alert("请填写最后一个关键词后再操作！");
+								return false;
+							}
+							if($(":input[name='keyword[]']").length>4)
+							{
+								alert("您最多可以添加5个关键词");
+								return false;
+							}
+							$(":input[name='keyword[]']").last().after("&nbsp;<input type=\"text\" name=\"keyword[]\" class=\"input_text_200 keyword\" style=\"width: 60px\">");
+							return false;
+						}
+					</script>
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span> 手机号：</td>
+						<td><input name="re_tel" type="text" class="input_text_200"
+							value="{$value['re_tel']}" style="width: 295px;" /></td>
+					</tr>
+					<tr>
+						<td width="100" height="30" align="right"><span
+							style="color: #FF3300; font-weight: bold">*</span> 自我介绍：</td>
+						<td><textarea name="re_text" rows="10" cols="40">{$value['re_text']}</textarea></td>
+					</tr>
+				</table>
+				<div style="position: relative;">
+				<table width="100%" border="0" cellpadding="20" cellspacing="0"
+					class="link_lan" bgcolor="F9F9F9">
+					<tr>
+						<td align="center"><!--套餐模式 --> <input name="add_mode"
+							type="hidden"  name="id" value="{$value['re_tel']}" />
+						<table width="100%" border="0" cellspacing="6" cellpadding="5">
+							<tr>
+								<td width="150" align="right"><input name="sub"
+									class="user_submit" type="submit" value="下一步" /><!--&nbsp;&nbsp;&nbsp;<input
+									name="button" type="button" value="下一步"  class="user_submit"
+									onclick="Javascript:window.location.assign('__URL__/work')" />--></td>
+								<td width="150" align="left"><a style="color: #0066CC"
+									href="Javascript:window.history.go(-1)">[返回上一页]</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+				</table>
+				</div>
+				</form>
+				</td>
+				<td width="150" valign="top" class="resume_right_box"><script
+					type="text/javascript"
+					src="__PUBLIC__/home/templates/default/js/jquery.vtip-min.js"></script>
+				<table width="142" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td height="35" align="center" style="color: #006600">简历完成状态</td>
+					</tr>
+				</table>
+				<table width="130" border="0" cellpadding="0" cellspacing="5"
+					align="center">
+					<tr>
+						<td height="25" align="center"
+							background="__PUBLIC__/home/templates/default/images/46.gif"
+							class="user_right_box">
+						<table width="100" border="0" cellpadding="0" cellspacing="3"
+							style="cursor: help" class="vtip"
+							title="简历完整指数为：<span style=color:#FF0000><strong>60</strong> %</span><br />完整指数小于<strong>60%</strong>的为无效简历。<br />简历完整指数越高，排名越靠前">
+							<tr>
+								<td width="70" align="left">
+								<div
+									style="border: 1px #006600 solid; width: 70px; height: 8px;">
+								<div style="width: 10%; background-color: #FF0A00; height: 8px;">
+								</div>
+								</div>
+								</td>
+								<td style="color: #009900; font-size: 12px;">0%</td>
+							</tr>
+						</table>
+
+						</td>
+					</tr>
+				</table>
+				<table width="130" border="0" align="center" cellpadding="0"
+					cellspacing="5" class="link_bk" style="margin-bottom: 10px;">
+					<tr>
+						<td height="28" align="center"
+							background="__PUBLIC__/home/templates/default/images/46.gif"
+							class="user_right_box"><a href="?act=resume_show&pid=184973"
+							style="color: #006600">显示简历所有内容</a></td>
+					</tr>
+				</table>
+				<table width="142" border="0" cellspacing="0" cellpadding="0"
+					class="link_bk">
+					<tr>
+						<td height="32" align="center" class="resume_right_on"><img
+							src="__PUBLIC__/home/templates/default/images/50.png"
+							align="absmiddle" /> &nbsp;&nbsp;<a href="__URL__/addResume/re_id/{$value['re_id']}">求职意向</a>
+						</td>
+					</tr>
+					<tr>
+						<td height="32" align="center"><img
+							src="__PUBLIC__/home/templates/default/images/50.png"
+							align="absmiddle" />&nbsp;&nbsp;<a href="__URL__/work/re_id/{$value['re_id']}">工作经历</a></td>
+					</tr>
+
+					<tr>
+						<td height="32" align="center"><img
+							src="__PUBLIC__/home/templates/default/images/50.png"
+							align="absmiddle" /> &nbsp;&nbsp;<a href="__URL__/show/re_id/{$value['re_id']}">作品展示</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</div>
+		</td>
+	</tr>
+</table>
+<include file="Common:foot" />
+</body>
+</html>

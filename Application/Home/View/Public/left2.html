@@ -1,0 +1,101 @@
+<div class="left_menu_home"><a href="__MODULE__/Student/centre"
+	style="color: #990000">中心首页</a> <a href="__MODULE__/Student/read"
+	style="color: #990000">个人信息</a></div>
+<div id="previewbox" style="display: none">
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+	<tr>
+		<td bgcolor="#F3F7FC"><strong>简历名称</strong></td>
+		<td width="130" align="center" bgcolor="#F3F7FC"><strong>刷新时间</strong></td>
+		<td width="50" bgcolor="#F3F7FC"><strong>点击</strong></td>
+	</tr>
+</table>
+</div>
+<div class="left_menu_box">
+<div class="left_menu_bg">
+<div class="left_menu_tit">求职管理</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Apply/resume">简历管理</a></li>
+	<li><a href="__MODULE__/Apply/addResume">新建简历</a></li>
+	<li><a href="__MODULE__/Apply/apply">投职管理</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+
+<div class="left_menu_box">
+<div class="left_menu_bg">
+<div class="left_menu_tit">就业服务</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Infor/addInfor">就业反馈</a></li>
+	<li><a href="__MODULE__/Infor/infor">反馈管理</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+
+<div class="left_menu_box" id="user" style="border-bottom: 1px;">
+<div class="left_menu_bg">
+<div class="left_menu_tit">账户管理</div>
+<div class="left_menu_img"><img
+	src="__ROOT__/Public/home/templates/default/images/07.gif" border="0" /></div>
+<div class="clear"></div>
+</div>
+<div class="left_menu_btop">
+<ul>
+	<li><a href="__MODULE__/Public/un" target="_self">安全退出</a></li>
+	<div class="clear"></div>
+</ul>
+</div>
+</div>
+</td>
+<script type="text/javascript">
+	$(document)
+			.ready(
+					function() {
+						$('#chk').click(
+								function() {
+									$("#form1 :checkbox").attr('checked',
+											$("#chk").attr('checked'))
+								});
+						$(".left_menu_btop").css("display", "block");
+						$(".left_menu_bg")
+								.click(
+										function() {
+											var tb = $(this).next();
+											var tb_display = tb.css("display");
+											if (tb_display == "block") {
+												tb.css("display", "none");
+												$(this)
+														.find("img")
+														.attr("src",
+																"__ROOT__/Public/home/templates/default/images/06.gif");
+											} else {
+												tb.css("display", "block");
+												$(this)
+														.find("img")
+														.attr("src",
+																"__ROOT__/Public/home/templates/default/images/07.gif");
+											}
+										});
+
+						$("input[type='text'],input[type='password']").focus(
+								function() {
+									$(this).css("border-color",
+											"#0066CC #9DCEFF #9DCEFF #0066CC");
+								});
+						$("input[type='text'],input[type='password']").blur(
+								function() {
+									$(this).css("border-color", "");
+								});
+					});
+</script>

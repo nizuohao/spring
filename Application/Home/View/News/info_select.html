@@ -1,0 +1,74 @@
+
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css">
+<link href="/Home/Tpl/Index/style/bao-list.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/Home/Tpl/Index/style/style2.css" />
+<link rel="stylesheet" type="text/css" href="/Home/Tpl/Index/style/style.css" />
+<script type="text/javascript" src="/Home/Tpl/Index/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="/Home/Tpl/Index/js/index.js"></script>
+<include file="Common:head" />
+<div class="main-wrap">
+        <div class="main">      
+            <div id="pageShow" class="content">
+                <div class="article-single">
+                <nav class="article-nav">
+                    <ul>
+                        <li class="slash"><a href="__MODULE__/Index/index"><i class="icon-home"></i>首页</a></li>
+                        <li class="slash"><a href="__MODULE__/News/info_select">新闻中心</a></li>
+                    </ul>
+                </nav>
+                </div>
+                <div class="article-list">
+                    <div class="dsh-sub-header">
+                    <h2 style=" font-size:26px; padding-top:20px;">
+                        <if condition = "$state eq 1">banner
+                        <elseif condition = "$state eq 2" />部门快讯
+                        <elseif condition = "$state eq 3" />毕业生快讯
+                        <elseif condition = "$state eq 4" />行业快讯 
+                        <elseif condition = "$state eq 5" />公告
+                        <else />所有新闻
+                        </if>
+                    </h2>
+                        </div>
+                    <div class="article-list-content">
+<!------  新闻列表---------->
+<volist name="list1" id="info">
+<article class="article-list-item">
+    <div>
+        <h3 style="">[
+		 <if condition = "$info.i_state eq 1">banner
+                        <elseif condition = "$info.i_state eq 2" />部门快讯
+                        <elseif condition = "$info.i_state eq 3" />毕业生快讯
+                        <elseif condition = "$info.i_state eq 4" />行业快讯 
+                        <else />公告
+                        </if>
+		]&nbsp;<a href="__MODULE__/News/info/id/{$info.i_id}" target="_blank">{$info.i_title}</a></h3>
+        <span>{$info.i_time|date="Y-m-d H:i:s",###}</span>
+        <p> <?php  $con=$info["i_content"]; echo substr($con,0,120);?>……</p>
+        <a href="__MODULE__/News/info/id/{$info.i_id}" class="view-more" target="_blank"> 查看详细 <i class="icon-angle-right"></i></a>
+    </div>
+</article>
+</volist>
+<!-- the end 新闻列表-->
+<nav class="page-nav">{$page}</nav>
+                    </div>
+                </div>
+            </div>
+<div class="sidebar">
+    <div class="other-special">
+        <h2 style=" font-size:26px; padding-top:20px; padding-bottom:10px">专题列表</h2>
+               <div class="other-special-item">
+               <h4>新闻频道</h4>
+               <ul id="info-board0" style="height: 218px; padding-top: 0px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+			   		<li><a href="__MODULE__/News/info_select" <if condition = "$state eq ''"> style="color:#f00"</if> >所有新闻</a></li>
+			   		<li><a href="__MODULE__/News/info_select/i_banner/2" <if condition = '$state eq 1'> style="color:#f00"</if> >banner</a></li>
+                    <li><a href="__MODULE__/News/info_select/i_state/2" <if condition = '$state eq 2'> style="color:#f00"</if>>部门快讯</a></li>
+                    <li><a href="__MODULE__/News/info_select/i_state/3" <if condition = '$state eq 3'> style="color:#f00"</if>>毕业生快讯</a></li>
+                    <li><a href="__MODULE__/News/info_select/i_state/4" <if condition = '$state eq 4'> style="color:#f00"</if>>行业快讯</a></li>
+                    <li><a href="__MODULE__/News/info_select/i_state/5" <if condition = '$state eq 5'> style="color:#f00"</if>>公告</a></li>
+</ul>
+			   </div>  
+    </div>
+</div>
+        </div>
+    </div>
+	<include file="Common:foot" />

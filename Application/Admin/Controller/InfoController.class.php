@@ -1,0 +1,360 @@
+<?php
+namespace Admin\Controller;
+use Think\Controller;
+class InfoController extends Controller 
+{
+	public function info()
+	{
+		$data=M('info');
+		$count=$data->count();
+		$Page       = new \Think\Page($count,5);
+		$show       = $Page->show();
+		$list=$data->limit($Page->firstRow.','.$Page->listRows)->select();
+		$this->assign('page',$show);
+		$this->assign('list',$list);
+		$this->display();
+	}
+
+	public function infoDel()
+	{
+		if(@$_GET['i_id'])
+		{
+		   $del=M(info);
+		   $id=$_GET['i_id'];
+		   $data=$del->delete($id);
+		   if($data)
+	     	{
+		     	 $this->success("删除成功",U('Info/info'),2);
+			}
+			else
+			{
+			   $this->error("删除失败",U('Info/info'),2);
+			}  
+	   }
+	}
+	public function infoAdd()
+	{
+		if(@$_POST['sub'])
+		{
+		  $data=D('info');
+		  $upload=new \Think\Upload();
+		  $upload->maxSize=3145728;
+		  $upload->exts=array('jpg','gif','png','txt','ppt');
+		  $upload->savePath='./Uploads/Info/';
+		  $upload->rootPath='./Public/';
+      $info=$upload->upload();
+      if($info)
+      {
+      	$data->create();
+      	$data->i_photo=$info['i_photo']['savepath'].$info['i_photo']['savename'];
+      	$data->i_time=time();
+        $result=$data->add();
+        if($result)
+				{
+				    $this->success("添加成功",U('Info/infoAdd'));
+				}
+				else
+				{
+				   $this->error("添加失败",U('Info/infoAdd'));
+				}
+	   	}
+		}
+		else 
+		{
+		  $this->display();
+		}
+	}
+	public function infoSel()
+	{
+		$data=M('info');
+		$sle['i_title']=$_POST['title'];
+		$sel=$data->where($sle)->select();
+    $this->assign('list',$sel);
+    $this->display();
+	}
+	public function infoUpde()
+	{
+		if($_POST['sub'])
+		{
+			$id['i_id']=$_POST['i_id'];
+	    if($_FILES['i_photo']['name']=='')
+	    {
+		   //没有改头像
+		    $a=D('info');
+		    $a->create();
+		    $result=$a->where($id)->save();
+		    if($result)
+				{
+				    $this->success("修改成功",U('Info/infoUpde'));
+				}
+				else
+				{
+				   $this->error("修改失败",U('Info/info'));
+				}
+	      }
+	      else 
+	      {
+				  $data=D('info');
+				  $s=$data->where($id)->find();
+				  @unlink("./Public".$s['i_photo']);
+				  $upload=new \Think\Upload();
+				  $upload->maxSize=3145728;
+				  $upload->exts=array('jpg','gif','png','txt','ppt');
+				  $upload->savePath='./Uploads/Info/';
+				  $upload->rootPath='./Public/';
+		      $info=$upload->upload();
+		      if($info)
+		      {
+			      	$data->create();
+			      	$data->i_photo=$info['i_photo']['savepath'].$info['i_photo']['savename'];
+			        $result=$data->where($id)->save();
+			        if($result)
+							{
+					    		$this->success("修改成功",U('Info/infoUpde'));
+							}
+			        else
+			        {
+			            $this->error("修改失败",U('Info/infoUpde'));
+			        }
+	          }
+	       }
+		   }
+		   else
+		   {
+					$sel=M('info');
+					$where['i_id']=$_GET['i_id'];
+					$sele=$sel->where($where)->find();
+					$this->assign('id',$_GET['i_id']);
+					$this->assign('info',$sele);
+					$this->display();
+		   }
+	}
+	public function grade()
+	{
+		$data=M('grade');
+		$count=$data->count();
+		$page=new \Think\Page($count,3);
+		$show=$page->show();
+		$list=$data->limit($page->firstRow.','.$page->listRows)->select();
+		$this->assign('grade',$list);
+		$this->assign('page',$show);
+		 $this->display();
+	}
+	public function gradeDel()
+	{
+		if(@$_GET['id'])
+		{
+		   $id=$_GET['id'];
+		   $data=M('grade');
+		   $as=$data->delete($id);
+		   if($as)
+	     	{
+		     	 $this->success("删除成功",U('Info/grade'),2);
+			}
+			else
+			{
+			   $this->error("删除失败",U('Info/grade'),2);
+			}  
+		}
+	}
+	public function grade_add()
+	{
+		$data=D('grade');
+		if($_POST['sub'])
+		{
+		   $data->create();
+		   $result=$data->add();
+       if($result)
+		   {
+		      $this->success("添加成功",U('Info/grade'));
+		   }
+		   else
+		   {
+		      $this->error("添加失败",U('Info/grade_add'));
+		   }
+		}
+		else 
+		{
+		   $this->display();
+		}
+	}
+	public function grade_Update()
+	{
+		$data=D('grade');
+		if($_POST['sub'])
+		{
+		   $hid = $_POST['g_id'];
+		   $data->create();
+		   $result=$data->where($hid)->save();
+       if($result)
+		   {
+		      $this->success("修改成功",U('Info/grade'));
+		   }
+		   else
+		   {
+		      $this->error("修改失败",U('Info/grade_Update'));
+		   }   
+		}
+		else 
+		{
+			$id = $_GET['g_id'];
+			$sel=$data->find($id);
+			$this->assign('sel',$sel);
+			//$this->assign('id',$_GET['g_id']);
+			$this->display();
+		}
+	}
+	public function info_class()
+	{
+		$data=D('class');
+		$count=$data->count();
+		$page=new \Think\Page($count,3);
+		$show=$page->show();
+		$list=$data->limit($page->firstRow.','.$page->listRows)->join('job_grade ON job_class.c_gid=job_grade.g_id')->select();
+		$this->assign('cla',$list);
+		$this->assign('page',$show);
+		$this->display();
+	}
+	public function info_class_add()
+	{
+		if($_POST['sub'])
+		{
+		  $as=D('class');
+		  $as->create();
+		  $result=$as->add();
+          if($result)
+		  {
+		    $this->success("添加成功",U('Info/info_class'));
+		  }
+		  else
+		  {
+		    $this->error("添加失败",U('Info/info_class_add'));
+		  }
+		}
+		else 
+		{
+			$data=M('grade');
+			$sel=$data->group('g_name')->select();
+			$this->assign('gra',$sel);
+			$this->display();
+		}
+	}
+	public function info_class_del()
+	{
+		$data=M('class');
+		$id=$_GET['id'];
+		$del=$data->delete($id);
+		if($del)
+    {
+	     	 $this->success("删除成功",U('Info/Info_class'));
+		}
+		else
+		{
+		   $this->error("删除失败",U('Info/Info_class'));
+		}  
+	}
+	public function info_class_Upde()
+	{
+		$del=D('class');
+		if($_POST['sub'])
+		{
+		   echo $id=$_GET['c_id'];
+		   $del->create();
+		   $result=$del->where($id)->save();
+		   echo $del->getlastsql();
+     /*if($result)
+		{
+		    $this->success("修改成功",U('Info/info_class'));
+		}
+		else
+		{
+		   $this->error("修改失败",U('Info/info_class_Upde'));
+		}*/
+		}
+		else 
+		{
+		  $id=$_GET['c_id'];
+		  $as=$del->find($id);
+		  $data=M('grade');
+			$sel=$data->group('g_name')->select();
+			$this->assign('gra',$sel);
+			$this->assign('as',$as);
+			//$this->assign('id',$_GET['c_id']);
+		  $this->display();
+		}
+	}
+	public function city()
+	{
+		$data=D('city');
+		$count=$data->count();
+		$page=new \Think\Page($count,4);
+		$show=$page->show();
+		$list=$data
+		->limit($page->firstRow.','.$page->listRows)
+		->select();
+		$this->assign('city',$list);
+		$this->assign('page',$show);
+		$this->display();
+	}
+	public function city_add(){
+		if($_POST['sub'])
+		{
+		  $data=D('city');
+		  $data->create();
+		  $result=$data->add();
+          if($result)
+		  {
+		    $this->success("添加成功",U('Info/city'));
+		  }
+		  else
+		  {
+		    $this->error("添加失败",U('Info/city_add'));
+		  }
+		}
+		else 
+		{
+		     $this->display();
+		}
+		
+	}
+	public function city_delete(){
+		$data=M('city');
+		$id=$_GET['id'];
+		$del=$data->delete($id);
+		if($del)
+	    {
+		     	 $this->success("删除成功",U('Info/city'));
+	    }
+	    else
+	    {
+			   $this->error("删除失败",U('Info/city'));
+		}  
+	}
+	public function city_Upde()
+	{	
+		if($_POST['sub'])
+		{
+			$data=D('city');
+		  $id['ci_id']=$_POST['ci_id'];
+		  $data->create();
+		   $result=$data->where($id)->save();
+          if($result)
+		  {
+		    $this->success("修改成功",U('Info/city'));
+		  }
+		  else
+		  {
+		    $this->error("修改失败",U('Info/city_Upde'));
+		  }
+		}
+		else 
+		{
+			$data=D('city');
+			$id = $_GET['id'];
+			$sel=$data->find($id);
+			$this->assign('ci',$sel);
+			//$this->assign('id',$_GET['g_id']);
+			$this->display();
+		}
+	}
+}

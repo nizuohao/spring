@@ -1,0 +1,15 @@
+
+.int label { float:left; width:100px; text-align:right;}
+.int input { padding:1px 1px; border:1px solid #ccc;height:16px;}
+.formtips{width: 200px;margin:2px;padding:2px;}
+.onError{
+    background:#FFE0E9 url(../img/reg3.gif) no-repeat 0 center;
+	padding-left:25px;
+}
+.onSuccess{
+    background:#E9FBEB url(../img/reg4.gif) no-repeat 0 center;
+	padding-left:25px;
+}
+.high{
+    color:red;
+}

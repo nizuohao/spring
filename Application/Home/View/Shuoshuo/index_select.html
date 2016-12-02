@@ -1,0 +1,108 @@
+<include file="Common:head" title="就业信息网-新闻信息" />
+<link href="__PUBLIC__/home/templates/default/css/style.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="/job/home/Tpl/Index/style/style2.css" />
+<link rel="stylesheet" type="text/css" href="/job/home/Tpl/Index/style/bao-list.css" />
+<script type="text/javascript" src="/job/home/Tpl/Index/js/jquery-1.8.1.js"></script>
+<script type="text/javascript" src="/job/home/Tpl/Index/js/index.js"></script>
+<script type="text/javascript" src="/job/home/Tpl/Shuoshuo/js/dialog.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#s_sub").click(function(){
+            if($("#si_title").val()==""){
+                $("#si_title1").html("请输入标题");
+                return false;
+            }
+        });
+        $("#s_text").click(function(){
+            $(this).html("");
+        })
+    })
+</script>
+<div class="main-wrap">
+        <div class="main">      
+            <div id="pageShow" class="content">
+                <div class="article-single">
+                <nav class="article-nav">
+                    <ul>
+                        <li class="slash"><a href="__APP__/Index/index"><i class="icon-home"></i>首页</a></li>
+                        <li class="slash"><a href="__APP__/Shuoshuo/index_select">说说中心</a></li>
+                    </ul>
+                </nav>
+                </div>
+<div style="padding-left:25px;">
+    <h2 style="font-size:20px; font-weight:bold; color:#666">
+        发表说说
+    </h2>
+<form action="__APP__/Shuoshuo/shuoshuo" method="post" enctype="multipart/form-data" style="padding-left:15px; padding-top:10px;">
+    <span class="pl3" align="left" style="padding:8px 0; display:block">
+      标题 : <input type="text" name="si_title" id="si_title" /><span id="si_title1" style="color:#f00;"></span>
+    </span>
+    <div class="txd">
+        <textarea class="j a_show_login" name="si_content" rows="5" cols="54" id="s_text"> 在这里请输入内容……</textarea><br>
+        <span class="bn-flat-hot rr">
+        <input type="file" name="si_photo" /><input name="submit_btn" type="submit" class="j a_show_login" value="加上去" id="s_sub" />
+        </span>
+    </div>
+</form>
+</div>
+                <div class="article-list">
+                    <div class="dsh-sub-header">
+                    <h2 style=" font-size:26px; padding-top:20px;">
+                        <if condition = "$state eq 1">banner
+                        <elseif condition = "$state eq 2" />部门快讯
+                        <elseif condition = "$state eq 3" />毕业生快讯
+                        <elseif condition = "$state eq 4" />行业快讯 
+                        <elseif condition = "$state eq 5" />公告
+                        <elseif condition = "$state eq 'shuo'" />说说中心
+                        <else />
+                        </if>
+                    </h2>
+                        </div>
+                    <div class="article-list-content">
+<!------  新闻列表---------->
+<volist name="list1" id="info">
+<article class="article-list-item">
+    <div>
+        <h3><a href="__APP__/Shuoshuo/index_list/s_id/{$info.s_id}" style="color:#0E5691">[{$info.s_name}]</a>&nbsp;<a href="__APP__/Shuoshuo/index/id/{$info.si_id}">{$info.si_title}</a></h3>
+        <span>{$info.si_time|date="Y-m-d H:i:s",###}</span>
+        <p>{$info.si_content}<if condition="$info.si_photo neq ''"><span style="color:#f00;">[有图]</span></if></p>
+        <a href="__APP__/Shuoshuo/index/id/{$info.si_id}" class="view-more"> 查看详细 <i class="icon-angle-right"></i></a>
+    </div>
+</article>
+</volist>
+<!-------- the end 新闻列表--------------------->
+<nav class="page-nav">{$page}</nav>
+<!--
+                        <nav class="page-nav"><ul>
+	         <li>共<span style="font-weight:bold">148</span>页&nbsp;&nbsp;</li>
+		     <li><a class="d-left-arrow" href="http://www.sdspring.cn/index.php?M=news#"></a></li>
+			 <li><a class="left-arrow" href="http://www.sdspring.cn/index.php?M=news#"></a></li>
+			 <li><a class="current" href="http://www.sdspring.cn/index.php?M=news#">1</a></li>
+			 <li><a class="right-arrow" href="http://www.sdspring.cn/index.php?M=news#" onclick="return page(2,0,&#39;pageNews&#39;)"></a></li>
+			 <li><a class="d-right-arrow" href="http://www.sdspring.cn/index.php?M=news#" onclick="return page(148,0,&#39;pageNews&#39;)"></a></li>
+		  </ul></nav>
+-->
+                    </div>
+                </div>
+            </div>
+<div class="sidebar">
+    <div class="other-special">
+        <h2 style=" font-size:26px; padding-top:20px; padding-bottom:10px">专题列表</h2>
+               <div class="other-special-item">
+               <h4>新闻频道<a href="http://www.sdspring.cn/tbgz#info-board0"><i class="icon-chevron-down"></i></a></h4>
+               <ul id="info-board0" style="height: 218px; padding-top: 0px; margin-top: 0px; padding-bottom: 10px; margin-bottom: 0px;">
+			   		<li><a href="__APP__/Index/info_select" <if condition = "$state eq ''"> style="color:#f00"</if> >所有新闻</a></li>
+			   		<li><a href="__APP__/Shuoshuo/index_select" <if condition = "$state eq 'shuo'"> style="color:#f00"</if> >说说中心</a></li>
+			   		<li><a href="__APP__/Index/info_select/i_state/1" <if condition = '$state eq 1'> style="color:#f00"</if> >banner</a></li>
+                    <li><a href="__APP__/Index/info_select/i_state/2" <if condition = '$state eq 2'> style="color:#f00"</if>>部门快讯</a></li>
+                    <li><a href="__APP__/Index/info_select/i_state/3" <if condition = '$state eq 3'> style="color:#f00"</if>>毕业生快讯</a></li>
+                    <li><a href="__APP__/Index/info_select/i_state/4" <if condition = '$state eq 4'> style="color:#f00"</if>>行业快讯</a></li>
+                    <li><a href="__APP__/Index/info_select/i_state/5" <if condition = '$state eq 5'> style="color:#f00"</if>>公告</a></li>
+</ul>
+			   </div>  
+    </div>
+</div>
+        </div>
+    </div>
+<include file="Common:foot" />
